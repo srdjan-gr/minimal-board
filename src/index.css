@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* Vite website coloer inspiration */
+:root {
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+
+
+  /* dark colors */
+  --bg-main: #242424;
+  --bg-second: #2f2f2f;
+  /* --bg-second: #333333; */
+  --font-color-first: #fff;
+  --font-color-second: #242424;
+  --font-color-tetriar: #636363;
+  --accent: #c1cba9;
+  --accent: #E3FCBF;
+  /* --accent: #d7e636; */
+  --accent: #EFF48E;
+
+  --font-main: 'Lato', sans-serif;
+  --font-second: 'Roboto', sans-serif;
+
+  --radius: 4px;
+  --radius-btn: 4px;
+
+  --border: 1px solid #2f2f2f;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+
+
+body {
+  font-family: var(--font-main);
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  background-color: var(--bg-main);
+  color: var(--font-color-first);
+  padding: 5rem;
+
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  padding: .5rem 2.8rem;
+  color: var(--accent);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all .1s ease-out;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: .5rem 2.8rem;
+  color: var(--font-color-second);
+}
+
+.btn-second {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: .5rem 2.8rem;
+  color: var(--bg-main);
+  margin-top: 3rem;
+  border-radius: var(--radius);
+}
+
+.box {
+  width: 28rem;
+  height: 18rem;
+  background-color: var(--bg-second);
+  border-radius: var(--radius);
+  padding: 3rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.box-border {
+  width: 24rem;
+  height: 16rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+h2 {
+  font-family: var(--font-second);
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: var(--font-color-tetriar);
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
