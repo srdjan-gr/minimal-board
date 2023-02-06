@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 
+import SidebarContext from '../../contexts/SidebarContext';
 
 const Sidebar = () => {
 
+    const { sidebar } = useContext(SidebarContext)
 
     return (
-        <nav  >
+        <nav className={`${sidebar ? 'toggleSidebar' : ''}`} >
             sidebar
 
         </nav>

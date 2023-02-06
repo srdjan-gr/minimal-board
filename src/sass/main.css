@@ -23,11 +23,16 @@ body {
 .icon-m {
   font-size: 2.2rem;
   cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.icon-rotate-180 {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 768px) {
   nav {
-    max-width: 6rem;
+    width: 6rem;
   }
   header,
 main {
@@ -46,10 +51,12 @@ nav {
   left: 0;
   padding: 1rem;
   border-right: 1px solid #2f2f2f;
+  transition: all 0.2s ease-out;
 }
 
-.closeSidebar {
+.toggleSidebar {
   max-width: 6rem;
+  transition: all 0.2s ease-out;
 }
 
 header {
@@ -89,5 +96,8 @@ main {
   top: 5rem;
   right: 0;
   color: rgb(214, 214, 214);
-  transition: all 0.2s ease-out;
+}
+
+.toggleMainContent {
+  width: calc(100% - 6rem);
 }/*# sourceMappingURL=main.css.map */

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import SidebarContext from '../../contexts/SidebarContext';
 
 const MainContent = () => {
+
+    const { sidebar } = useContext(SidebarContext)
+
     return (
-        <main>Main</main>
+        <main className={`${sidebar === true ? 'toggleMainContent' : ''}`}>Main</main>
     )
 }
 

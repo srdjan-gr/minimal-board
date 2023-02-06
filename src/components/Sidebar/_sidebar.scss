@@ -7,8 +7,12 @@ nav{
     left: 0;
     padding: 1rem;
     border-right: $border;
+    transition: $transition-2;
 }
 
-.closeSidebar{
+.toggleSidebar{
     max-width: 6rem;
+    transition: $transition-2;
 }
+
+

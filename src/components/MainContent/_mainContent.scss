@@ -7,7 +7,9 @@ main{
     top: 5rem;
     right: 0;
     color: rgb(214, 214, 214);
-    transition: $transition-2;
+    // transition: $transition-2;
+}
 
-
+.toggleMainContent{
+    width: calc(100% - 6rem);
 }

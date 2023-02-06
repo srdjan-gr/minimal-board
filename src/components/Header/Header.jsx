@@ -1,8 +1,15 @@
 import React, { useContext } from 'react'
 import { BiDotsVerticalRounded, BiArrowToLeft } from "react-icons/bi";
 
+import SidebarContext from '../../contexts/SidebarContext';
 
 const Header = () => {
+
+    const { sidebar, setSidebar } = useContext(SidebarContext)
+
+    const toggleSidebar = () => {
+        setSidebar(!sidebar);
+    }
 
     return (
         <header>
@@ -11,7 +18,7 @@ const Header = () => {
 
             </article>
             <article className='header__right'>
-                <BiArrowToLeft className='icon-m' />
+                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m`} onClick={toggleSidebar} />
             </article>
         </header>
     )

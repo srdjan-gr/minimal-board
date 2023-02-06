@@ -85,4 +85,9 @@ body {
   .icon-m{
     font-size: 2.2rem;
     cursor: pointer;
+    transition: $transition-1;
+  }
+
+  .icon-rotate-180{
+    transform: rotate(180deg);
   }
