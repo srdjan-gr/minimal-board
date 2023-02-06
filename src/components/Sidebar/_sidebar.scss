@@ -1,14 +1,30 @@
 nav{
     background-color: aquamarine;
     width: 25rem;
-    height: calc(100vh - 5rem);
+    height: 100vh;
     position: absolute;
     bottom: 0rem;
     left: 0;
-    padding: 1rem;
+    z-index: 1;
     border-right: $border;
     transition: $transition-2;
+    
+    .nav__header{
+        padding: 1rem;
+        height: 5rem;
+        width: 100%;
+        background-color: rgb(191, 204, 15);
+        border-bottom: $border;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__middle{
+        padding: 1rem;
+    }
+
 }
+
 
 .toggleSidebar{
     max-width: 6rem;

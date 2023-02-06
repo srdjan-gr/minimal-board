@@ -8,8 +8,15 @@ const Sidebar = () => {
 
     return (
         <nav className={`${sidebar ? 'toggleSidebar' : ''}`} >
-            sidebar
 
+            <article className='nav__header'>
+                sidebar logo
+            </article>
+
+            <article className='nav__middle'>
+                sidebar menus
+
+            </article>
         </nav>
     )
 }

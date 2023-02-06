@@ -1,29 +1,16 @@
 header{
     background-color: plum;
-    width: calc(100%);
+    width: calc(100% - 25rem);
     position: fixed;
     top: 0;
     right: 0;
     height: 5rem;
     display: flex;
     align-items: center;
-    transition: $transition-2;
     border-bottom: $border;
+    padding: 0 1rem;
+}
 
-    .header__left{
-        display: flex;
-        align-items: center;
-        width: 25rem;
-        border-right: $border;
-        height: 100%;
-        padding: 0 1rem;
-    }
-
-    .header__right{
-        display: flex;
-        align-items: center;
-        width: calc(100% - 25rem);
-        height: 100%;
-        padding: 0 1rem;
-    }
+.toggleHeader{
+    width: calc(100% - 6rem);
 }
