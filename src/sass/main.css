@@ -19,6 +19,14 @@ body {
   grid-template-columns: 25rem 1fr;
   grid-template-rows: 8rem 1fr;
 } */
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
 .icon-m {
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -26,6 +34,12 @@ body {
   height: 2.6rem;
   padding: 0.4rem;
   border-radius: 0.8rem;
+}
+
+.icon-m1 {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
 }
 
 .icon-m:hover {
@@ -132,6 +146,53 @@ header .header__right {
 
 .toggleHeader {
   width: calc(100% - 6rem);
+}
+
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.header__menu {
+  min-width: 12rem;
+  min-height: 6rem;
+  position: absolute;
+  top: 6rem;
+  right: 1rem;
+  z-index: 9;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  transform-origin: top;
+  transform: rotateX(-100deg) translateY(-50%);
+  opacity: 0;
+  display: flex;
+  flex-direction: raw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+.header__menu-single {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  transition: all 0.1s ease-out;
+}
+.header__menu-single:hover {
+  background-color: #EFF48E;
+  color: #242424;
+  border-radius: 4px;
+}
+.header__menu h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.toggleHeaderMenu {
+  transform: rotateX(0deg) translateY(0);
+  z-index: 11;
+  opacity: 1;
 }
 
 main {

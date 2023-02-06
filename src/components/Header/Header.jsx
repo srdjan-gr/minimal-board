@@ -4,28 +4,28 @@ import { BiDotsVerticalRounded, BiArrowToLeft, BiSun } from "react-icons/bi";
 import SidebarContext from '../../contexts/SidebarContext';
 import ThemeContext from '../../contexts/ThemeContext';
 
-const Header = () => {
+
+const Header = ({ headerMenu, setHeaderMenu }) => {
 
     const { sidebar, setSidebar } = useContext(SidebarContext)
     const { theme, setTheme } = useContext(ThemeContext)
 
+
     const toggleSidebar = () => {
         setSidebar(!sidebar);
 
-        if (!sidebar) {
-            localStorage.setItem('minimalBoardSidebar', 'asideClosed');
-        } else {
-            localStorage.setItem('minimalBoardSidebar', 'asideOpend');
-        }
+        !sidebar ? localStorage.setItem('minimalBoardSidebar', 'asideClosed') :
+            localStorage.setItem('minimalBoardSidebar', 'asideOpend')
     }
 
 
     const toogleTheme = () => {
-        if (theme === 'darkTheme') {
-            setTheme('lightTheme')
-        } else {
-            setTheme('darkTheme')
-        }
+        theme === 'darkTheme' ? setTheme('lightTheme') : setTheme('darkTheme')
+    }
+
+
+    const toggleHeaderMenu = () => {
+        setHeaderMenu(!headerMenu)
     }
 
     return (
@@ -36,8 +36,10 @@ const Header = () => {
             </article>
             <article className='header__right'>
                 <BiSun className='icon-m background-second' onClick={toogleTheme} />
-                <BiDotsVerticalRounded className='icon-m background-second' />
+                <BiDotsVerticalRounded className='icon-m background-second' onClick={toggleHeaderMenu} />
             </article>
+
+
         </header>
     )
 }

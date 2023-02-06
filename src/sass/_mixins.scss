@@ -9,3 +9,12 @@
 @mixin borderBottom($color){
     border-bottom: 1px solid  $color;
 }
+
+
+@mixin flex($direction, $align, $justify, $gap){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
