@@ -20,9 +20,12 @@ body {
   grid-template-rows: 8rem 1fr;
 } */
 .icon-m {
-  font-size: 2.2rem;
   cursor: pointer;
   transition: all 0.1s ease-out;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
 }
 
 .icon-m:hover {
@@ -37,10 +40,13 @@ body {
   color: rgb(34, 34, 34);
 }
 .lightTheme .text-second {
-  color: #b1b1b1;
+  color: #cacaca;
 }
 .lightTheme .background {
   background-color: #e7e7e7;
+}
+.lightTheme .background-second {
+  background-color: #cacaca;
 }
 .lightTheme .border-right {
   border-right: 1px solid #bebebe;
@@ -60,6 +66,9 @@ body {
 }
 .darkTheme .background {
   background-color: #242424;
+}
+.darkTheme .background-second {
+  background-color: #2f2f2f;
 }
 .darkTheme .border-right {
   border-right: 1px solid #2f2f2f;

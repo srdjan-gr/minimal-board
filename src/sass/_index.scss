@@ -86,9 +86,13 @@ body {
 
 
   .icon-m{
-    font-size: 2.2rem;
+    // font-size: 2rem;
     cursor: pointer;
     transition: $transition-1;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: .4rem;
+    border-radius: .8rem;
   }
 
   .icon-m:hover{
@@ -101,7 +105,7 @@ body {
 
 
 
-  // Themess
+  // Start Theme
 .lightTheme{
   .text{
     color: $font-color-light-first;
@@ -113,6 +117,10 @@ body {
 
   .background{
     background-color: $bg-light;
+  }
+
+  .background-second{
+    background-color: $bg-light-second;
   }
 
   .border-right {
@@ -141,6 +149,10 @@ body {
     background-color: $bg-dark;
   }
 
+  .background-second{
+    background-color: $bg-dark-second;
+  }
+
   .border-right {
     @include borderRight($border-dark);
   }
@@ -153,3 +165,4 @@ body {
     @include borderBottom($border-dark);
   }
 }
+  // End Theme

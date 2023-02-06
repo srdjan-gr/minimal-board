@@ -31,12 +31,12 @@ const Header = () => {
     return (
         <header className={`${sidebar === true ? 'toggleHeader' : ''} background text border-bottom border-left`}>
             <article className='header__left'>
-                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m`} onClick={toggleSidebar} />
+                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m background-second`} onClick={toggleSidebar} />
 
             </article>
             <article className='header__right'>
-                <BiSun className='icon-m' onClick={toogleTheme} />
-                <BiDotsVerticalRounded className='icon-m' />
+                <BiSun className='icon-m background-second' onClick={toogleTheme} />
+                <BiDotsVerticalRounded className='icon-m background-second' />
             </article>
         </header>
     )
