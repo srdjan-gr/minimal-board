@@ -1,14 +1,22 @@
 header{
-    background-color: plum;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: plum;
     width: calc(100% - 25rem);
     position: fixed;
     top: 0;
     right: 0;
     height: 5rem;
-    display: flex;
-    align-items: center;
     border-bottom: $border;
     padding: 0 1rem;
+    transition: $transition-2;
+
+    .header__right{
+        display: flex;
+        gap: 1rem;
+    }
+
 }
 
 .toggleHeader{

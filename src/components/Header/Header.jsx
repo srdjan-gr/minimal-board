@@ -13,8 +13,14 @@ const Header = () => {
 
     return (
         <header className={`${sidebar === true ? 'toggleHeader' : ''}`}>
-            <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m`} onClick={toggleSidebar} />
-            <BiSun className='icon-m' />
+            <article className='header__left'>
+                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m`} onClick={toggleSidebar} />
+
+            </article>
+            <article className='header__right'>
+                <BiSun className='icon-m' />
+                <BiDotsVerticalRounded className='icon-m' />
+            </article>
         </header>
     )
 }

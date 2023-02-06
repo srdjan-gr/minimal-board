@@ -1,5 +1,4 @@
 nav{
-    background-color: aquamarine;
     width: 25rem;
     height: 100vh;
     position: absolute;
@@ -27,8 +26,7 @@ nav{
 
 
 .toggleSidebar{
-    max-width: 6rem;
-    transition: $transition-2;
+    width: 6rem !important;
 }
 
 
