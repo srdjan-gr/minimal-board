@@ -9,6 +9,12 @@ const Header = () => {
 
     const toggleSidebar = () => {
         setSidebar(!sidebar);
+
+        if (!sidebar) {
+            localStorage.setItem('minimalBoardSidebar', 'asideClosed');
+        } else {
+            localStorage.setItem('minimalBoardSidebar', 'asideOpend');
+        }
     }
 
     return (
