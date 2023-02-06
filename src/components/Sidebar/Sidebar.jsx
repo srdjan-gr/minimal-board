@@ -7,13 +7,13 @@ const Sidebar = () => {
     const { sidebar } = useContext(SidebarContext)
 
     return (
-        <nav className={`${sidebar ? 'toggleSidebar' : ''}`} >
+        <nav className={`${sidebar ? 'toggleSidebar' : ''} background text `} >
 
-            <article className='nav__header'>
+            <article className='nav__header border-bottom'>
                 sidebar logo
             </article>
 
-            <article className='nav__middle'>
+            <article className='nav__middle '>
                 sidebar menus
 
             </article>

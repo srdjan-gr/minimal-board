@@ -1,0 +1,11 @@
+@mixin borderRight($color){
+    border-right: 1px solid  $color;
+}
+
+@mixin borderLeft($color){
+    border-left: 1px solid  $color;
+}
+
+@mixin borderBottom($color){
+    border-bottom: 1px solid  $color;
+}

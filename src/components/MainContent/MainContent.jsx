@@ -7,7 +7,7 @@ const MainContent = () => {
     const { sidebar } = useContext(SidebarContext)
 
     return (
-        <main className={`${sidebar === true ? 'toggleMainContent' : ''}`}>Main</main>
+        <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>Main</main>
     )
 }
 

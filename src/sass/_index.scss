@@ -1,10 +1,12 @@
+@use './colors' as *;
+
 body {
     font-family: $font-main;
     font-size: 1.6rem;
     line-height: 1.5rem;
     font-weight: 500;
-    background-color: $bg-main;
-    color: $font-color-first;
+    // background-color: $bg-main;
+    // color: $font-color-first;
   }
   
   /* .app {
@@ -96,3 +98,58 @@ body {
   .icon-rotate-180{
     transform: rotate(180deg);
   }
+
+
+
+  // Themess
+.lightTheme{
+  .text{
+    color: $font-color-light-first;
+  }
+
+  .text-second{
+    color: $bg-light-second;
+  }
+
+  .background{
+    background-color: $bg-light;
+  }
+
+  .border-right {
+    @include borderRight($border-light);
+  }
+
+  .border-left {
+    @include borderLeft($border-light);
+  }
+
+  .border-bottom {
+    @include borderBottom($border-light);
+  }
+}
+
+.darkTheme{
+  .text{
+    color: $font-color-dark-first;
+  }
+
+  .text-second{
+    color: $bg-dark-second;
+  }
+
+  .background{
+    background-color: $bg-dark;
+  }
+
+  .border-right {
+    @include borderRight($border-dark);
+  }
+
+  .border-left {
+    @include borderLeft($border-dark);
+  }
+
+  .border-bottom {
+    @include borderBottom($border-dark);
+  }
+}
