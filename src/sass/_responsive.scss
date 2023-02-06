@@ -1,0 +1,22 @@
+// Bigger than 1920px to 2k
+@media screen and (min-width:1920px) and (max-width:2560px) {
+
+}
+
+// Smaller than 768px
+@media (max-width:768px) {
+
+    nav{
+       max-width: 6rem;
+    }
+    
+    header,
+    main{
+        min-width: calc(100% - 6rem);
+    }
+
+    header .header__left{
+       max-width: 6rem;
+    }
+
+}
