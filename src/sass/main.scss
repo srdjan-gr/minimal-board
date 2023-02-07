@@ -4,7 +4,9 @@
 @import 'responsive';
 
 
+@import '../Pages/pages';
+
 @import '../components/Sidebar/sidebar';
 @import '../components/Header/header';
 @import '../components/HeaderMenu/headerMenu';
-@import '../components/MainContent/mainContent';
+@import '../components/ErrorComponent/errorComponent';

@@ -1,8 +1,8 @@
 @use '../../sass/colors' as *;
 
 .header__menu{
-    min-width: 12rem;
-    min-height: 6rem;
+    min-width: 14rem;
+    // min-height: 7rem;
     position: absolute;
     top: 6rem;
     right: 1rem;
@@ -14,20 +14,20 @@
     transform: rotateX(-100deg) translateY(-50%);
     opacity: 0;
     
-    @include flex(raw, flex-start, flex-start, 0 );
+    @include flex(column, flex-start, flex-start, 0 );
     
     &-single{
         @include flex(raw, center, flex-start, 1rem );
         cursor: pointer;
         width: 100%;
-        padding: .5rem;
+        padding: .6rem;
         transition: $transition-1;
+        border-radius: $radius;
     }
 
     &-single:hover{
         background-color: $accent;
         color: $font-color-dark-second;
-        border-radius: $radius;
     }
 
     h3{

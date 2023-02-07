@@ -10,11 +10,11 @@ const Sidebar = () => {
         <nav className={`${sidebar ? 'toggleSidebar' : ''} background text `} >
 
             <article className='nav__header border-bottom'>
-                sidebar logo
+                logo
             </article>
 
             <article className='nav__middle '>
-                sidebar menus
+                sidebar
 
             </article>
         </nav>

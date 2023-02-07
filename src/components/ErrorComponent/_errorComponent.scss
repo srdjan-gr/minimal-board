@@ -1,0 +1,11 @@
+.error__container{
+    @include flex(column, center, center, 0);
+
+    width: 30rem;
+    height: 14rem;
+    border-radius: $radius;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
