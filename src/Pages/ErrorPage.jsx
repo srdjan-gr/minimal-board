@@ -7,7 +7,7 @@ const ErrorPage = () => {
     const { sidebar } = useContext(SidebarContext)
     return (
         <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>
-            <ErrorComponent />
+            <ErrorComponent error='error404' />
 
         </main>
     )
