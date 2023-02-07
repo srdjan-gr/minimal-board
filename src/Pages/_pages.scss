@@ -1,5 +1,5 @@
 main{
-    padding: 1rem;
+    padding: 2rem;
     width: calc(100% - 25rem);
     height: calc(100% - 5rem);
     position: absolute;
@@ -7,6 +7,14 @@ main{
     right: 0;
     z-index: 10;
     transition: $transition-2;
+    overflow-y: scroll;
+    
+    .grid__container{
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, 25rem);
+        min-height: 15rem;
+    }
 }
 
 .toggleMainContent{

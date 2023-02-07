@@ -5,7 +5,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import ThemeContext from './contexts/ThemeContext';
 
 
-import { Route, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, useParams } from 'react-router-dom';
 import Home from './Pages/Home';
 import ErrorPage from './Pages/ErrorPage';
 import All from './Pages/All';
@@ -24,12 +24,12 @@ function App() {
     {
       path: "/",
       element: <Home />,
-      errorElement: <ErrorPage />
+      errorElement: <ErrorPage />,
     },
     {
-      path: "All",
+      path: "All/:categoryid",
       element: <All />,
-      errorElement: < ErrorPage />
+      errorElement: <ErrorPage />
     },
   ])
 
@@ -38,11 +38,6 @@ function App() {
     <div className={`${theme === 'darkTheme' ? 'darkTheme' : 'lightTheme'}`}>
 
       <RouterProvider router={router} />
-
-
-
-
-
 
     </div>
 

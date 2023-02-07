@@ -6,15 +6,20 @@ import './sass/main.css'
 
 import { ThemeProvider } from './contexts/ThemeContext';
 import { SidebarProvider } from './contexts/SidebarContext';
+import { CategoriesProvider } from './contexts/CategoriesContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
 
-    <ThemeProvider>
-      <SidebarProvider>
+  <ThemeProvider>
+    <SidebarProvider>
+      <CategoriesProvider>
+
         <App />
-      </SidebarProvider>
-    </ThemeProvider>
 
-  </React.StrictMode>,
+      </CategoriesProvider>
+    </SidebarProvider>
+  </ThemeProvider>
+
+  // </React.StrictMode>,
 )

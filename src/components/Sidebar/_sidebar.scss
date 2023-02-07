@@ -1,3 +1,5 @@
+@use '../../sass/colors' as *;
+
 nav{
     width: 25rem;
     height: 100vh;
@@ -49,6 +51,23 @@ nav{
 
     .nav__middle{
         padding: 1.5rem 1.5rem 1.5rem 0;
+
+        & ul{
+            @include flex(column, flex-start, flex-start, .5rem);
+
+            & a {
+                font-size: 1.8rem;
+                width: 100%;
+                padding: .8rem;
+                transition: $transition-1;
+                border-radius: 0 $radius $radius 0;
+            }
+
+            & a:hover {
+                background-color: $accent;
+                color: $font-color-dark-second;
+            }
+        }
 
         a{
             padding-left: 1.5rem;
