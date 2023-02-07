@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 
 import SidebarContext from '../contexts/SidebarContext';
 
-const Home = () => {
+const All = () => {
 
     const { sidebar } = useContext(SidebarContext)
     const [headerMenu, setHeaderMenu] = useState(false);
@@ -20,11 +20,11 @@ const Home = () => {
 
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>
 
-                Home
+                All Items
 
             </main>
         </div>
     )
 }
 
-export default Home
+export default All

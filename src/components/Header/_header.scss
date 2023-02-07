@@ -6,6 +6,7 @@ header{
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 10;
     height: 5rem;
     padding: 0 1rem;
     transition: $transition-2;

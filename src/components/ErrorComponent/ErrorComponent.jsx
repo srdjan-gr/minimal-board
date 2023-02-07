@@ -7,7 +7,7 @@ const ErrorComponent = ({ error }) => {
             return (
                 <div className='error__container background-second'>
                     <h3>404</h3>
-                    <h3>The page does not exist!!!</h3>
+                    <h3>Page not found!!!</h3>
                 </div>
             )
             break;
