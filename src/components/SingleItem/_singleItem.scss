@@ -9,7 +9,7 @@
     @include flex(raw, flex-start, space-around, 1rem);
 
     &-description{
-      width: 80%;
+      // width: 80%;
       height: 100%;
       
       @include flex(column, flex-start, flex-start, .5rem);
@@ -24,6 +24,10 @@
       }
     }
 
+    &-icons{
+      height: 100% !important;
+      @include flex(column, flex-start, space-between, 0);
+    }
   }
 
   .box:hover{

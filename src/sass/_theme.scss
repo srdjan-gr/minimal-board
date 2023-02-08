@@ -33,6 +33,18 @@
     .border-bottom {
       @include borderBottom($border-light);
     }
+
+    .bg-success {
+      background-color: $success;
+    }
+
+    .bg-danger {
+      background-color: $danger;
+    }
+    
+    .bg-info {
+      background-color: $info;
+    }
   }
   
 
@@ -71,5 +83,17 @@
   
     .border-bottom {
       @include borderBottom($border-dark);
+    }
+
+    .bg-success {
+      background-color: $success;
+    }
+
+    .bg-danger {
+      background-color: $danger;
+    }
+
+    .bg-info {
+      background-color: $info;
     }
   }

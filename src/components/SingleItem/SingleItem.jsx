@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { BiDotsHorizontalRounded, BiCheck } from "react-icons/bi";
 
 import TasksContext from '../../contexts/TasksContext';
 
@@ -12,7 +12,7 @@ const SingleItem = ({ task }) => {
 
     return (
         <div className="box background-second text">
-            <div className="box-icon">
+            <div className="box-category-icon">
 
             </div>
 
@@ -22,7 +22,10 @@ const SingleItem = ({ task }) => {
                 <button className='btn'>Test btn</button>
             </div>
 
-            <BiDotsHorizontalRounded className='icon-m background' />
+            <div className="box-icons">
+                <BiDotsHorizontalRounded className='icon-m background' />
+                <BiCheck className='icon-m background bg-success' />
+            </div>
         </div>
     )
 
