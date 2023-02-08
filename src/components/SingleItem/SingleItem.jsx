@@ -14,12 +14,17 @@ const SingleItem = ({ task }) => {
             <div className="box-description">
                 <h2>{task_ime}</h2>
                 <p className='text-second'>{task_text}</p>
-                <button className='btn'>Test btn</button>
+                {/*<button className='btn'>Test btn</button>*/}
             </div>
 
             <div className="box-icons">
                 <BiDotsHorizontalRounded className='icon-m background' />
-                <BiCheck className='icon-m background bg-success' />
+
+                {
+                    uradjen == 1 ?
+                        <BiCheck className='icon-m background bg-success' /> :
+                        <BiQuestionMark className='icon-m background bg-info' />
+                }
             </div>
         </div>
     )

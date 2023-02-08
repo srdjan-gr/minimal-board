@@ -97,7 +97,7 @@ a {
   background-color: #63e8af;
 }
 .lightTheme .bg-info {
-  background-color: #63e8af;
+  background-color: rgba(150, 99, 232, 0.1);
 }
 
 .darkTheme .text {
@@ -131,7 +131,7 @@ a {
   background-color: #63e8af;
 }
 .darkTheme .bg-info {
-  background-color: #63e8af;
+  background-color: rgba(150, 99, 232, 0.1);
 }
 
 /* $accent: #d7e636; */
