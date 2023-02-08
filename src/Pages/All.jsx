@@ -8,6 +8,7 @@ import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import Loader from '../components/Loader/Loader';
 import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
+import StatusFilter from '../components/StatusFilter/StatusFilter';
 
 import SidebarContext from '../contexts/SidebarContext';
 // import CategoriesContext from '../contexts/CategoriesContext';
@@ -34,17 +35,20 @@ const All = () => {
 
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>
 
-                <div className="grid__container">
-                    {
-                        isLoading === true ? <Loader /> :
-                            tasks.length === 0 ? <ErrorComponent error='notasks' /> :
-                                tasks.map((task, idx) => {
+                <div className='main__all-container'>
+                    <StatusFilter />
+                    <div className="grid__container">
+                        {
+                            isLoading === true ? <Loader /> :
+                                tasks.length === 0 ? <ErrorComponent error='notasks' /> :
+                                    tasks.map((task, idx) => {
 
-                                    return (
-                                        <SingleItem key={task.id} task={task} />
-                                    )
-                                })
-                    }
+                                        return (
+                                            <SingleItem key={task.id} task={task} />
+                                        )
+                                    })
+                        }
+                    </div>
                 </div>
             </main>
         </div>

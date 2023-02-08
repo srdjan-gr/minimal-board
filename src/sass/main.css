@@ -90,6 +90,9 @@ a {
 .lightTheme .border-bottom {
   border-bottom: 1px solid #bebebe;
 }
+.lightTheme .border-all {
+  border: 1px solid #bebebe;
+}
 .lightTheme .bg-success {
   background-color: hsla(154deg, 74%, 65%, 0.1);
 }
@@ -123,6 +126,9 @@ a {
 }
 .darkTheme .border-bottom {
   border-bottom: 1px solid #2f2f2f;
+}
+.darkTheme .border-all {
+  border: 1px solid #2f2f2f;
 }
 .darkTheme .bg-success {
   background-color: hsla(154deg, 74%, 65%, 0.1);
@@ -165,7 +171,7 @@ a {
   }
 }
 main {
-  padding: 2rem;
+  padding: 1.5rem;
   width: calc(100% - 25rem);
   height: calc(100% - 5rem - 7rem);
   position: absolute;
@@ -175,7 +181,15 @@ main {
   transition: all 0.2s ease-out;
   overflow-y: scroll;
 }
-main .grid__container {
+main .main__all-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+main .main__all-container .grid__container {
+  width: 100%;
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, 25rem);
@@ -473,4 +487,62 @@ header .header__right {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.status__filter {
+  width: 22rem;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.status__filter h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.status__filter .status-group {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.status__filter .status-group label {
+  margin-bottom: 0.3rem;
+}
+.status__filter .status-group input[type=checkbox] {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0.15rem solid rgba(128, 128, 128, 0.301);
+  border-radius: 0.3em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+.status__filter .status-group input[type=checkbox]::before {
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0.15rem solid #FF6699;
+  border-radius: 0.3em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em rgba(255, 102, 153, 0.25);
+}
+.status__filter .status-group input[type=checkbox]:checked::before {
+  transform: scale(1);
 }/*# sourceMappingURL=main.css.map */

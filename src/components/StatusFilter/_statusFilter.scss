@@ -1,0 +1,63 @@
+@use '../../sass/colors' as *;
+
+.status__filter{
+
+    width: 22rem;
+    // min-height: 12rem;
+    padding: 1rem;
+    border-radius: $radius;
+
+    @include flex(column, flex-start, flex-start, 1.5rem);
+
+    h2{
+        text-transform: uppercase;
+        font-size: $fs-16;
+    }
+
+    .status-group{
+        @include flex(raw, center, center, 1rem); 
+
+        label{
+            margin-bottom: .3rem;
+        }
+
+        input[type='checkbox']{
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: .5rem;
+
+            -webkit-appearance: none;
+            appearance: none;
+            // background-color: gray;
+            margin: 0;
+
+            font: inherit;
+            color: currentColor;
+            width: 1.6rem;
+            height: 1.6rem;
+            border: 0.15rem solid rgba(128, 128, 128, 0.301);
+            border-radius: 0.3em;
+            transform: translateY(-0.075em);
+
+            
+            display: grid;
+            place-content: center;
+        }
+
+        input[type="checkbox"]::before {
+            content: "";
+            width: 1.4rem;
+            height: 1.4rem;
+            border: 0.15rem solid $accent;
+            border-radius: 0.3em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em $accent-50;
+        }
+
+        input[type="checkbox"]:checked::before {
+        transform: scale(1);
+        }
+    }
+    
+}

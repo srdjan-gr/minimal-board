@@ -34,6 +34,10 @@
       @include borderBottom($border-light);
     }
 
+    .border-all {
+      @include borderAll($border-light);
+    }
+
     .bg-success {
       background-color: $success;
     }
@@ -84,6 +88,11 @@
     .border-bottom {
       @include borderBottom($border-dark);
     }
+
+    .border-all {
+      @include borderAll($border-dark);
+    }
+
 
     .bg-success {
       background-color: $success;
