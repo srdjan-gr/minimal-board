@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import Sidebar from '../components/Sidebar/Sidebar'
-import SingleItem from '../components/SingleItem/SingleItem';
 
 import SidebarContext from '../contexts/SidebarContext';
 
@@ -21,7 +20,6 @@ const Home = () => {
             <Sidebar />
 
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} >
-
 
 
             </main>

@@ -5,6 +5,7 @@ import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
+import Loader from '../components/Loader/Loader';
 import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
 
@@ -35,7 +36,7 @@ const All = () => {
 
                 <div className="grid__container">
                     {
-                        isLoading === true ? 'Loading...' :
+                        isLoading === true ? <Loader /> :
                             tasks.length === 0 ? <ErrorComponent error='notasks' /> :
                                 tasks.map((task, idx) => {
 

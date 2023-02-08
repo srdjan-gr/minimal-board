@@ -16,8 +16,6 @@ const Sidebar = () => {
     const { categories, setCategories } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading } = useContext(TasksContext);
 
-    // console.log(tasks);
-
 
     const fetchTasks = (id) => {
 

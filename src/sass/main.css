@@ -56,12 +56,6 @@ a {
   transition: all 0.1s ease-out;
 }
 
-.icon-m2 {
-  width: 4rem;
-  height: 4rem;
-  padding: 1rem;
-}
-
 .icon-m:hover {
   color: #FF6699;
 }
@@ -431,4 +425,51 @@ header .header__right {
 
 .breadcrumbActive {
   color: #FF6699;
+}
+
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.loader__container {
+  position: absolute;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+.loader__container P {
+  position: absolute;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 1.8rem;
+}
+.loader__container P span {
+  color: #FF6699;
+}
+.loader__container .loader {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: block;
+  box-sizing: border-box;
+  border: 0.1rem solid;
+  border-color: #FF6699 transparent;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=main.css.map */

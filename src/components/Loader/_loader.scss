@@ -1,0 +1,44 @@
+@use '../../sass/colors' as *;
+
+
+.loader__container {
+    position: absolute;
+    @include flex(raw, center, center, 0);
+
+    top: 40%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    
+    P{
+        position: absolute;
+        @include flex(raw, center, center, 0);
+        height: 1.8rem;
+
+        & span{
+            color: $accent;
+        }
+    }
+    
+    .loader {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        display: block;
+        box-sizing: border-box;
+        border: .1rem solid;
+        border-color: $accent transparent;
+        animation: rotation 1s linear infinite;
+    }
+    
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    } 
+}
