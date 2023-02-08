@@ -23,7 +23,7 @@ const ErrorPage = () => {
 
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} id="detail">
 
-                <ErrorComponent error='error404' />
+                <ErrorComponent error='notasks' />
 
             </main>
         </div>

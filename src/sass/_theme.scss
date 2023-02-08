@@ -1,0 +1,75 @@
+@use './colors' as *;
+  
+
+  .lightTheme{
+    .text{
+      color: $font-color-light-first;
+    }
+
+    .text-hover:hover{
+      color: $font-color-dark-first;
+    }
+  
+    .text-second{
+      color: $font-color-light-second;
+    }
+  
+    .background{
+      background-color: $bg-light;
+    }
+  
+    .background-second{
+      background-color: $bg-light-second;
+    }
+  
+    .border-right {
+      @include borderRight($border-light);
+    }
+  
+    .border-left {
+      @include borderLeft($border-light);
+    }
+  
+    .border-bottom {
+      @include borderBottom($border-light);
+    }
+  }
+  
+
+  .darkTheme{
+    .text{
+      color: $font-color-dark-first;
+    }
+
+    .text-hover:hover{
+      color: $font-color-light-first;
+    }
+  
+    .text-second{
+      color: $font-color-dark-second;
+    }
+  
+    .background{
+      background-color: $bg-dark;
+    }
+  
+    // .b:hover{
+    //   background-color: $bg-dark-second;
+    // }
+  
+    .background-second{
+      background-color: $bg-dark-second;
+    }
+  
+    .border-right {
+      @include borderRight($border-dark);
+    }
+  
+    .border-left {
+      @include borderLeft($border-dark);
+    }
+  
+    .border-bottom {
+      @include borderBottom($border-dark);
+    }
+  }

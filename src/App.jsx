@@ -27,7 +27,7 @@ function App() {
       errorElement: <ErrorPage />,
     },
     {
-      path: "All/:categoryid",
+      path: "All/:categoryName",
       element: <All />,
       errorElement: <ErrorPage />
     },

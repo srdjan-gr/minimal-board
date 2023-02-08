@@ -9,9 +9,9 @@ body {
 
 .btn {
   background-color: transparent;
-  border: 1px solid #EFF48E;
+  border: 1px solid #FF6699;
   padding: 0.8rem 1.8rem;
-  color: #EFF48E;
+  color: #FF6699;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -21,7 +21,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #EFF48E;
+  background-color: #FF6699;
   color: #636363;
 }
 
@@ -71,15 +71,20 @@ a {
 }
 
 .icon-m:hover {
-  color: #EFF48E;
+  color: #FF6699;
 }
 
 .icon-rotate-180 {
   transform: rotate(180deg);
 }
 
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
 .lightTheme .text {
   color: rgb(34, 34, 34);
+}
+.lightTheme .text-hover:hover {
+  color: #fff;
 }
 .lightTheme .text-second {
   color: #e7e7e7;
@@ -102,6 +107,9 @@ a {
 
 .darkTheme .text {
   color: #fff;
+}
+.darkTheme .text-hover:hover {
+  color: rgb(34, 34, 34);
 }
 .darkTheme .text-second {
   color: #636363;
@@ -127,7 +135,7 @@ a {
     width: 6rem !important;
   }
   header,
-main {
+  main {
     min-width: calc(100% - 6rem);
   }
 }
@@ -216,8 +224,7 @@ nav .nav__middle ul a {
   border-radius: 0 4px 4px 0;
 }
 nav .nav__middle ul a:hover {
-  background-color: #EFF48E;
-  color: #636363;
+  background-color: #FF6699;
 }
 nav .nav__middle a {
   padding-left: 1.5rem;
@@ -290,8 +297,7 @@ header .header__right {
   border-radius: 4px;
 }
 .header__menu-single:hover {
-  background-color: #EFF48E;
-  color: #636363;
+  background-color: #FF6699;
 }
 .header__menu h3 {
   font-size: 1.5rem;
@@ -317,11 +323,13 @@ header .header__right {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
+  padding: 1rem;
+  text-align: center;
 }
 
 .box {
   width: 25rem;
-  height: 15rem;
+  min-height: 15rem;
   border-radius: 4px;
   padding: 2.5rem 1rem;
   display: flex;

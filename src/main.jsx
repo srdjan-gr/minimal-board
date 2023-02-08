@@ -7,6 +7,7 @@ import './sass/main.css'
 import { ThemeProvider } from './contexts/ThemeContext';
 import { SidebarProvider } from './contexts/SidebarContext';
 import { CategoriesProvider } from './contexts/CategoriesContext';
+import { TasksProvider } from './contexts/TasksContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
@@ -14,9 +15,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider>
     <SidebarProvider>
       <CategoriesProvider>
+        <TasksProvider >
 
-        <App />
+          <App />
 
+        </TasksProvider>
       </CategoriesProvider>
     </SidebarProvider>
   </ThemeProvider>

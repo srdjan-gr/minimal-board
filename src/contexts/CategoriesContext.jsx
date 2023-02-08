@@ -42,7 +42,6 @@ export const CategoriesProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setIsLoading(true)
         api({
             method: 'post',
             url: 'category.php?fun=read',
@@ -50,7 +49,6 @@ export const CategoriesProvider = ({ children }) => {
             .then((response) => {
                 setCategories(response.data);
             });
-        setIsLoading(false)
     }, [])
 
 

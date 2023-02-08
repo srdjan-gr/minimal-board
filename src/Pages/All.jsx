@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom';
+import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
@@ -7,13 +8,16 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
 
 import SidebarContext from '../contexts/SidebarContext';
-import CategoriesContext from '../contexts/CategoriesContext';
+// import CategoriesContext from '../contexts/CategoriesContext';
 
+import TasksContext from '../contexts/TasksContext';
 
 const All = () => {
-    const { categories, setCategories, isLoading } = useContext(CategoriesContext);
+    // const { categories, setCategories } = useContext(CategoriesContext);
 
-    let categoryid = useParams();
+    const { tasks, setTasks, isLoading } = useContext(TasksContext);
+
+    let { categoryid } = useParams();
 
     const { sidebar } = useContext(SidebarContext)
     const [headerMenu, setHeaderMenu] = useState(false);
@@ -29,13 +33,14 @@ const All = () => {
 
                 <div className="grid__container">
                     {
-                        categories.map((cat, idx) => {
+                        isLoading === true ? 'Loading...' :
+                            tasks.length === 0 ? <ErrorComponent error='notasks' /> :
+                                tasks.map((task, idx) => {
 
-                            categoryid.categoryid == cat.id ?
-                                (
-                                    <SingleItem key={cat.id} cat={cat} />
-                                ) : ''
-                        })
+                                    return (
+                                        <SingleItem key={task.id} task={task} />
+                                    )
+                                })
                     }
                 </div>
             </main>

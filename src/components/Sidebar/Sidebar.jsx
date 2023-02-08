@@ -4,14 +4,33 @@ import { Link, useParams } from 'react-router-dom';
 
 import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
+import TasksContext from '../../contexts/TasksContext';
 
 import userImg from '../../assets/nouser.jpg';
-import brandLogo from '../../assets/logo-no-background.png';
+import brandLogo from '../../assets/logo/mb-white-pink-200.png';
+import api from '../../api/api'
 
 const Sidebar = () => {
 
     const { sidebar } = useContext(SidebarContext);
-    const { categories, setCategories, isLoading } = useContext(CategoriesContext);
+    const { categories, setCategories } = useContext(CategoriesContext);
+    const { tasks, setTasks, setIsLoading } = useContext(TasksContext);
+
+    // console.log(tasks);
+
+
+    const fetchTasks = (id) => {
+
+        setIsLoading(true)
+        api({
+            method: 'post',
+            url: 'tasks.php?id=' + id,
+        })
+            .then((response) => {
+                setTasks(response.data);
+                setIsLoading(false)
+            });
+    }
 
     return (
 
@@ -35,7 +54,7 @@ const Sidebar = () => {
                     {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                         categories.map((category, idx) => {
                             return (
-                                <Link key={category.id} className='text' to={`All/${category.id}`} > {category.kategorija_ime_EN}</Link>
+                                <Link key={category.id} className='text' to={`All/${category.kategorija_ime_EN}`} onClick={() => fetchTasks(category.id)}> {category.kategorija_ime_EN}</Link>
                             )
                         })
                     }
