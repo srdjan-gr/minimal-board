@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
@@ -15,6 +16,7 @@ const Home = () => {
     return (
         <div>
             <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Breadcrumb />
             <HeaderMenu headerMenu={headerMenu} />
             <Sidebar />
 

@@ -11,6 +11,10 @@ body {
   margin-left: 1.5rem;
 }
 
+.p-1 {
+  padding: 0 2rem;
+}
+
 h2 {
   font-size: 1.8rem;
   font-weight: 400;
@@ -50,6 +54,12 @@ a {
   font-size: 2rem;
   cursor: pointer;
   transition: all 0.1s ease-out;
+}
+
+.icon-m2 {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
 }
 
 .icon-m:hover {
@@ -155,16 +165,17 @@ a {
     width: 6rem !important;
   }
   header,
-  main {
+  main,
+  .breadcrumb {
     min-width: calc(100% - 6rem);
   }
 }
 main {
   padding: 2rem;
   width: calc(100% - 25rem);
-  height: calc(100% - 5rem);
+  height: calc(100% - 5rem - 7rem);
   position: absolute;
-  top: 5rem;
+  bottom: 0rem;
   right: 0;
   z-index: 10;
   transition: all 0.2s ease-out;
@@ -387,4 +398,37 @@ header .header__right {
 
 .box:hover {
   transform: translateY(-0.2rem);
+}
+
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.breadcrumb {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0rem;
+  width: calc(100% - 25rem);
+  position: fixed;
+  top: 5rem;
+  right: 0;
+  z-index: 10;
+  height: 7rem;
+  padding: 0 1rem;
+  transition: all 0.2s ease-out;
+}
+.breadcrumb a {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+
+.toggleBreadcrumb {
+  width: calc(100% - 6rem);
+}
+
+.breadcrumbActive {
+  color: #FF6699;
 }/*# sourceMappingURL=main.css.map */

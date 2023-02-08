@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { BiDotsHorizontalRounded, BiCheck } from "react-icons/bi";
-
-import TasksContext from '../../contexts/TasksContext';
+import React from 'react'
+import { BiDotsHorizontalRounded, BiCheck, BiQuestionMark } from "react-icons/bi";
 
 
 const SingleItem = ({ task }) => {
 
     const { id, task_ime, task_text, uradjen } = task
-    // const { tasks, setTasks } = useContext(TasksContext);
 
 
     return (

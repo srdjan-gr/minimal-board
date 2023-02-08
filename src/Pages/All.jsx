@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom';
+import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 
 import Header from '../components/Header/Header'
@@ -25,6 +26,7 @@ const All = () => {
     return (
         <div>
             <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Breadcrumb />
             <HeaderMenu headerMenu={headerMenu} />
             <Sidebar />
 

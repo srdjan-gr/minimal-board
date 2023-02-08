@@ -7,6 +7,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 
 import SidebarContext from '../contexts/SidebarContext';
+import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 
 const ErrorPage = () => {
 
@@ -17,6 +18,7 @@ const ErrorPage = () => {
     return (
         <div>
             <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Breadcrumb />
             <HeaderMenu headerMenu={headerMenu} />
             <Sidebar />
 

@@ -1,9 +1,9 @@
 main{
     padding: 2rem;
     width: calc(100% - 25rem);
-    height: calc(100% - 5rem);
+    height: calc(100% - 5rem - 7rem);
     position: absolute;
-    top: 5rem;
+    bottom: 0rem;
     right: 0;
     z-index: 10;
     transition: $transition-2;
