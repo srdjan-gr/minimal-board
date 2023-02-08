@@ -379,6 +379,7 @@ header .header__right {
   margin-bottom: 0.5rem;
 }
 .box-description h2 {
+  font-family: "Arvo", serif;
   text-transform: lowercase;
 }
 .box-icons {

@@ -9,9 +9,7 @@ const SingleItem = ({ task }) => {
 
     return (
         <div className="box background-second text">
-            <div className="box-category-icon">
 
-            </div>
 
             <div className="box-description">
                 <h2>{task_ime}</h2>
