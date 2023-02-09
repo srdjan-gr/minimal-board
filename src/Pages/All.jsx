@@ -36,7 +36,9 @@ const All = () => {
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>
 
                 <div className='main__all-container'>
-                    <StatusFilter />
+
+                    {tasks.length > 0 ? <StatusFilter /> : ''}
+
                     <div className="grid__container">
                         {
                             isLoading === true ? <Loader /> :

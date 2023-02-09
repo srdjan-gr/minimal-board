@@ -13,16 +13,18 @@ import api from '../../api/api'
 const Sidebar = () => {
 
     const { sidebar } = useContext(SidebarContext);
-    const { categories, setCategories } = useContext(CategoriesContext);
+    const { categories, setCategories, setCatId } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading } = useContext(TasksContext);
 
 
     const fetchTasks = (id) => {
 
+        setCatId(id);
+
         setIsLoading(true)
         api({
             method: 'post',
-            url: 'tasks.php?id=' + id,
+            url: 'tasks.php?fun=read&opt=all&id=' + id,
         })
             .then((response) => {
                 setTasks(response.data);

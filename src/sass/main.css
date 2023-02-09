@@ -11,6 +11,10 @@ body {
   margin-left: 1.5rem;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .p-1 {
   padding: 0 2rem;
 }
@@ -145,7 +149,7 @@ a {
 .btn {
   background-color: transparent;
   border: 1px solid #FF6699;
-  padding: 0.6rem 1.8rem;
+  padding: 0.8rem 1.8rem;
   color: #FF6699;
   border-radius: 4px;
   cursor: pointer;
@@ -156,6 +160,24 @@ a {
 }
 
 .btn:hover {
+  background-color: #FF6699;
+  color: rgb(34, 34, 34);
+}
+
+.btn-s {
+  background-color: transparent;
+  border: 1px solid #FF6699;
+  padding: 0.5rem 1.5rem;
+  color: #FF6699;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.btn-s:hover {
   background-color: #FF6699;
   color: rgb(34, 34, 34);
 }
@@ -504,18 +526,28 @@ header .header__right {
 .status__filter h2 {
   text-transform: uppercase;
   font-size: 16px;
+  line-height: normal;
 }
-.status__filter .status-group {
+.status__filter form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.status__filter form .status-group {
   display: flex;
   flex-direction: raw;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
-.status__filter .status-group label {
+.status__filter form .status-group label {
   margin-bottom: 0.3rem;
 }
-.status__filter .status-group input[type=checkbox] {
+.status__filter form .status-group input[type=radio] {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 0.5rem;
@@ -533,7 +565,7 @@ header .header__right {
   display: grid;
   place-content: center;
 }
-.status__filter .status-group input[type=checkbox]::before {
+.status__filter form .status-group input[type=radio]::before {
   content: "";
   width: 1.4rem;
   height: 1.4rem;
@@ -543,6 +575,6 @@ header .header__right {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em rgba(255, 102, 153, 0.25);
 }
-.status__filter .status-group input[type=checkbox]:checked::before {
+.status__filter form .status-group input[type=radio]:checked::before {
   transform: scale(1);
 }/*# sourceMappingURL=main.css.map */

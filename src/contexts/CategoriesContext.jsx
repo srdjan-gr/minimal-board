@@ -40,6 +40,8 @@ export const CategoriesProvider = ({ children }) => {
         // },
     ]);
     const [isLoading, setIsLoading] = useState(false);
+    const [catId, setCatId] = useState(null);
+
 
     useEffect(() => {
         api({
@@ -53,7 +55,7 @@ export const CategoriesProvider = ({ children }) => {
 
 
     return (
-        <CategoriesContext.Provider value={{ categories, setCategories, isLoading }}>
+        <CategoriesContext.Provider value={{ categories, setCategories, isLoading, setCatId, catId }}>
             {children}
         </CategoriesContext.Provider>
     )
