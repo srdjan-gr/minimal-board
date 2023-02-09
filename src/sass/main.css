@@ -577,4 +577,12 @@ header .header__right {
 }
 .status__filter form .status-group input[type=radio]:checked::before {
   transform: scale(1);
+}
+
+.filters__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-center;
+  gap: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

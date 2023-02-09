@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
+import Filters from '../components/Filters/Filters';
 
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
@@ -37,7 +38,9 @@ const All = () => {
 
                 <div className='main__all-container'>
 
-                    {tasks.length > 0 ? <StatusFilter /> : ''}
+
+
+                    {tasks.length > 0 ? <Filters /> : ''}
 
                     <div className="grid__container">
                         {

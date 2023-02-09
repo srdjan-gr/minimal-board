@@ -1,0 +1,3 @@
+.filters__container {
+    @include flex(column, flex-start, flex-center, 1.5rem);
+}
