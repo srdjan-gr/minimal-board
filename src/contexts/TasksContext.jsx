@@ -9,9 +9,12 @@ export const TasksProvider = ({ children }) => {
     const [tasks, setTasks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState('');
+    const [order, setOrder] = useState('');
+
+    // console.log(status, order)
 
     return (
-        <TasksContext.Provider value={{ tasks, setTasks, setIsLoading, isLoading, status, setStatus }}>
+        <TasksContext.Provider value={{ tasks, setTasks, setIsLoading, isLoading, status, setStatus, order, setOrder }}>
             {children}
         </TasksContext.Provider>
     )

@@ -12,4 +12,8 @@
         }
     }
 
+    form{
+        height: 100%;
+        @include flex(column, flex-start, flex-start, 1.5rem); 
+    }
 }

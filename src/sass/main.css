@@ -411,6 +411,7 @@ header .header__right {
   gap: 1rem;
 }
 .box-description {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -421,7 +422,6 @@ header .header__right {
 .box-description p {
   text-transform: uppercase;
   font-size: 16px;
-  margin-bottom: 0.5rem;
 }
 .box-description h2 {
   font-family: "Arvo", serif;
@@ -538,7 +538,17 @@ header .header__right {
 .filters__container-header h2 {
   text-transform: uppercase;
   font-size: 1.4rem;
-} /* $accent: #d7e636; */
+}
+.filters__container form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+/* $accent: #d7e636; */
 /* $bg-second: #333333; */
 .status__filter {
   width: 22rem;
@@ -555,26 +565,17 @@ header .header__right {
   font-size: 16px;
   line-height: normal;
 }
-.status__filter form {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-.status__filter form .status-group {
+.status__filter .status-group {
   display: flex;
   flex-direction: raw;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
 }
-.status__filter form .status-group label {
+.status__filter .status-group label {
   margin-bottom: 0.4rem;
 }
-.status__filter form .status-group input[type=radio] {
+.status__filter .status-group input[type=radio] {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 0.5rem;
@@ -592,7 +593,7 @@ header .header__right {
   display: grid;
   place-content: center;
 }
-.status__filter form .status-group input[type=radio]::before {
+.status__filter .status-group input[type=radio]::before {
   content: "";
   width: 1.4rem;
   height: 1.4rem;
@@ -602,10 +603,10 @@ header .header__right {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em rgba(255, 102, 153, 0.25);
 }
-.status__filter form .status-group input[type=radio]:checked::before {
+.status__filter .status-group input[type=radio]:checked::before {
   transform: scale(1);
 }
-.status__filter form .status-group .radioNone input[type=radio]::before {
+.status__filter .status-group .radioNone input[type=radio]::before {
   width: 0rem;
   height: 0rem;
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { BiUser } from "react-icons/bi";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
@@ -14,7 +14,7 @@ const Sidebar = () => {
 
     const { sidebar } = useContext(SidebarContext);
     const { categories, setCategories, setCatId } = useContext(CategoriesContext);
-    const { tasks, setTasks, setIsLoading } = useContext(TasksContext);
+    const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
 
     const fetchTasks = (id) => {
@@ -32,6 +32,11 @@ const Sidebar = () => {
             });
     }
 
+    const resetFilters = () => {
+        setStatus('')
+        setOrder('')
+    }
+
     return (
 
         <nav className={`${sidebar ? 'toggleSidebar' : ''} background text `} >
@@ -46,7 +51,7 @@ const Sidebar = () => {
                     </div>
                 </span>
 
-                <Link to='/'><img className='company-logo' src={brandLogo} alt="" /></Link>
+                <Link to='/'><img className='company-logo' src={brandLogo} alt="" onClick={resetFilters} /></Link>
             </article>
 
             <article className='nav__middle'>
