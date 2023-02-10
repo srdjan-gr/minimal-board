@@ -8,12 +8,12 @@ const SingleItem = ({ task }) => {
 
 
     return (
-        <div className="box background-second text">
+        <div className="box background-second">
 
 
             <div className="box-description">
-                <h2>{task_ime}</h2>
-                <p className='text-second'>{task_text}</p>
+                <h2 className='text'>{task_ime}</h2>
+                <p className='text-third'>{task_text}</p>
                 {/*<button className='btn'>Test btn</button>*/}
             </div>
 

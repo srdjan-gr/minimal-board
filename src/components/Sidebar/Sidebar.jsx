@@ -7,7 +7,8 @@ import CategoriesContext from '../../contexts/CategoriesContext';
 import TasksContext from '../../contexts/TasksContext';
 
 import userImg from '../../assets/nouser.jpg';
-import brandLogo from '../../assets/logo/mb-white-pink-200.png';
+import brandLogoLight from '../../assets/logo/mb-white-pink-200.png';
+import brandLogoDark from '../../assets/logo/mb-black-pink-200.png';
 import api from '../../api/api'
 
 const Sidebar = () => {
@@ -38,7 +39,6 @@ const Sidebar = () => {
     }
 
     return (
-
         <nav className={`${sidebar ? 'toggleSidebar' : ''} background text `} >
 
             <article className='nav__header border-bottom'>
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     </div>
                 </span>
 
-                <Link to='/'><img className='company-logo' src={brandLogo} alt="" onClick={resetFilters} /></Link>
+                <Link to='/'><img className='company-logo' src={brandLogoLight} alt="" onClick={resetFilters} /></Link>
             </article>
 
             <article className='nav__middle'>
@@ -59,7 +59,12 @@ const Sidebar = () => {
                     {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                         categories.map((category, idx) => {
                             return (
-                                <Link key={category.id} className='text' to={`All/${category.kategorija_ime_EN}`} onClick={() => fetchTasks(category.id)}> {category.kategorija_ime_EN}</Link>
+                                <Link
+                                    key={category.id}
+                                    className='text'
+                                    to={`All/${category.kategorija_ime_EN}`}
+                                    onClick={() => fetchTasks(category.id)}> {category.kategorija_ime_EN}
+                                </Link>
                             )
                         })
                     }

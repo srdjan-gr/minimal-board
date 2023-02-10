@@ -14,13 +14,9 @@ import All from './Pages/All';
 function App() {
 
   const { theme, setTheme } = useContext(ThemeContext);
-  // const [headerMenu, setHeaderMenu] = useState(false);
 
   // New router V6.4
   const router = createBrowserRouter([
-
-
-
     {
       path: "/",
       element: <Home />,
@@ -35,7 +31,7 @@ function App() {
 
   return (
 
-    <div className={`${theme === 'darkTheme' ? 'darkTheme' : 'lightTheme'}`}>
+    <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'}`}>
 
       <RouterProvider router={router} />
 

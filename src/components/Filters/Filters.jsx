@@ -12,7 +12,17 @@ const Filters = () => {
 
 
     const { catId } = useContext(CategoriesContext);
-    const { setTasks, setIsLoading, status, order, setOrder } = useContext(TasksContext);
+    const { setTasks, setIsLoading, status, setStatus, order, setOrder } = useContext(TasksContext);
+
+
+
+    const resetFilter = (e) => {
+        e.preventDefault();
+        // setStatus('');
+        // setOrder('');
+
+        // console.log(e.target.disabled = true);
+    }
 
 
     const handleSubmit = (e) => {
@@ -41,8 +51,8 @@ const Filters = () => {
 
     return (
         <article className='filters__container'>
-            <div className="filters__container-header border-bottom text-second">
-                <BiFilter className='icon-m' />
+            <div className="filters__container-header border-bottom text-third">
+                <BiFilter className='icon-m2' />
                 <h2>Filters</h2>
             </div>
 
@@ -51,11 +61,11 @@ const Filters = () => {
                 <FilterByTime />
 
                 {status === '' && order === '' ?
-                    <button className="btn-s">Filter</button> :
+                    <button className="btn-s mt-1">Filter</button> :
 
-                    <div className="btn-container">
+                    <div className="btn-container mt-1">
                         <button className="btn-s">Filter</button>
-                        <button className="btn-s">X</button>
+                        <button className="btn-s" onClick={resetFilter}>X</button>
                     </div>}
             </form>
         </article>

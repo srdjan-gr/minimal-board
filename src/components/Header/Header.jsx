@@ -20,7 +20,14 @@ const Header = ({ headerMenu, setHeaderMenu }) => {
 
 
     const toogleTheme = () => {
-        theme === 'darkTheme' ? setTheme('lightTheme') : setTheme('darkTheme')
+
+        if (theme == 'lightTheme') {
+            setTheme('darkTheme')
+            localStorage.setItem('minimalBoardTheme', 'darkTheme')
+        } else {
+            setTheme('lightTheme')
+            localStorage.setItem('minimalBoardTheme', 'lightTheme')
+        }
     }
 
 

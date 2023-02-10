@@ -3,15 +3,16 @@
 .status__filter{
     
     width: 22rem;
-    padding: 1rem;
+    padding:  1rem;
     border-radius: $radius;
 
-    @include flex(column, flex-start, flex-start, 1.5rem);
+    @include flex(column, flex-start, flex-start, 1rem);
 
     h2{
         text-transform: uppercase;
         font-size: $fs-16;
         line-height: normal;
+        margin-bottom: 1rem
     }
 
     .status-group{
@@ -35,7 +36,7 @@
             color: currentColor;
             width: 1.6rem;
             height: 1.6rem;
-            border: 0.15rem solid rgba(128, 128, 128, 0.301);
+            border: 0.15rem solid  #636363;
             border-radius: 0.3em;
             transform: translateY(-0.075em);
 

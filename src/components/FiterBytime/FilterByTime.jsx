@@ -8,9 +8,8 @@ const FilterByTime = () => {
     const { setOrder } = useContext(TasksContext);
 
     return (
-        <article className='status__filter border-all text-second' >
-            <h2 className='text-second'>Filter by time</h2>
-
+        <article className='status__filter border-all text-third' >
+            <h2>Filter by time</h2>
 
             <div className="status-group">
                 <input
@@ -30,7 +29,6 @@ const FilterByTime = () => {
 
                 <label htmlFor="filterToDo">From Oldest</label>
             </div>
-
         </article>
     )
 }

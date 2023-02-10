@@ -7,20 +7,9 @@ const StatusFilter = () => {
 
     const { setStatus } = useContext(TasksContext);
 
-
-    const resetFilter = (e) => {
-        setStatus(null);
-
-
-        // console.log(e.target.disabled = true);
-    }
-
-
     return (
-
-        <article className='status__filter border-all text-second' >
-            <h2 className='text-second'>Filter by status</h2>
-
+        <article className='status__filter border-all' >
+            <h2 className='text-third'>Filter by status</h2>
 
             <div className="status-group">
                 <input type="radio"
@@ -40,9 +29,6 @@ const StatusFilter = () => {
 
                 <label htmlFor="filterToDo">Todo</label>
             </div>
-
-
-
         </article>
     )
 }

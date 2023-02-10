@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { BiFilter, BiListOl } from "react-icons/bi";
 import { useParams } from 'react-router-dom';
+
+
 import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 import Filters from '../components/Filters/Filters';
-
 import Header from '../components/Header/Header'
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import Loader from '../components/Loader/Loader';
@@ -12,19 +14,17 @@ import SingleItem from '../components/SingleItem/SingleItem';
 import StatusFilter from '../components/StatusFilter/StatusFilter';
 
 import SidebarContext from '../contexts/SidebarContext';
-// import CategoriesContext from '../contexts/CategoriesContext';
 
 import TasksContext from '../contexts/TasksContext';
 
 const All = () => {
-    // const { categories, setCategories } = useContext(CategoriesContext);
 
     const { tasks, setTasks, isLoading } = useContext(TasksContext);
+    const { sidebar } = useContext(SidebarContext)
+    const [headerMenu, setHeaderMenu] = useState(false);
 
     let { categoryid } = useParams();
 
-    const { sidebar } = useContext(SidebarContext)
-    const [headerMenu, setHeaderMenu] = useState(false);
 
     return (
         <div>
@@ -40,18 +40,28 @@ const All = () => {
 
                     {tasks.length > 0 ? <Filters /> : ''}
 
-                    <div div className="grid__container">
-                        {
-                            isLoading === true ? <Loader /> :
-                                tasks.length === 0 ? <ErrorComponent error='notasks' /> :
-                                    tasks.map((task, idx) => {
+                    <div className="main__all-container-content">
 
-                                        return (
-                                            <SingleItem key={task.id} task={task} />
-                                        )
-                                    })
-                        }
+                        <div className="filters__container-header border-bottom text-third">
+                            <BiListOl className='icon-m2' />
+                            <h2>Tasks</h2>
+                            <h2 >( {tasks.length} )</h2>
+                        </div>
+
+                        <div div className="grid__container">
+                            {
+                                isLoading === true ? <Loader /> :
+                                    tasks.length === 0 ? <ErrorComponent error='notasks' /> :
+                                        tasks.map((task, idx) => {
+
+                                            return (
+                                                <SingleItem key={task.id} task={task} />
+                                            )
+                                        })
+                            }
+                        </div>
                     </div>
+
                 </div>
             </main>
         </div>

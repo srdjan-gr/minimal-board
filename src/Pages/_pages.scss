@@ -1,5 +1,5 @@
 main{
-    padding: 1.5rem;
+    padding: 2rem;
     width: calc(100% - 25rem);
     height: calc(100% - 5rem - 7rem);
     position: absolute;
@@ -11,17 +11,21 @@ main{
 
     .main__all-container{
 
-        @include flex(row, flex-start, flex-start, 1.5rem);
+        @include flex(raw, flex-start, flex-start, 2rem);
 
-        .grid__container{
+        &-content{
             width: 100%;
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, 25rem);
-            min-height: 15rem;
+            @include flex(column, flex-start, flex-start, 2rem);
+
+            .grid__container{
+                width: 100%;
+                display: grid;
+                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fit, 25rem);
+                min-height: 15rem;
+            }
         }
     }
-
 }
 
 .toggleMainContent{

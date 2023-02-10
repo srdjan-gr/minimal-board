@@ -1,55 +1,7 @@
 @use './colors' as *;
   
 
-  .lightTheme{
-    .text{
-      color: $font-color-light-first;
-    }
 
-    .text-hover:hover{
-      color: $font-color-dark-first;
-    }
-  
-    .text-second{
-      color: $font-color-light-second;
-    }
-  
-    .background{
-      background-color: $bg-light;
-    }
-  
-    .background-second{
-      background-color: $bg-light-second;
-    }
-  
-    .border-right {
-      @include borderRight($border-light);
-    }
-  
-    .border-left {
-      @include borderLeft($border-light);
-    }
-  
-    .border-bottom {
-      @include borderBottom($border-light);
-    }
-
-    .border-all {
-      @include borderAll($border-light);
-    }
-
-    .bg-success {
-      background-color: $success;
-    }
-
-    .bg-danger {
-      background-color: $danger;
-    }
-    
-    .bg-info {
-      background-color: $info;
-    }
-  }
   
 
   .darkTheme{
@@ -63,6 +15,10 @@
   
     .text-second{
       color: $font-color-dark-second;
+    }
+
+    .text-third{
+      color: $font-color-dark-third;
     }
   
     .background{
@@ -102,6 +58,61 @@
       background-color: $danger;
     }
 
+    .bg-info {
+      background-color: $info;
+    }
+  }
+
+
+  .lightTheme{
+    .text{
+      color: $font-color-light-first;
+    }
+
+    .text-hover:hover{
+      color: $font-color-dark-first;
+    }
+  
+    .text-second{
+      color: $font-color-light-second;
+    }
+
+    .text-third{
+      color: $font-color-light-third;
+    }
+  
+    .background{
+      background-color: $bg-light;
+    }
+  
+    .background-second{
+      background-color: $bg-light-second;
+    }
+  
+    .border-right {
+      @include borderRight($border-light);
+    }
+  
+    .border-left {
+      @include borderLeft($border-light);
+    }
+  
+    .border-bottom {
+      @include borderBottom($border-light);
+    }
+
+    .border-all {
+      @include borderAll($border-light);
+    }
+
+    .bg-success {
+      background-color: $success;
+    }
+
+    .bg-danger {
+      background-color: $danger;
+    }
+    
     .bg-info {
       background-color: $info;
     }
