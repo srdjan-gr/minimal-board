@@ -584,6 +584,7 @@ header .header__right {
   justify-content: flex-center;
   gap: 1rem;
   width: 100%;
+  padding-bottom: 1rem;
 }
 .filters__container-header h2 {
   text-transform: uppercase;

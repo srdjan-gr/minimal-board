@@ -4,7 +4,7 @@
     &-header{
         @include flex(raw, center, flex-center, 1rem);
         width: 100%;
-        // margin-bottom: 1rem;
+        padding-bottom: 1rem;;
 
         h2{
             text-transform: uppercase;
