@@ -38,11 +38,9 @@ const All = () => {
 
                 <div className='main__all-container'>
 
-
-
                     {tasks.length > 0 ? <Filters /> : ''}
 
-                    <div className="grid__container">
+                    <div div className="grid__container">
                         {
                             isLoading === true ? <Loader /> :
                                 tasks.length === 0 ? <ErrorComponent error='notasks' /> :

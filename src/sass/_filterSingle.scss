@@ -1,4 +1,4 @@
-@use '../../sass/colors' as *;
+@use './colors' as *;
 
 .status__filter{
     
@@ -25,9 +25,10 @@
             @include flex(raw, center, flex-start, 1rem); 
     
             label{
-                margin-bottom: .3rem;
+                margin-bottom: .4rem;
             }
     
+            
             input[type='radio']{
                 width: 1.6rem;
                 height: 1.6rem;
@@ -35,7 +36,6 @@
     
                 -webkit-appearance: none;
                 appearance: none;
-                // background-color: gray;
                 margin: 0;
     
                 font: inherit;
@@ -46,7 +46,6 @@
                 border-radius: 0.3em;
                 transform: translateY(-0.075em);
     
-                
                 display: grid;
                 place-content: center;
             }
@@ -64,6 +63,14 @@
     
             input[type="radio"]:checked::before {
             transform: scale(1);
+            }
+
+            .radioNone{
+
+                input[type="radio"]::before{
+                    width: 0rem;
+                    height: 0rem;
+                }
             }
         }
 

@@ -71,7 +71,7 @@ a {
 /* $accent: #d7e636; */
 /* $bg-second: #333333; */
 .lightTheme .text {
-  color: rgb(34, 34, 34);
+  color: #2f2f2f;
 }
 .lightTheme .text-hover:hover {
   color: #fff;
@@ -111,7 +111,7 @@ a {
   color: #fff;
 }
 .darkTheme .text-hover:hover {
-  color: rgb(34, 34, 34);
+  color: #2f2f2f;
 }
 .darkTheme .text-second {
   color: #636363;
@@ -146,6 +146,15 @@ a {
 
 /* $accent: #d7e636; */
 /* $bg-second: #333333; */
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: raw;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
 .btn {
   background-color: transparent;
   border: 1px solid #FF6699;
@@ -161,7 +170,7 @@ a {
 
 .btn:hover {
   background-color: #FF6699;
-  color: rgb(34, 34, 34);
+  color: #2f2f2f;
 }
 
 .btn-s {
@@ -179,7 +188,7 @@ a {
 
 .btn-s:hover {
   background-color: #FF6699;
-  color: rgb(34, 34, 34);
+  color: #2f2f2f;
 }
 
 @media (max-width: 768px) {
@@ -511,7 +520,25 @@ header .header__right {
   }
 }
 
-/* $accent: #d7e636; */
+.filters__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-center;
+  gap: 2rem;
+}
+.filters__container-header {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-center;
+  gap: 1rem;
+  width: 100%;
+}
+.filters__container-header h2 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+} /* $accent: #d7e636; */
 /* $bg-second: #333333; */
 .status__filter {
   width: 22rem;
@@ -545,7 +572,7 @@ header .header__right {
   gap: 1rem;
 }
 .status__filter form .status-group label {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 .status__filter form .status-group input[type=radio] {
   width: 1.6rem;
@@ -578,11 +605,7 @@ header .header__right {
 .status__filter form .status-group input[type=radio]:checked::before {
   transform: scale(1);
 }
-
-.filters__container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-center;
-  gap: 1.5rem;
+.status__filter form .status-group .radioNone input[type=radio]::before {
+  width: 0rem;
+  height: 0rem;
 }/*# sourceMappingURL=main.css.map */

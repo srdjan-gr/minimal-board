@@ -5,11 +5,11 @@ import api from '../../api/api';
 import TasksContext from '../../contexts/TasksContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
 
-
-const StatusFilter = () => {
+const FilterByTime = () => {
 
     const { catId } = useContext(CategoriesContext);
-    const { setTasks, setIsLoading, status, setStatus } = useContext(TasksContext);
+    const { setTasks, setIsLoading, status } = useContext(TasksContext);
+    const [order, setOrder] = useState('');
 
 
     const handleSubmit = (e) => {
@@ -19,54 +19,45 @@ const StatusFilter = () => {
 
         api({
             method: 'post',
-            url: 'tasks.php?fun=read&opt=status&status=' + status + '&id=' + catId,
+            url: 'tasks.php?fun=read&opt=time&status=' + status + '&order=' + order + '&id=' + catId,
         })
             .then((response) => {
+
                 setTasks(response.data);
                 setIsLoading(false);
             });
     }
 
-
-    const resetFilter = (e) => {
-        setStatus(null);
-
-
-        // console.log(e.target.disabled = true);
-    }
-
-
     return (
-
         <article className='status__filter border-all text-second' >
-            <h2 className='text-second'>Filter by status</h2>
+            <h2 className='text-second'>Filter by time</h2>
 
             <form onSubmit={handleSubmit}>
                 <div className="status-group">
-                    <input type="radio"
+                    <input
+                        type="radio"
                         name="filter"
                         id="filterDone"
-                        value={1}
-                        onChange={(e) => setStatus(e.target.value)} />
+                        onChange={(e) => setOrder('ASC')} />
 
-                    <label htmlFor="filterDone">Done</label>
+                    <label htmlFor="filterDone">From Newest</label>
                 </div>
                 <div className="status-group">
-                    <input type="radio"
+                    <input
+                        type="radio"
                         name="filter"
                         id="filterToDo"
-                        value={0}
-                        onChange={(e) => setStatus(e.target.value)} />
+                        onChange={(e) => setOrder('DESC')} />
 
-                    <label htmlFor="filterToDo">Todo</label>
+                    <label htmlFor="filterToDo">From Oldest</label>
                 </div>
 
-                {status === '' ?
+                {order == '' ?
                     <button className="btn-s mt-1">Filter</button> :
                     (
                         <div className="btn-container mt-1">
                             <button className="btn-s">Filter</button>
-                            <button className="btn-s" onClick={(e) => resetFilter(e)}>X</button>
+                            <button className="btn-s">X</button>
                         </div>
                     )}
             </form>
@@ -74,4 +65,4 @@ const StatusFilter = () => {
     )
 }
 
-export default StatusFilter
+export default FilterByTime

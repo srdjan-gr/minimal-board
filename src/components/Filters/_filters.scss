@@ -1,3 +1,15 @@
 .filters__container {
-    @include flex(column, flex-start, flex-center, 1.5rem);
+    @include flex(column, flex-start, flex-center, 2rem);
+
+    &-header{
+        @include flex(raw, center, flex-center, 1rem);
+        width: 100%;
+        // margin-bottom: 1rem;
+
+        h2{
+            text-transform: uppercase;
+            font-size: 1.4rem;
+        }
+    }
+
 }
