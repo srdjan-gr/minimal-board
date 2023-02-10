@@ -3,7 +3,7 @@ import { BiLogOutCircle, BiCog } from "react-icons/bi";
 
 const HeaderMenu = ({ headerMenu }) => {
     return (
-        <article className={`${headerMenu ? 'toggleHeaderMenu' : ''} header__menu text background-second`}>
+        <article className={`${headerMenu ? 'toggleHeaderMenu' : ''} header__menu text background border-all`}>
 
             <div className='header__menu-single'>
                 <BiCog className='icon-m1' />

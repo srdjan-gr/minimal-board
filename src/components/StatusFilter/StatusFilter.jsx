@@ -8,8 +8,8 @@ const StatusFilter = () => {
     const { setStatus } = useContext(TasksContext);
 
     return (
-        <article className='status__filter border-all' >
-            <h2 className='text-third'>Filter by status</h2>
+        <article className='status__filter border-all text-third' >
+            <h2>Filter by status</h2>
 
             <div className="status-group">
                 <input type="radio"

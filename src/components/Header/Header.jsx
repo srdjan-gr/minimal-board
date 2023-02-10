@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { BiDotsVerticalRounded, BiArrowToLeft, BiSun } from "react-icons/bi";
+import { BiDotsVerticalRounded, BiArrowToLeft, BiSun, BiPlus } from "react-icons/bi";
 
 import SidebarContext from '../../contexts/SidebarContext';
 import ThemeContext from '../../contexts/ThemeContext';

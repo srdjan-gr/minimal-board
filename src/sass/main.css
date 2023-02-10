@@ -55,9 +55,7 @@ a {
 }
 
 .icon-m1 {
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all 0.1s ease-out;
+  font-size: 2.5rem;
 }
 
 .icon-m:hover {
@@ -66,6 +64,21 @@ a {
 
 .icon-m2 {
   font-size: 2rem;
+}
+
+.icon-letter {
+  cursor: pointer;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.4rem;
+  margin-bottom: 0.1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: #FF6699;
 }
 
 .icon-rotate-180 {
@@ -253,9 +266,9 @@ main .main__all-container-content .grid__container {
 /* $bg-second: #333333; */
 nav {
   width: 25rem;
-  height: 100vh;
+  height: 100%;
   position: absolute;
-  bottom: 0rem;
+  top: 0rem;
   left: 0;
   z-index: 5;
   transition: all 0.2s ease-out;
@@ -295,7 +308,11 @@ nav .nav__header-user .user-data p {
   font-style: italic;
 }
 nav .nav__middle {
-  padding: 1.5rem 1.5rem 1.5rem 0;
+  padding-top: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 nav .nav__middle ul {
   display: flex;
@@ -304,18 +321,30 @@ nav .nav__middle ul {
   justify-content: flex-start;
   gap: 0.5rem;
 }
-nav .nav__middle ul a {
-  font-size: 1.8rem;
+nav .nav__middle ul .nav__middle-category {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0rem;
+  width: 90%;
+  height: 3.4rem;
+  border-radius: 0 4px 4px 0;
+  padding-left: 1.7rem;
+}
+nav .nav__middle ul .nav__middle-category .category-links {
+  font-size: 16px;
   width: 100%;
-  padding: 0.8rem;
   transition: all 0.1s ease-out;
   border-radius: 0 4px 4px 0;
+  transform: translateX(1.5rem);
 }
-nav .nav__middle ul a:hover {
+nav .nav__middle ul .nav__middle-category:hover {
   background-color: #FF6699;
 }
-nav .nav__middle a {
-  padding-left: 1.5rem;
+
+.activeNavCategory {
+  background-color: #FF6699;
 }
 
 .toggleSidebar {
@@ -328,6 +357,9 @@ nav .nav__middle a {
   display: none;
 }
 .toggleSidebar .company-logo {
+  display: none;
+}
+.toggleSidebar .category-links {
   display: none;
 }
 
@@ -408,7 +440,7 @@ header .header__right {
   height: 14rem;
   border-radius: 4px;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   padding: 1rem;
