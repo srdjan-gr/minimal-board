@@ -340,11 +340,15 @@ nav .nav__middle ul .nav__middle-category .category-links {
   transform: translateX(1.5rem);
 }
 nav .nav__middle ul .nav__middle-category:hover {
-  background-color: #FF6699;
+  border-top: 1px solid #FF6699;
+  border-right: 1px solid #FF6699;
+  border-bottom: 1px solid #FF6699;
 }
 
 .activeNavCategory {
-  background-color: #FF6699;
+  border-top: 1px solid #FF6699;
+  border-right: 1px solid #FF6699;
+  border-bottom: 1px solid #FF6699;
 }
 
 .toggleSidebar {
@@ -391,7 +395,6 @@ header .header__right {
   min-width: 14rem;
   position: absolute;
   top: 6rem;
-  right: 1rem;
   z-index: 9;
   border-radius: 4px;
   transition: all 0.2s ease-out;
@@ -412,16 +415,24 @@ header .header__right {
   gap: 1rem;
   cursor: pointer;
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.5rem 1rem;
   transition: all 0.1s ease-out;
   border-radius: 4px;
 }
 .header__menu-single:hover {
-  background-color: #FF6699;
+  border: 1px solid #FF6699;
 }
 .header__menu h3 {
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+.right-1 {
+  right: 1rem;
+}
+
+.right-8 {
+  right: 8rem;
 }
 
 .toggleHeaderMenu {

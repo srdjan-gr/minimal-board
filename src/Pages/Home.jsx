@@ -11,12 +11,23 @@ const Home = () => {
 
     const { sidebar } = useContext(SidebarContext)
     const [headerMenu, setHeaderMenu] = useState(false);
+    const [headerMenuOption, setHeaderMenuOption] = useState('');
+
+    // const [headerMenu, setHeaderMenu] = useState({
+    //     option: 'option',
+    //     state: setHeaderMenu(false)
+    // });
 
     return (
         <div>
-            <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Header
+                headerMenu={headerMenu}
+                setHeaderMenu={setHeaderMenu}
+                headerMenuOption={headerMenuOption}
+                setHeaderMenuOption={setHeaderMenuOption}
+            />
             <Breadcrumb />
-            <HeaderMenu headerMenu={headerMenu} />
+            <HeaderMenu headerMenu={headerMenu} headerMenuOption={headerMenuOption} />
             <Sidebar />
 
             <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} >

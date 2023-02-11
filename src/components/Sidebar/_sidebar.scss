@@ -75,14 +75,20 @@ nav{
             }
 
             .nav__middle-category:hover {
-                background-color: $accent;
+                // background-color: $accent;
+                border-top: 1px solid $accent;
+                border-right: 1px solid $accent;
+                border-bottom: 1px solid $accent;
             }
         }
     }
 }
 
 .activeNavCategory{
-    background-color: $accent;
+    // background-color: $accent;
+    border-top: 1px solid $accent;
+    border-right: 1px solid $accent;
+    border-bottom: 1px solid $accent;
 }
 
 

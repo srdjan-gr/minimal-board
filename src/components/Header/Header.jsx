@@ -5,7 +5,7 @@ import SidebarContext from '../../contexts/SidebarContext';
 import ThemeContext from '../../contexts/ThemeContext';
 
 
-const Header = ({ headerMenu, setHeaderMenu }) => {
+const Header = ({ headerMenu, setHeaderMenu, headerMenuOption, setHeaderMenuOption }) => {
 
     const { sidebar, setSidebar } = useContext(SidebarContext)
     const { theme, setTheme } = useContext(ThemeContext)
@@ -31,8 +31,14 @@ const Header = ({ headerMenu, setHeaderMenu }) => {
     }
 
 
-    const toggleHeaderMenu = () => {
+    const headerMenuOptions = () => {
         setHeaderMenu(!headerMenu)
+        setHeaderMenuOption('options')
+    }
+
+    const headerMenuAdd = () => {
+        setHeaderMenu(!headerMenu)
+        setHeaderMenuOption('add')
     }
 
     return (
@@ -42,8 +48,9 @@ const Header = ({ headerMenu, setHeaderMenu }) => {
 
             </article>
             <article className='header__right'>
+                <BiPlus className='icon-m background-second' onClick={headerMenuAdd} />
                 <BiSun className='icon-m background-second' onClick={toogleTheme} />
-                <BiDotsVerticalRounded className='icon-m background-second' onClick={toggleHeaderMenu} />
+                <BiDotsVerticalRounded className='icon-m background-second' onClick={headerMenuOptions} />
             </article>
 
 
