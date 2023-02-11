@@ -12,14 +12,13 @@ import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 const ErrorPage = () => {
 
     const { sidebar } = useContext(SidebarContext)
-    const [headerMenu, setHeaderMenu] = useState(false);
 
 
     return (
         <div>
-            <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Header />
             <Breadcrumb />
-            <HeaderMenu headerMenu={headerMenu} />
+            <HeaderMenu />
             <Sidebar />
 
 

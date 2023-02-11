@@ -14,23 +14,21 @@ import SingleItem from '../components/SingleItem/SingleItem';
 import StatusFilter from '../components/StatusFilter/StatusFilter';
 
 import SidebarContext from '../contexts/SidebarContext';
-
 import TasksContext from '../contexts/TasksContext';
 
 const All = () => {
 
     const { tasks, setTasks, isLoading } = useContext(TasksContext);
     const { sidebar } = useContext(SidebarContext)
-    const [headerMenu, setHeaderMenu] = useState(false);
 
     let { categoryid } = useParams();
 
 
     return (
         <div>
-            <Header headerMenu={headerMenu} setHeaderMenu={setHeaderMenu} />
+            <Header />
             <Breadcrumb />
-            <HeaderMenu headerMenu={headerMenu} />
+            <HeaderMenu />
             <Sidebar />
 
 

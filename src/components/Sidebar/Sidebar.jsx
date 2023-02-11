@@ -60,8 +60,7 @@ const Sidebar = () => {
                 <Link to='/'>
                     {theme == 'darkTheme' ?
                         <img className='company-logo' src={brandLogoLight} alt="" onClick={resetFilters} /> :
-                        <img className='company-logo' src={brandLogoDark} alt="" onClick={resetFilters} />
-                    }
+                        <img className='company-logo' src={brandLogoDark} alt="" onClick={resetFilters} />}
                 </Link>
             </article>
 

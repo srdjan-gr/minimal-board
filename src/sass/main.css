@@ -407,7 +407,7 @@ header .header__right {
   display: flex;
   flex-direction: raw;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   cursor: pointer;
   width: 100%;

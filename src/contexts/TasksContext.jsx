@@ -14,7 +14,8 @@ export const TasksProvider = ({ children }) => {
     // console.log(status, order)
 
     return (
-        <TasksContext.Provider value={{ tasks, setTasks, setIsLoading, isLoading, status, setStatus, order, setOrder }}>
+        <TasksContext.Provider
+            value={{ tasks, setTasks, setIsLoading, isLoading, status, setStatus, order, setOrder }}>
             {children}
         </TasksContext.Provider>
     )

@@ -3,12 +3,14 @@ import { BiDotsVerticalRounded, BiArrowToLeft, BiSun, BiPlus } from "react-icons
 
 import SidebarContext from '../../contexts/SidebarContext';
 import ThemeContext from '../../contexts/ThemeContext';
+import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 
 
-const Header = ({ headerMenu, setHeaderMenu, headerMenuOption, setHeaderMenuOption }) => {
+const Header = () => {
 
     const { sidebar, setSidebar } = useContext(SidebarContext)
     const { theme, setTheme } = useContext(ThemeContext)
+    const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
 
 
     const toggleSidebar = () => {
@@ -32,13 +34,13 @@ const Header = ({ headerMenu, setHeaderMenu, headerMenuOption, setHeaderMenuOpti
 
 
     const headerMenuOptions = () => {
-        setHeaderMenu(!headerMenu)
-        setHeaderMenuOption('options')
+        setOptionsMenuContainer(!optionsMenuContainer)
+        setOption('options')
     }
 
     const headerMenuAdd = () => {
-        setHeaderMenu(!headerMenu)
-        setHeaderMenuOption('add')
+        setOptionsMenuContainer(!optionsMenuContainer)
+        setOption('add')
     }
 
     return (
