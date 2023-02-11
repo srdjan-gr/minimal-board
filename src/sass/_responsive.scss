@@ -15,4 +15,14 @@
     .breadcrumb{
         min-width: calc(100% - 6rem);
     }
+
+}
+
+
+@media (max-width:560px) {
+
+
+    .hiddenMenu__container{
+        width: 100% !important;
+    }
 }

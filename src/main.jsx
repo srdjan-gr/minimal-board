@@ -9,6 +9,7 @@ import { SidebarProvider } from './contexts/SidebarContext';
 import { CategoriesProvider } from './contexts/CategoriesContext';
 import { TasksProvider } from './contexts/TasksContext';
 import { OptionsMenuProvider } from './contexts/OptionsMenuContext';
+import { HiddenMenuProvider } from './contexts/HiddenMenuContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
@@ -16,13 +17,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider>
     <SidebarProvider>
       <OptionsMenuProvider>
-        <CategoriesProvider>
-          <TasksProvider >
+        <HiddenMenuProvider>
+          <CategoriesProvider>
+            <TasksProvider >
 
-            <App />
+              <App />
 
-          </TasksProvider>
-        </CategoriesProvider>
+            </TasksProvider>
+          </CategoriesProvider>
+        </HiddenMenuProvider>
       </OptionsMenuProvider>
     </SidebarProvider>
   </ThemeProvider>
