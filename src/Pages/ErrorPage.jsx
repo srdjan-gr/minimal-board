@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 
 import Header from '../components/Header/Header'
-import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
+import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
 import Sidebar from '../components/Sidebar/Sidebar'
 
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
@@ -18,7 +18,7 @@ const ErrorPage = () => {
         <div>
             <Header />
             <Breadcrumb />
-            <HeaderMenu />
+            <OptionsMenu />
             <Sidebar />
 
 

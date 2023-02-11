@@ -7,7 +7,8 @@ import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 import Filters from '../components/Filters/Filters';
 import Header from '../components/Header/Header'
-import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
+import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
+
 import Loader from '../components/Loader/Loader';
 import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
@@ -28,7 +29,7 @@ const All = () => {
         <div>
             <Header />
             <Breadcrumb />
-            <HeaderMenu />
+            <OptionsMenu />
             <Sidebar />
 
 
