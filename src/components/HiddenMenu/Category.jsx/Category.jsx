@@ -11,7 +11,6 @@ const Category = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { categories, setCategories, catId, setCatId, setAdd } = useContext(CategoriesContext);
 
-    console.log(addCategory);
 
     const handleSubbmit = (e) => {
         e.preventDefault()

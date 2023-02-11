@@ -473,10 +473,10 @@ header .header__right {
 }
 
 .box {
-  width: 25rem;
-  min-height: 15rem;
+  width: 26rem;
+  min-height: 6rem;
   border-radius: 4px;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 1.5rem;
   display: flex;
   transition: all 0.1s ease-out;
   display: flex;

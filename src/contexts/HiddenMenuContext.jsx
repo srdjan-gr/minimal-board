@@ -7,7 +7,7 @@ export const HiddenMenuProvider = ({ children }) => {
 
     const [hiddenMenu, setHiddenMenu] = useState({
         container: true,
-        option: 'category',
+        option: 'addTask',
         optionName: ''
     });
 
