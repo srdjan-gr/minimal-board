@@ -16,7 +16,7 @@
     @include flex(column, flex-start, flex-start, 0 );
     
     &-single{
-        @include flex(raw, center, flex-start, 1rem );
+        @include flex(raw, center, center, 1rem );
         cursor: pointer;
         width: 100%;
         padding: .5rem 1rem;
@@ -26,8 +26,8 @@
     }
 
     &-single:hover{
-        // background-color: $accent;
-        border: 1px solid $accent;
+        background-color: $accent;
+        // border: 1px solid $accent;
     }
 
     h3{

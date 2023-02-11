@@ -59,7 +59,7 @@ a {
 }
 
 .icon-m:hover {
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
 }
 
 .icon-m2 {
@@ -78,7 +78,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0;
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
 }
 
 .icon-rotate-180 {
@@ -180,9 +180,9 @@ a {
 
 .btn {
   background-color: transparent;
-  border: 1px solid #FF6699;
+  border: 1px solid hsl(340deg, 100%, 75%);
   padding: 0.8rem 1.8rem;
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -192,15 +192,15 @@ a {
 }
 
 .btn:hover {
-  background-color: #FF6699;
+  background-color: hsl(340deg, 100%, 75%);
   color: #2f2f2f;
 }
 
 .btn-s {
   background-color: transparent;
-  border: 1px solid #FF6699;
+  border: 1px solid hsl(340deg, 100%, 75%);
   padding: 0.5rem 1.5rem;
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -210,7 +210,7 @@ a {
 }
 
 .btn-s:hover {
-  background-color: #FF6699;
+  background-color: hsl(340deg, 100%, 75%);
   color: #2f2f2f;
 }
 
@@ -340,15 +340,11 @@ nav .nav__middle ul .nav__middle-category .category-links {
   transform: translateX(1.5rem);
 }
 nav .nav__middle ul .nav__middle-category:hover {
-  border-top: 1px solid #FF6699;
-  border-right: 1px solid #FF6699;
-  border-bottom: 1px solid #FF6699;
+  background-color: hsl(340deg, 100%, 75%);
 }
 
 .activeNavCategory {
-  border-top: 1px solid #FF6699;
-  border-right: 1px solid #FF6699;
-  border-bottom: 1px solid #FF6699;
+  background-color: hsl(340deg, 100%, 75%);
 }
 
 .toggleSidebar {
@@ -411,7 +407,7 @@ header .header__right {
   display: flex;
   flex-direction: raw;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
   cursor: pointer;
   width: 100%;
@@ -420,7 +416,7 @@ header .header__right {
   border-radius: 4px;
 }
 .header__menu-single:hover {
-  border: 1px solid #FF6699;
+  background-color: hsl(340deg, 100%, 75%);
 }
 .header__menu h3 {
   font-size: 1.5rem;
@@ -531,7 +527,7 @@ header .header__right {
 }
 
 .breadcrumbActive {
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
 }
 
 /* $accent: #d7e636; */
@@ -559,7 +555,7 @@ header .header__right {
   height: 1.8rem;
 }
 .loader__container P span {
-  color: #FF6699;
+  color: hsl(340deg, 100%, 75%);
 }
 .loader__container .loader {
   position: relative;
@@ -569,7 +565,7 @@ header .header__right {
   display: block;
   box-sizing: border-box;
   border: 0.1rem solid;
-  border-color: #FF6699 transparent;
+  border-color: hsl(340deg, 100%, 75%) transparent;
   animation: rotation 1s linear infinite;
 }
 @keyframes rotation {
@@ -660,7 +656,7 @@ header .header__right {
   content: "";
   width: 1.4rem;
   height: 1.4rem;
-  border: 0.15rem solid #FF6699;
+  border: 0.15rem solid hsl(340deg, 100%, 75%);
   border-radius: 0.3em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;

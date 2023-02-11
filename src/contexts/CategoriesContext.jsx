@@ -55,7 +55,8 @@ export const CategoriesProvider = ({ children }) => {
 
 
     return (
-        <CategoriesContext.Provider value={{ categories, setCategories, isLoading, setCatId, catId }}>
+        <CategoriesContext.Provider
+            value={{ categories, setCategories, isLoading, setCatId, catId }}>
             {children}
         </CategoriesContext.Provider>
     )

@@ -55,7 +55,7 @@ const All = () => {
                                         tasks.map((task, idx) => {
 
                                             return (
-                                                <SingleItem key={task.id} task={task} />
+                                                <SingleItem key={task.id_task} task={task} />
                                             )
                                         })
                             }

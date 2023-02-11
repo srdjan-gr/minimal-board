@@ -62,23 +62,23 @@ const Sidebar = () => {
             <article className='nav__middle'>
                 <ul>
                     {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
-                        categories.map((category, idx) => {
+                        categories.map((category) => {
 
-                            const x = category.kategorija_ime_EN
+                            const x = category.cat_name
                             const short = x.slice(0, 1)
 
                             return (
-                                <div key={category.id} className={`${catId == category.id ? 'activeNavCategory' : ''} nav__middle-category`}>
+                                <div key={category.id_cat} className={`${catId == category.id_cat ? 'activeNavCategory' : ''} nav__middle-category`}>
                                     <Link
                                         className=' icon-letter background-second category-icon'
-                                        to={`All/${category.kategorija_ime_EN}`}
-                                        onClick={() => fetchTasks(category.id)}>{short}
+                                        to={`All/${category.cat_name}`}
+                                        onClick={() => fetchTasks(category.id_cat)}>{short}
                                     </Link>
 
                                     <Link
                                         className='text category-links '
-                                        to={`All/${category.kategorija_ime_EN}`}
-                                        onClick={() => fetchTasks(category.id)}> {category.kategorija_ime_EN}
+                                        to={`All/${category.cat_name}`}
+                                        onClick={() => fetchTasks(category.id_cat)}> {category.cat_name}
                                     </Link>
                                 </div>
                             )

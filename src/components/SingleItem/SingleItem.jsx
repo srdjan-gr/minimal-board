@@ -4,7 +4,7 @@ import { BiDotsHorizontalRounded, BiCheck, BiQuestionMark } from "react-icons/bi
 
 const SingleItem = ({ task }) => {
 
-    const { id, task_ime, task_text, uradjen } = task
+    const { id_task, task_title, task_description, task_priority, task_status, task_del } = task
 
 
     return (
@@ -12,8 +12,8 @@ const SingleItem = ({ task }) => {
 
 
             <div className="box-description">
-                <h2 className='text'>{task_ime}</h2>
-                <p className='text-third'>{task_text}</p>
+                <h2 className='text'>{task_title}</h2>
+                <p className='text-third'>{task_description}</p>
                 {/*<button className='btn'>Test btn</button>*/}
             </div>
 
@@ -21,7 +21,7 @@ const SingleItem = ({ task }) => {
                 <BiDotsHorizontalRounded className='icon-m background' />
 
                 {
-                    uradjen == 1 ?
+                    task_status == 1 ?
                         <BiCheck className='icon-m background bg-success' /> :
                         <BiQuestionMark className='icon-m background bg-info' />
                 }
