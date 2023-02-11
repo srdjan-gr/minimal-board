@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
 import TasksContext from '../../contexts/TasksContext';
+import ThemeContext from '../../contexts/ThemeContext';
 
 import userImg from '../../assets/nouser.jpg';
 import brandLogoLight from '../../assets/logo/mb-white-pink-200.png';
@@ -12,7 +13,7 @@ import brandLogoDark from '../../assets/logo/mb-black-pink-200.png';
 import api from '../../api/api'
 
 const Sidebar = () => {
-
+    const { theme, setTheme } = useContext(ThemeContext);
     const { sidebar } = useContext(SidebarContext);
     const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
@@ -56,7 +57,12 @@ const Sidebar = () => {
                     </div>
                 </span>
 
-                <Link to='/'><img className='company-logo' src={brandLogoLight} alt="" onClick={resetFilters} /></Link>
+                <Link to='/'>
+                    {theme == 'darkTheme' ?
+                        <img className='company-logo' src={brandLogoLight} alt="" onClick={resetFilters} /> :
+                        <img className='company-logo' src={brandLogoDark} alt="" onClick={resetFilters} />
+                    }
+                </Link>
             </article>
 
             <article className='nav__middle'>
