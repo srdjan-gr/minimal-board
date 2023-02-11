@@ -6,8 +6,9 @@ const HiddenMenuContext = createContext();
 export const HiddenMenuProvider = ({ children }) => {
 
     const [hiddenMenu, setHiddenMenu] = useState({
-        container: false,
-        option: ''
+        container: true,
+        option: 'category',
+        optionName: ''
     });
 
     // console.log(hiddenMenu);

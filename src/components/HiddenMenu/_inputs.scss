@@ -1,0 +1,26 @@
+@use '../../sass/colors' as *;
+
+.inputs__container{
+    @include flex(column, flex-start, flex-start, 2rem);
+
+    form {
+
+        @include flex(column, flex-start, flex-start, 0rem);
+
+        width: 100%;
+        padding: 2rem;
+        border-radius: $radius;
+
+        input{
+            width: 100%;
+            border-radius: $radius;
+            padding: 1rem;
+            font-size: $fs-16;
+            letter-spacing: .1rem;
+        }
+
+        input:focus{
+            outline: 1px solid $accent;
+        }
+    }
+}

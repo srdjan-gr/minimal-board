@@ -17,12 +17,12 @@ const HeaderMenu = () => {
         switch (id) {
 
             case 'category':
-                setHiddenMenu({ container: true, option: 'category' })
+                setHiddenMenu({ container: true, option: 'category', optionName: "Add Category" })
                 setOptionsMenuContainer(!optionsMenuContainer)
                 break;
 
             case 'task':
-                setHiddenMenu({ container: true, option: 'addTask' })
+                setHiddenMenu({ container: true, option: 'addTask', optionName: "Add Task" })
                 setOptionsMenuContainer(!optionsMenuContainer)
                 break;
 
@@ -37,7 +37,7 @@ const HeaderMenu = () => {
         case 'add':
             return (
                 <article className={`${optionsMenuContainer ? 'toggleHeaderMenu' : ''} header__menu right-1 text background border-all`}>
-                    <div className='header__menu-single' id='category' onClick={() => openHiddenMenu('category')}>
+                    <div className='header__menu-single' onClick={() => openHiddenMenu('category')}>
                         <span className='icon-letter background-second'>C</span>
                         <h3>Category</h3>
                     </div>
