@@ -10,37 +10,18 @@ export const CategoriesProvider = ({ children }) => {
         //     id: 1,
         //     kategorija_ime_EN: 'Personal',
         // },
-        // {
-        //     id: 2,
-        //     kategorija_ime_EN: 'Busines',
-        // },
-        // {
-        //     id: 3,
-        //     kategorija_ime_EN: 'Personal',
-        // },
-        // {
-        //     id: 4,
-        //     kategorija_ime_EN: 'Busines',
-        // },
-        // {
-        //     id: 5,
-        //     kategorija_ime_EN: 'Personal',
-        // },
-        // {
-        //     id: 6,
-        //     kategorija_ime_EN: 'Busines',
-        // },
-        // {
-        //     id: 7,
-        //     kategorija_ime_EN: 'Personal',
-        // },
-        // {
-        //     id: 8,
-        //     kategorija_ime_EN: 'Busines',
-        // },
     ]);
+
+    // const [categories, setCategories] = useState({
+    //     data: [],
+    //     isLoading: false,
+    //     catId: null,
+    //     add: false
+    // })
+
     const [isLoading, setIsLoading] = useState(false);
     const [catId, setCatId] = useState(null);
+    const [add, setAdd] = useState(false);
 
 
     useEffect(() => {
@@ -51,12 +32,12 @@ export const CategoriesProvider = ({ children }) => {
             .then((response) => {
                 setCategories(response.data);
             });
-    }, [])
+    }, [add])
 
 
     return (
         <CategoriesContext.Provider
-            value={{ categories, setCategories, isLoading, setCatId, catId }}>
+            value={{ categories, setCategories, isLoading, setCatId, catId, setAdd }}>
             {children}
         </CategoriesContext.Provider>
     )

@@ -1,17 +1,20 @@
 @use '../../sass/colors' as *;
 
-.inputs__container{
+
+form {
+
     @include flex(column, flex-start, flex-start, 2rem);
 
-    form {
-
+    .inputs__container{
         @include flex(column, flex-start, flex-start, 0rem);
+
 
         width: 100%;
         padding: 2rem;
         border-radius: $radius;
 
-        input{
+        input,
+        select{
             width: 100%;
             border-radius: $radius;
             padding: .8rem;
@@ -21,6 +24,20 @@
 
         input:focus{
             outline: 1px solid $accent;
+        }
+    }
+
+    .btn__container{
+        @include flex(raw, center, space-between, 0rem); 
+        width: 100%;
+        position: relative;
+        height: 4rem;
+
+        .loader__container{
+            position: absolute;
+            top: 0;
+            left: 34rem;
+            z-index: 100;
         }
     }
 }

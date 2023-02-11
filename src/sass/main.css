@@ -348,6 +348,7 @@ nav .nav__middle ul .nav__middle-category {
   height: 3.4rem;
   border-radius: 0 4px 4px 0;
   padding-left: 1.7rem;
+  text-transform: capitalize;
 }
 nav .nav__middle ul .nav__middle-category .category-links {
   font-size: 16px;
@@ -631,14 +632,14 @@ header .header__right {
 
 /* $accent: #d7e636; */
 /* $bg-second: #333333; */
-.inputs__container {
+form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
 }
-.inputs__container form {
+form .inputs__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -648,15 +649,32 @@ header .header__right {
   padding: 2rem;
   border-radius: 4px;
 }
-.inputs__container form input {
+form .inputs__container input,
+form .inputs__container select {
   width: 100%;
   border-radius: 4px;
   padding: 0.8rem;
   font-size: 16px;
   letter-spacing: 0.1rem;
 }
-.inputs__container form input:focus {
+form .inputs__container input:focus {
   outline: 1px solid hsl(340deg, 100%, 75%);
+}
+form .btn__container {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
+  width: 100%;
+  position: relative;
+  height: 4rem;
+}
+form .btn__container .loader__container {
+  position: absolute;
+  top: 0;
+  left: 34rem;
+  z-index: 100;
 }
 
 .modal__component {

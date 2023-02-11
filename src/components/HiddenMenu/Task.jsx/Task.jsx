@@ -1,39 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
+import api from '../../../api/api';
+import Loader from '../../Loader/Loader'
 
 const Task = () => {
 
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubbmit = (e) => {
         e.preventDefault();
+
+
 
 
     }
 
 
     return (
-        <article className='inputs__container '>
-            <form className=' border-all' onSubmit={handleSubbmit}>
-                <label htmlFor="addCategory" className='text-third mb-05'>Task Name</label>
+        <form onSubmit={handleSubbmit}>
+            <article article className='inputs__container border-all' >
+                <label htmlFor="taskName" className='text-third mb-05'>Task Name</label>
                 <input
-                    id='addCategory'
+                    id='taskName'
                     type="text"
                     placeholder='Enter name...'
                     className='background text border-all mb-2'
 
                 />
 
-                <label htmlFor="addCategory" className='text-third mb-05' >Description</label>
+                <label htmlFor="taskDesc" className='text-third mb-05' >Description</label>
                 <input
-                    id='addCategory'
+                    id='taskDesc'
                     type="text"
                     placeholder='Enter description...'
-                    className='background text border-all'
+                    className='background text border-all mb-2'
 
                 />
-            </form>
 
-            <button className='btn-s'>Add category</button>
-        </article>
+                <label htmlFor="selectCategory" className='text-third mb-05' >Task Category</label>
+                <select name="cars" id="selectCategory" className='background text border-all mb-2'>
+                    <option defaultValue="0">--Select Category--</option>
+                    <option defaultValu={0}>{0}</option>
+
+                </select>
+
+            </article>
+
+            <div className="btn__container">
+                <button className='btn-s'>Add category</button>
+                {isLoading ? <Loader /> : ''}
+            </div>
+        </form >
     )
 }
 
