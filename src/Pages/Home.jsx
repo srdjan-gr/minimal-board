@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 
 import Header from '../components/Header/Header'
 import HiddenMenu from '../components/HiddenMenu/HiddenMenu';
+import Modal from '../components/Modal/Modal';
 import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
 import Sidebar from '../components/Sidebar/Sidebar'
 
@@ -14,6 +15,7 @@ const Home = () => {
 
     return (
         <div>
+            <Modal />
             <HiddenMenu />
             <Header />
             <Breadcrumb />

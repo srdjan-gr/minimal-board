@@ -13,7 +13,7 @@ const Task = () => {
     return (
         <article className='inputs__container '>
             <form className=' border-all' onSubmit={handleSubbmit}>
-                <label htmlFor="addCategory" className='text-second mb-05'>Task Name</label>
+                <label htmlFor="addCategory" className='text-third mb-05'>Task Name</label>
                 <input
                     id='addCategory'
                     type="text"
@@ -22,7 +22,7 @@ const Task = () => {
 
                 />
 
-                <label htmlFor="addCategory" className='text-second mb-05' >Description</label>
+                <label htmlFor="addCategory" className='text-third mb-05' >Description</label>
                 <input
                     id='addCategory'
                     type="text"

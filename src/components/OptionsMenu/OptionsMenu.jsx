@@ -3,6 +3,7 @@ import { BiLogOutCircle, BiCog, BiListOl } from "react-icons/bi";
 
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
+import ModalContext from '../../contexts/ModalContext';
 
 // import headerOptions from '../../data';
 
@@ -10,20 +11,22 @@ const HeaderMenu = () => {
 
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
+    const { modal, setModal } = useContext(ModalContext)
 
+    const openHiddenMenu = (option) => {
 
-    const openHiddenMenu = (id) => {
-
-        switch (id) {
+        switch (option) {
 
             case 'category':
                 setHiddenMenu({ container: true, option: 'category', optionName: "Add Category" })
                 setOptionsMenuContainer(!optionsMenuContainer)
+                setModal(true)
                 break;
 
             case 'task':
                 setHiddenMenu({ container: true, option: 'addTask', optionName: "Add Task" })
                 setOptionsMenuContainer(!optionsMenuContainer)
+                setModal(true)
                 break;
 
             default:

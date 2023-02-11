@@ -13,12 +13,11 @@ const Category = () => {
     return (
         <article className='inputs__container '>
             <form className=' border-all' onSubmit={handleSubbmit}>
-                <label htmlFor="addCategory" className='text-second mb-05'>Category Name</label>
+                <label htmlFor="addCategory" className='text-third mb-05'>Category Name</label>
                 <input
                     id='addCategory'
                     type="text"
                     placeholder='Enter name...'
-                    // className='background border-all text'
                     className='background text border-all'
 
                 />

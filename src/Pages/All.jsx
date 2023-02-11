@@ -16,6 +16,7 @@ import StatusFilter from '../components/StatusFilter/StatusFilter';
 
 import SidebarContext from '../contexts/SidebarContext';
 import TasksContext from '../contexts/TasksContext';
+import Modal from '../components/Modal/Modal';
 
 const All = () => {
 
@@ -27,6 +28,7 @@ const All = () => {
 
     return (
         <div>
+            <Modal />
             <Header />
             <Breadcrumb />
             <OptionsMenu />

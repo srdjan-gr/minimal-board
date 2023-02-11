@@ -2,16 +2,20 @@ import React, { useContext } from 'react'
 import { BiX } from "react-icons/bi";
 
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
+import ModalContext from '../../contexts/ModalContext';
+
 import Category from './Category.jsx/Category';
 import Task from './Task.jsx/Task';
 
 const HiddenMenu = () => {
 
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
+    const { modal, setModal } = useContext(ModalContext)
 
 
     const closeHiddenMenu = () => {
         setHiddenMenu({ container: false, option: '' });
+        setModal(false)
     }
 
 
