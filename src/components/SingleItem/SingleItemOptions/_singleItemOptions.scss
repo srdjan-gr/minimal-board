@@ -9,9 +9,6 @@
     z-index: 0;
     border-radius: $radius;
     transition: $transition-1;
-
-    // transform-origin: top;
-    // transform: rotateX(-100deg) translateY(-50%);
     opacity: 0;
     
     @include flex(column, flex-start, flex-start, 0 );
@@ -23,18 +20,16 @@
         padding: .5rem 1rem;
         transition: $transition-1;
         border-radius: $radius;
-        // margin-top: .5rem ;
     }
 
     &-single:hover{
         background-color: $accent;
-        // border: 1px solid $accent;
     }
 
     h3{
         font-size: 1.5rem;
         font-weight: 400;
-      }
+    }
 }
 
 .singleItemOptionsToggle{

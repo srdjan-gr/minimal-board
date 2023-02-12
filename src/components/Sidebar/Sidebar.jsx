@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { BiUser, BiListUl } from "react-icons/bi";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
@@ -18,10 +18,18 @@ const Sidebar = () => {
     const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const location = useLocation();
 
 
     const fetchTasks = (id) => {
+
+        // const param = searchParams.get('/All/*')
+        // if (param) {
+        //     searchParams.delete('/All/*')
+        //     setSearchParams(searchParams)
+        // }
 
         setCatId(id);
 
