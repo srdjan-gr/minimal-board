@@ -9,6 +9,9 @@ import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 import SidebarContext from '../contexts/SidebarContext';
 import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
 
+import Modal from '../components/Modal/Modal';
+import HiddenMenu from '../components/HiddenMenu/HiddenMenu';
+
 const ErrorPage = () => {
 
     const { sidebar } = useContext(SidebarContext)
@@ -16,6 +19,8 @@ const ErrorPage = () => {
 
     return (
         <div>
+            <Modal />
+            <HiddenMenu />
             <Header />
             <Breadcrumb />
             <OptionsMenu />

@@ -1,19 +1,21 @@
-@use '../../sass/colors' as *;
+@use '../../../sass/colors' as *;
 
-.header__menu{
-    min-width: 14rem;
+
+.singleItemOptions__container{
+    min-width: 12rem;
     position: absolute;
-    top: 6rem;
-    z-index: 9;
+    top: 2.5rem;
+    right: 5rem;
+    z-index: 0;
     border-radius: $radius;
-    transition: $transition-2;
+    transition: $transition-1;
 
-    transform-origin: top;
-    transform: rotateX(-100deg) translateY(-50%);
+    // transform-origin: top;
+    // transform: rotateX(-100deg) translateY(-50%);
     opacity: 0;
     
     @include flex(column, flex-start, flex-start, 0 );
-    
+
     &-single{
         @include flex(raw, center, flex-start, 1rem );
         cursor: pointer;
@@ -35,16 +37,7 @@
       }
 }
 
-.right-1{
-    right: 1rem;
-}
-
-.right-8{
-    right: 8rem;
-}
-
-.toggleHeaderMenu{
-    transform: rotateX(0deg) translateY(0);
-    z-index: 11;
+.singleItemOptionsToggle{
     opacity: 1;
+    z-index: 10;
 }

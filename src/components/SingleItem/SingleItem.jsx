@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BiDotsHorizontalRounded, BiCheck, BiQuestionMark, BiStar } from "react-icons/bi";
 
+import SingleItemOptionsContext from '../../contexts/SingleItemOptionsContext';
+import SingleItemOptions from './SingleItemOptions/SingleItemOptions';
 
 const SingleItem = ({ task }) => {
 
     const { id_task, task_title, task_description, task_priority, task_status, task_del } = task
+    const { itemsMenu, setItemsMenu } = useContext(SingleItemOptionsContext)
 
 
     const stars = () => {
@@ -33,8 +36,18 @@ const SingleItem = ({ task }) => {
     }
 
 
+    const singleItemMenu = (taskId) => {
+
+        itemsMenu.container == false ?
+            setItemsMenu({ container: true, option: '', optionName: '', itemId: taskId }) :
+            setItemsMenu({ container: false, option: '', optionName: '', itemId: '' })
+    }
+
+    // OnClick is sending Id o clicked Item.
+    // To SinleItemOptioons Component sending Id of Item where Component livs. 
     return (
         <div className="box background-second">
+            <SingleItemOptions id={id_task} />
 
 
             <div className="box-description">
@@ -44,13 +57,13 @@ const SingleItem = ({ task }) => {
             </div>
 
             <div className="box-icons">
-                <BiDotsHorizontalRounded className='icon-m background' />
+                <BiDotsHorizontalRounded
+                    className='icon-m background'
+                    onClick={() => singleItemMenu(id_task)} />
 
-                {
-                    task_status == 1 ?
-                        <BiCheck className='icon-m background bg-success' /> :
-                        <BiQuestionMark className='icon-m background bg-info' />
-                }
+                {task_status == 1 ?
+                    <BiCheck className='icon-m background bg-success' /> :
+                    <BiQuestionMark className='icon-m background bg-info' />}
             </div>
         </div>
     )

@@ -83,7 +83,6 @@ a {
   width: 2.6rem;
   height: 2.6rem;
   padding: 0.4rem;
-  margin-bottom: 0.1rem;
   border-radius: 0.8rem;
   display: flex;
   flex-direction: raw;
@@ -491,6 +490,7 @@ header .header__right {
   padding: 2.5rem 1.5rem;
   display: flex;
   transition: all 0.1s ease-out;
+  position: relative;
   display: flex;
   flex-direction: raw;
   align-items: flex-start;
@@ -518,9 +518,9 @@ header .header__right {
   height: 100% !important;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 0;
+  gap: 1rem;
 }
 
 .box:hover {
@@ -705,6 +705,48 @@ form .btn__container .loader__container {
 .toggleModal {
   z-index: 99;
   opacity: 1;
+}
+
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.singleItemOptions__container {
+  min-width: 12rem;
+  position: absolute;
+  top: 2.5rem;
+  right: 5rem;
+  z-index: 0;
+  border-radius: 4px;
+  transition: all 0.1s ease-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+.singleItemOptions__container-single {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  transition: all 0.1s ease-out;
+  border-radius: 4px;
+}
+.singleItemOptions__container-single:hover {
+  background-color: hsl(340deg, 100%, 75%);
+}
+.singleItemOptions__container h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.singleItemOptionsToggle {
+  opacity: 1;
+  z-index: 10;
 }
 
 .filters__container {

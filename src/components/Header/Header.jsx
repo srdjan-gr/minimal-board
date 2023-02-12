@@ -13,14 +13,13 @@ const Header = () => {
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
 
 
-
     const toggleSidebar = () => {
         setSidebar(!sidebar);
 
         !sidebar ? localStorage.setItem('minimalBoardSidebar', 'asideClosed') :
             localStorage.setItem('minimalBoardSidebar', 'asideOpend')
     }
-
+ 
 
     const toogleTheme = () => {
 
@@ -55,8 +54,6 @@ const Header = () => {
                 <BiSun className='icon-m background-second' onClick={toogleTheme} />
                 <BiDotsVerticalRounded className='icon-m background-second' onClick={headerMenuOptions} />
             </article>
-
-
         </header>
     )
 }

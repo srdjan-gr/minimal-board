@@ -83,12 +83,10 @@ body {
   }
 
   .icon-letter{
-    // font-size: 2rem;
     cursor: pointer;
     width: 2.6rem;
     height: 2.6rem;
     padding: .4rem;
-    margin-bottom: .1rem;
     border-radius: .8rem;
     @include flex (raw, center, center, 0);
     color: $accent;
