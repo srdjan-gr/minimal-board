@@ -6,7 +6,6 @@ import ThemeContext from '../../contexts/ThemeContext';
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 
 
-
 const Header = () => {
 
     const { sidebar, setSidebar } = useContext(SidebarContext)

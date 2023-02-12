@@ -21,7 +21,8 @@ form {
             letter-spacing: .1rem;
         }
 
-        input:focus{
+        input:focus,
+        select:focus{
             outline: 1px solid $accent;
         }
     }

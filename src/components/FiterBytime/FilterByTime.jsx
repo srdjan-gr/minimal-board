@@ -16,7 +16,7 @@ const FilterByTime = () => {
                     type="radio"
                     name="byTime"
                     id="filterDone"
-                    onChange={(e) => setOrder('ASC')} />
+                    onChange={(e) => setOrder('DESC')} />
 
                 <label htmlFor="filterDone">From Newest</label>
             </div>
@@ -25,7 +25,7 @@ const FilterByTime = () => {
                     type="radio"
                     name="byTime"
                     id="filterToDo"
-                    onChange={(e) => setOrder('DESC')} />
+                    onChange={(e) => setOrder('ASC')} />
 
                 <label htmlFor="filterToDo">From Oldest</label>
             </div>

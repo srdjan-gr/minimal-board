@@ -3,12 +3,16 @@ import api from '../../../api/api';
 import Loader from '../../Loader/Loader'
 
 import CategoriesContext from '..//../../contexts/CategoriesContext';
+import ModalContext from '../../../contexts/ModalContext';
+import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 
 const Category = () => {
 
     // Initial state
     const [addCategory, setAddCategory] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const { setModal } = useContext(ModalContext)
+    const { setHiddenMenu } = useContext(HiddenMenuContext);
     const { categories, setCategories, catId, setCatId, setAdd } = useContext(CategoriesContext);
 
 
@@ -29,6 +33,8 @@ const Category = () => {
             .then((response) => {
                 setAdd(true)
                 setIsLoading(false);
+                setModal(false)
+                setHiddenMenu(false)
                 setAddCategory('');
             });
     }

@@ -4,11 +4,15 @@ import Loader from '../../Loader/Loader'
 import Category from '../Category.jsx/Category';
 
 import CategoriesContext from '../../../contexts/CategoriesContext';
+import ModalContext from '../../../contexts/ModalContext';
+import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 
 const Task = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const { categories } = useContext(CategoriesContext);
+    const { setModal } = useContext(ModalContext)
+    const { setHiddenMenu } = useContext(HiddenMenuContext);
 
     // Initial state
     const [title, setTitle] = useState('');
@@ -38,8 +42,10 @@ const Task = () => {
             .then((response) => {
 
                 console.log(response.data);
-                // setAdd(true)
+
                 setIsLoading(false);
+                setModal(false)
+                setHiddenMenu(false)
                 setTitle('')
                 setDescription('')
                 setPriority('')

@@ -16,6 +16,21 @@
         min-width: calc(100% - 6rem);
     }
 
+    .user-data{
+        opacity: 0;
+        transition: $transition-2;
+        transition-delay: 250ms;
+        display: none;
+    }
+
+    .company-logo{
+        display: none;
+    }
+
+    .category-links{
+        display: none;
+    }
+
 }
 
 
