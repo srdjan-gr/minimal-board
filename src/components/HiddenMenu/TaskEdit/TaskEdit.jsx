@@ -6,19 +6,22 @@ import Category from '../Category.jsx/Category';
 import CategoriesContext from '../../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
+import TaskEditContext from '../../../contexts/TasksEditContext';
 
-const Task = () => {
+const TaskEdit = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const { categories } = useContext(CategoriesContext);
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
+    const { tasksEdit, setTasksEdit } = useContext(TaskEditContext)
 
     // Initial state
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [priority, setPriority] = useState('');
-    const [category, setCategory] = useState('');
+    const [id, setId] = useState(tasksEdit.taskData.id_task);
+    const [title, setTitle] = useState(tasksEdit.taskData.task_title);
+    const [description, setDescription] = useState(tasksEdit.taskData.task_description);
+    const [priority, setPriority] = useState(tasksEdit.taskData.task_priority);
+    const [category, setCategory] = useState(tasksEdit.taskData.category_id_cat);
 
     const handleSubbmit = (e) => {
         e.preventDefault();
@@ -26,6 +29,7 @@ const Task = () => {
         setIsLoading(true);
 
         const sendData = {
+            id: id,
             title: title,
             description: description,
             priority: priority,
@@ -36,7 +40,7 @@ const Task = () => {
 
         api({
             method: 'post',
-            url: 'tasks.php?fun=edit',
+            url: 'tasks.php?fun=update',
             data: sendData,
         })
             .then((response) => {
@@ -46,6 +50,7 @@ const Task = () => {
                 setIsLoading(false);
                 setModal(false)
                 setHiddenMenu(false)
+                setId('')
                 setTitle('')
                 setDescription('')
                 setPriority('')
@@ -84,7 +89,6 @@ const Task = () => {
                     value={priority}
                     onChange={(e) => setPriority(e.target.value)}
                 >
-                    <option value={0}>Select Priority</option>
                     <option value={1}>1</option>
                     <option value={2}>2</option>
                     <option value={3}>3</option>
@@ -112,11 +116,11 @@ const Task = () => {
             </article>
 
             <div className="btn__container">
-                <button className='btn-s'>Add Task</button>
+                <button className='btn-s'>Edit Task</button>
                 {isLoading ? <Loader /> : ''}
             </div>
         </form>
     )
 }
 
-export default Task
+export default TaskEdit

@@ -39,15 +39,15 @@ const SingleItem = ({ task }) => {
     const singleItemMenu = (taskId) => {
 
         itemsMenu.container == false ?
-            setItemsMenu({ container: true, option: '', optionName: '', itemId: taskId }) :
-            setItemsMenu({ container: false, option: '', optionName: '', itemId: '' })
+            setItemsMenu({ container: true, itemId: taskId }) :
+            setItemsMenu({ container: false, itemId: '' })
     }
 
     // OnClick is sending Id o clicked Item.
     // To SinleItemOptioons Component sending Id of Item where Component livs. 
     return (
         <div className="box background-second">
-            <SingleItemOptions id={id_task} />
+            <SingleItemOptions task={task} />
 
 
             <div className="box-description">

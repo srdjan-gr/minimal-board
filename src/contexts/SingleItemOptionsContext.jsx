@@ -7,8 +7,6 @@ export const SingleItemOptionsProvider = ({ children }) => {
 
     const [itemsMenu, setItemsMenu] = useState({
         container: false,
-        option: '',
-        optionName: '',
         itemId: ''
     });
 

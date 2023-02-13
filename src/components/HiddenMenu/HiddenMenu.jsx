@@ -6,6 +6,7 @@ import ModalContext from '../../contexts/ModalContext';
 
 import Category from './Category.jsx/Category';
 import Task from './Task.jsx/Task';
+import TaskEdit from './TaskEdit/TaskEdit';
 
 const HiddenMenu = () => {
 
@@ -31,7 +32,8 @@ const HiddenMenu = () => {
                 {
                     hiddenMenu.option === 'category' ? <Category /> :
                         hiddenMenu.option === 'addTask' ? <Task /> :
-                            ''
+                            hiddenMenu.option === 'editTask' ? <TaskEdit /> :
+                                ''
                 }
             </div>
 

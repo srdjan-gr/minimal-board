@@ -12,6 +12,7 @@ import { OptionsMenuProvider } from './contexts/OptionsMenuContext';
 import { HiddenMenuProvider } from './contexts/HiddenMenuContext';
 import { ModalProvider } from './contexts/ModalContext'
 import { SingleItemOptionsProvider } from './contexts/SingleItemOptionsContext'
+import { TasksEditProvider } from './contexts/TasksEditContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
@@ -24,9 +25,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <CategoriesProvider>
               <SingleItemOptionsProvider>
                 <TasksProvider >
+                  <TasksEditProvider>
 
-                  <App />
+                    <App />
 
+                  </TasksEditProvider>
                 </TasksProvider>
               </SingleItemOptionsProvider>
             </CategoriesProvider>
