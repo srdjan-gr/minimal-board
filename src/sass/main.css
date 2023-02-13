@@ -282,7 +282,7 @@ main .main__all-container-content .grid__container {
   width: 100%;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, 25rem);
+  grid-template-columns: repeat(auto-fit, 26rem);
   min-height: 15rem;
 }
 
