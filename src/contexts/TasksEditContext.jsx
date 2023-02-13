@@ -6,16 +6,11 @@ const TasksEditContext = createContext();
 export const TasksEditProvider = ({ children }) => {
 
 
-    // const [tasksEdit, setTasksEdit] = useState([]);
     const [tasksEdit, setTasksEdit] = useState({
         taskData: [],
         isLoading: false,
     });
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [status, setStatus] = useState('');
-    // const [order, setOrder] = useState('');
 
-    console.log(tasksEdit.taskData)
 
     return (
         <TasksEditContext.Provider

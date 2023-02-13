@@ -43,10 +43,11 @@ const SingleItem = ({ task }) => {
             setItemsMenu({ container: false, itemId: '' })
     }
 
-    // OnClick is sending Id o clicked Item.
+    // OnClick is sending Id to clicked Item.
     // To SinleItemOptioons Component sending Id of Item where Component livs. 
     return (
         <div className="box background-second">
+            {/* sending full Single Task object to Single Item Option component. From there to Item Delete or Item Edit components*/}
             <SingleItemOptions task={task} />
 
 

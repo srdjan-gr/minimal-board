@@ -22,8 +22,6 @@ const SingleItemOptions = ({ task }) => {
     const { tasksEdit, setTasksEdit } = useContext(TaskEditContext)
 
 
-
-
     const deleteItem = (id) => {
 
         confirm('Are you shure you to delete task?')
@@ -52,6 +50,7 @@ const SingleItemOptions = ({ task }) => {
     const editItem = (task) => {
         setHiddenMenu({ container: true, option: 'editTask', optionName: "Edit Task" });
         setModal(true);
+        
         setTasksEdit({
             taskData: task, isLoading: false,
         });
@@ -60,8 +59,8 @@ const SingleItemOptions = ({ task }) => {
 
 
     return (
-        // Class for toggle component will be add only if 2 ids are the same
-        // Preventing that on Single Task click Options component will be opend in All Tasks
+        // Class for toggle component will be added only if 2 ids are the same
+        // Preventing that on Single Task click Options component will be opened in All Tasks
         <article className={`${itemsMenu.container && task.id_task == itemsMenu.itemId ? 'singleItemOptionsToggle' : ''} singleItemOptions__container background text border-all`}>
             <div className='header__menu-single' >
                 <BiShow className='icon-m background-second' />
