@@ -71,7 +71,7 @@ a {
 }
 
 .icon-m:hover {
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
 }
 
 .icon-m2 {
@@ -89,7 +89,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0;
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
 }
 
 .icon-rotate-180 {
@@ -191,9 +191,9 @@ a {
 
 .btn {
   background-color: transparent;
-  border: 1px solid hsl(340deg, 100%, 75%);
+  border: 1px solid rgb(255, 128, 170);
   padding: 0.8rem 1.8rem;
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -203,15 +203,15 @@ a {
 }
 
 .btn:hover {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
   color: #2f2f2f;
 }
 
 .btn-s {
   background-color: transparent;
-  border: 1px solid hsl(340deg, 100%, 75%);
+  border: 1px solid rgb(255, 128, 170);
   padding: 0.5rem 1.5rem;
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.1s ease-out;
@@ -221,7 +221,7 @@ a {
 }
 
 .btn-s:hover {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
   color: #2f2f2f;
 }
 
@@ -247,9 +247,19 @@ a {
     display: none;
   }
 }
-@media (max-width: 560px) {
+@media (max-width: 480px) {
   .hiddenMenu__container {
     width: 100% !important;
+  }
+  .modal__component {
+    display: none;
+  }
+  main .main__all-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
   }
 }
 main {
@@ -369,11 +379,11 @@ nav .nav__middle ul .nav__middle-category .category-links {
   transform: translateX(1.5rem);
 }
 nav .nav__middle ul .nav__middle-category:hover {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
 }
 
 .activeNavCategory {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
 }
 
 .toggleSidebar {
@@ -445,7 +455,7 @@ header .header__right {
   border-radius: 4px;
 }
 .header__menu-single:hover {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
 }
 .header__menu h3 {
   font-size: 1.5rem;
@@ -557,7 +567,7 @@ header .header__right {
 }
 
 .breadcrumbActive {
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
 }
 
 /* $accent: #d7e636; */
@@ -585,7 +595,7 @@ header .header__right {
   height: 1.8rem;
 }
 .loader__container P span {
-  color: hsl(340deg, 100%, 75%);
+  color: rgb(255, 128, 170);
 }
 .loader__container .loader {
   position: relative;
@@ -595,7 +605,7 @@ header .header__right {
   display: block;
   box-sizing: border-box;
   border: 0.1rem solid;
-  border-color: hsl(340deg, 100%, 75%) transparent;
+  border-color: rgb(255, 128, 170) transparent;
   animation: rotation 1s linear infinite;
 }
 @keyframes rotation {
@@ -671,7 +681,7 @@ form .inputs__container select {
 }
 form .inputs__container input:focus,
 form .inputs__container select:focus {
-  outline: 1px solid hsl(340deg, 100%, 75%);
+  outline: 1px solid rgb(255, 128, 170);
 }
 form .btn__container {
   display: flex;
@@ -737,7 +747,7 @@ form .btn__container .loader__container {
   border-radius: 4px;
 }
 .singleItemOptions__container-single:hover {
-  background-color: hsl(340deg, 100%, 75%);
+  background-color: rgb(255, 128, 170);
 }
 .singleItemOptions__container h3 {
   font-size: 1.5rem;
@@ -828,7 +838,7 @@ form .btn__container .loader__container {
   content: "";
   width: 1.4rem;
   height: 1.4rem;
-  border: 0.15rem solid hsl(340deg, 100%, 75%);
+  border: 0.15rem solid rgb(255, 128, 170);
   border-radius: 0.3em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;

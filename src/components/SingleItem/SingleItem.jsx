@@ -33,6 +33,10 @@ const SingleItem = ({ task }) => {
                 return <span></span>
                 break;
         }
+
+        // for (let i = 1; i < task_priority.length; i++) {
+        //     return <span><BiStar /></span>;
+        // }
     }
 
 

@@ -6,13 +6,16 @@ import Category from '../Category.jsx/Category';
 import CategoriesContext from '../../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
+import TasksContext from '../../../contexts/TasksContext';
 
 const Task = () => {
 
     const [isLoading, setIsLoading] = useState(false);
-    const { categories } = useContext(CategoriesContext);
+    const { categories, catId } = useContext(CategoriesContext);
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
+    const { setTasks } = useContext(TasksContext);
+
 
     // Initial state
     const [title, setTitle] = useState('');
@@ -36,7 +39,7 @@ const Task = () => {
 
         api({
             method: 'post',
-            url: 'tasks.php?fun=edit',
+            url: 'tasks.php?fun=add',
             data: sendData,
         })
             .then((response) => {
@@ -50,7 +53,16 @@ const Task = () => {
                 setDescription('')
                 setPriority('')
                 setCategory('')
-            });
+
+                api({
+                    method: 'post',
+                    url: 'tasks.php?fun=read&opt=all&id=' + catId,
+                })
+                    .then((response) => {
+                        setTasks(response.data);
+                    });
+            })
+
     }
 
 

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { BiX } from "react-icons/bi";
 
 import TasksContext from '../../contexts/TasksContext';
 
-const FilterByTime = () => {
+const FilterByTime = ({ x }) => {
 
-    const { setOrder } = useContext(TasksContext);
+    const { order, setOrder } = useContext(TasksContext);
+
 
     return (
         <article className='status__filter border-all text-third' >
@@ -18,7 +18,7 @@ const FilterByTime = () => {
                     id="filterDone"
                     onChange={(e) => setOrder('DESC')} />
 
-                <label htmlFor="filterDone">From Newest</label>
+                <label htmlFor="filterDone">Newest First</label>
             </div>
             <div className="status-group">
                 <input
@@ -27,7 +27,7 @@ const FilterByTime = () => {
                     id="filterToDo"
                     onChange={(e) => setOrder('ASC')} />
 
-                <label htmlFor="filterToDo">From Oldest</label>
+                <label htmlFor="filterToDo">Oldest First</label>
             </div>
         </article>
     )

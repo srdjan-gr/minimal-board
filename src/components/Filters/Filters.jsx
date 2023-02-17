@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { BiFilter } from "react-icons/bi";
 import api from '../../api/api';
 
@@ -7,21 +7,43 @@ import StatusFilter from '../StatusFilter/StatusFilter'
 
 import TasksContext from '../../contexts/TasksContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
+import FilterByPriority from '../Filters/FilterByPriority/FilterByPriority';
 
 const Filters = () => {
 
 
     const { catId } = useContext(CategoriesContext);
-    const { setTasks, setIsLoading, status, setStatus, order, setOrder } = useContext(TasksContext);
+    const { setTasks, setIsLoading, status, setStatus, order, setOrder, priority, setPriority } = useContext(TasksContext);
 
 
+    // const renderFilters = () => {
+    //     return (
+    //         <div>
+    //             <StatusFilter />
+    //             <FilterByTime />
+    //             <FilterByPriority />
+    //         </div>
+    //     )
+    // }
 
     const resetFilter = (e) => {
-        e.preventDefault();
-        // setStatus('');
-        // setOrder('');
 
-        // console.log(e.target.disabled = true);
+        e.preventDefault();
+        setStatus('');
+        setOrder('');
+
+        renderFilters()
+
+
+        setIsLoading(true)
+        api({
+            method: 'post',
+            url: 'tasks.php?fun=read&opt=all&id=' + catId,
+        })
+            .then((response) => {
+                setTasks(response.data);
+                setIsLoading(false)
+            });
     }
 
 
@@ -59,8 +81,9 @@ const Filters = () => {
             <form onSubmit={handleSubmit}>
                 <StatusFilter />
                 <FilterByTime />
+                <FilterByPriority />
 
-                {status === '' && order === '' ?
+                {status === '' && order === '' && priority === '' ?
                     <button className="btn-s mt-1">Filter</button> :
 
                     <div className="btn-container mt-1">

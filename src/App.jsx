@@ -31,7 +31,7 @@ function App() {
 
   return (
 
-    <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'}`}>
+    <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'} main`}>
 
       <RouterProvider router={router} />
 

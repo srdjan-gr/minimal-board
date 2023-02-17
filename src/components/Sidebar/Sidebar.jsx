@@ -25,12 +25,6 @@ const Sidebar = () => {
 
     const fetchTasks = (id) => {
 
-        // const param = searchParams.get('/All/*')
-        // if (param) {
-        //     searchParams.delete('/All/*')
-        //     setSearchParams(searchParams)
-        // }
-
         setCatId(id);
 
         setIsLoading(true)

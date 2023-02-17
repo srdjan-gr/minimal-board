@@ -34,10 +34,21 @@
 }
 
 
-@media (max-width:560px) {
-
+@media (max-width:480px) {
 
     .hiddenMenu__container{
         width: 100% !important;
+    }
+
+    .modal__component{
+        display: none;
+    }
+
+    main{
+        .main__all-container{
+
+            @include flex(column, flex-start, flex-start, 2rem);
+    
+        }
     }
 }
