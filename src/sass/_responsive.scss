@@ -4,7 +4,7 @@
 }
 
 // Smaller than 768px
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
     nav{
        width: 6rem !important;
@@ -34,7 +34,7 @@
 }
 
 
-@media (max-width:480px) {
+@media screen and (max-width: 480px) {
 
     .hiddenMenu__container{
         width: 100% !important;
@@ -49,6 +49,26 @@
 
             @include flex(column, flex-start, flex-start, 2rem);
     
+            .filters__container {
+
+                .filters-form{
+                    background-color: antiquewhite;
+                    height: 0;
+                    opacity: 0;
+                    // display: none;
+            
+                    form{
+                        height: 0%;
+                    }            
+                }
+            
+            }
+
+            .mobileFilterIcon{
+                opacity: 1;
+            }
         }
     }
+
+
 }

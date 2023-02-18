@@ -37,7 +37,7 @@ const All = () => {
             <HiddenMenu />
 
 
-            <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`}>
+            <main className={`${sidebar ? 'toggleMainContent' : ''} background text border-left`}>
 
                 <div className='main__all-container'>
 
@@ -53,7 +53,7 @@ const All = () => {
 
                         <div div className="grid__container">
                             {
-                                isLoading === true ? <Loader /> :
+                                isLoading ? <Loader /> :
                                     tasks.length === 0 ? <ErrorComponent error='notasks' /> :
                                         tasks.map((task, idx) => {
 

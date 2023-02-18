@@ -12,7 +12,7 @@ export const TasksProvider = ({ children }) => {
     const [order, setOrder] = useState('');
     const [priority, setPriority] = useState('');
 
-    console.log(tasks)
+    // console.log(tasks)
 
     return (
         <TasksContext.Provider

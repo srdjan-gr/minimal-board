@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { BiFilter } from "react-icons/bi";
+import { BiFilter, BiChevronDown } from "react-icons/bi";
 import api from '../../api/api';
 
 import FilterByTime from '../FiterBytime/FilterByTime'
@@ -13,7 +13,14 @@ const Filters = () => {
 
 
     const { catId } = useContext(CategoriesContext);
-    const { setTasks, setIsLoading, status, setStatus, order, setOrder, priority, setPriority } = useContext(TasksContext);
+    const { setTasks,
+        setIsLoading,
+        status,
+        setStatus,
+        order,
+        setOrder,
+        priority,
+        setPriority } = useContext(TasksContext);
 
 
     // const renderFilters = () => {
@@ -32,8 +39,7 @@ const Filters = () => {
         setStatus('');
         setOrder('');
 
-        renderFilters()
-
+        // renderFilters()
 
         setIsLoading(true)
         api({
@@ -56,7 +62,10 @@ const Filters = () => {
             catId: catId,
             order: order,
             status: status,
+            priority: priority
         }
+
+        console.log(sendData);
 
         api({
             method: 'post',
@@ -66,6 +75,10 @@ const Filters = () => {
             .then((response) => {
 
                 setTasks(response.data);
+
+                // setOrder('')
+                // setStatus('')
+                // setPriority('')
                 setIsLoading(false);
             });
     }
@@ -76,21 +89,24 @@ const Filters = () => {
             <div className="filters__container-header border-bottom text-third">
                 <BiFilter className='icon-m2' />
                 <h2>Filters</h2>
+                <BiChevronDown className='icon-m2 mobileFilterIcon' />
             </div>
 
-            <form onSubmit={handleSubmit}>
-                <StatusFilter />
-                <FilterByTime />
-                <FilterByPriority />
+            <div className="filters-form">
+                <form onSubmit={handleSubmit}>
+                    <StatusFilter />
+                    <FilterByTime />
+                    <FilterByPriority />
 
-                {status === '' && order === '' && priority === '' ?
-                    <button className="btn-s mt-1">Filter</button> :
+                    {status === '' && order === '' && priority === '' ?
+                        '' :
 
-                    <div className="btn-container mt-1">
-                        <button className="btn-s">Filter</button>
-                        <button className="btn-s" onClick={resetFilter}>X</button>
-                    </div>}
-            </form>
+                        <div className="btn-container mt-1">
+                            <button className="btn-s">Filter</button>
+                            <button className="btn-s" onClick={resetFilter}>X</button>
+                        </div>}
+                </form>
+            </div>
         </article>
     )
 }

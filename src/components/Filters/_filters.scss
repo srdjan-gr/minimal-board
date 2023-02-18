@@ -1,8 +1,9 @@
 .filters__container {
     @include flex(column, flex-start, flex-center, 2rem);
-
+    
     &-header{
-        @include flex(raw, center, flex-center, 1rem);
+        @include flex(raw, center, flex-start, 1rem);
+        // width: 22rem;
         width: 100%;
         padding-bottom: 1rem;;
 
@@ -12,8 +13,21 @@
         }
     }
 
-    form{
+    .filters-form{
+        // background-color: antiquewhite;
         height: 100%;
-        @include flex(column, flex-start, flex-start, 1.5rem); 
+        opacity: 1;
+        // display: none;
+
+        form{
+            @include flex(column, flex-start, flex-start, 1.5rem); 
+        }
     }
+
+
+}
+
+.mobileFilterIcon{
+    transform: translateX(11rem);
+    opacity: 0;
 }
