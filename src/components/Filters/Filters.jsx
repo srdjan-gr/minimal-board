@@ -11,6 +11,8 @@ import FilterByPriority from '../Filters/FilterByPriority/FilterByPriority';
 
 const Filters = () => {
 
+    const [filters, setFilters] = useState(false);
+
 
     const { catId } = useContext(CategoriesContext);
     const { setTasks,
@@ -84,16 +86,22 @@ const Filters = () => {
     }
 
 
+    // Filters container on MObile devices
+    const openMobileFilters = () => {
+        setFilters(!filters)
+    }
+
+
     return (
         <article className='filters__container'>
             <div className="filters__container-header border-bottom text-third">
                 <BiFilter className='icon-m2' />
                 <h2>Filters</h2>
-                <BiChevronDown className='icon-m2 mobileFilterIcon' />
+                <BiChevronDown className={`${filters ? 'icon-rotate-180' : ''} icon-m2 mobileFilterIcon`} onClick={openMobileFilters} />
             </div>
 
-            <div className="filters-form">
-                <form onSubmit={handleSubmit}>
+            <div className={`${filters ? 'filtersFormActive' : ''} filters-form`} >
+                <form form onSubmit={handleSubmit}>
                     <StatusFilter />
                     <FilterByTime />
                     <FilterByPriority />

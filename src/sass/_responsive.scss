@@ -66,23 +66,35 @@
         .main__all-container{
 
             @include flex(column, flex-start, flex-start, 2rem);
+
     
             .filters__container {
+
+                &-header {
+                    position: relative;
+                }
+
+                width: 100%;
 
                 .filters-form{
                     height: 0;
                     opacity: 0;
-                    // display: none;
-            
+                    transition: $transition-1;
+                    
                     form{
                         height: 0%;
+                        padding: 0;
+                        width: 100% !important;
                     }            
                 }
-            
             }
 
             .mobileFilterIcon{
+                position: absolute;
+                right: 0;
                 opacity: 1;
+                cursor: pointer;
+                transition: $transition-2;
             }
         }
 
@@ -99,6 +111,13 @@
                 }
             }
         }
+    }
+
+    .filtersFormActive {
+        @include flex(column, flex-start, flex-start, 2rem);
+        min-height: 41rem !important;
+        opacity: 1 !important;
+        // transition: $transition-2;
     }
 
 }

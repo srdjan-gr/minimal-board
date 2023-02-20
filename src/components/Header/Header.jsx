@@ -14,7 +14,6 @@ const Header = () => {
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
 
-    console.log(hiddenMenu);
 
     const toggleSidebar = () => {
         setSidebar(!sidebar);

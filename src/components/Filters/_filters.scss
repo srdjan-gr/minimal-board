@@ -21,6 +21,7 @@
 
         form{
             @include flex(column, flex-start, flex-start, 1.5rem); 
+            padding: 0;
         }
     }
 
@@ -28,6 +29,5 @@
 }
 
 .mobileFilterIcon{
-    transform: translateX(11rem);
     opacity: 0;
 }

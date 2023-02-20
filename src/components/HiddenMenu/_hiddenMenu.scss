@@ -10,7 +10,18 @@
     height: 100%;
     transition: $transition-2;
     transform: translateX(-100%);
-    // display: none;
+
+
+    // To Test these design
+    // top: 2rem;
+    // bottom: 2rem;
+    // left: 0;
+    // z-index: 100;
+    // max-width: calc(100% - 2rem);
+    // height: calc(100% - 4rem);
+    // background-color: aquamarine;
+    // border-radius:  0 2rem 2rem 0;
+
 
     &-header {
         @include flex(raw, center, space-between, 0rem);

@@ -276,21 +276,43 @@ a {
     justify-content: flex-start;
     gap: 2rem;
   }
+  main .main__all-container .filters__container {
+    width: 100%;
+  }
+  main .main__all-container .filters__container-header {
+    position: relative;
+  }
   main .main__all-container .filters__container .filters-form {
     height: 0;
     opacity: 0;
+    transition: all 0.1s ease-out;
   }
   main .main__all-container .filters__container .filters-form form {
     height: 0%;
+    padding: 0;
+    width: 100% !important;
   }
   main .main__all-container .mobileFilterIcon {
+    position: absolute;
+    right: 0;
     opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
   }
   main .main__all-container-content .grid__container {
     grid-template-columns: repeat(auto-fit, 100%) !important;
   }
   main .main__all-container-content .grid__container .box {
     width: 100% !important;
+  }
+  .filtersFormActive {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    min-height: 41rem !important;
+    opacity: 1 !important;
   }
 }
 main {
@@ -324,7 +346,6 @@ main .main__all-container-content .grid__container {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, 26rem);
-  min-height: 18rem;
 }
 
 .toggleMainContent {
@@ -525,6 +546,7 @@ header .header__right {
 }
 
 .box {
+  min-height: 16rem;
   border-radius: 4px;
   padding: 2.5rem 1.5rem;
   display: flex;
@@ -858,10 +880,10 @@ form .btn__container .loader__container {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1.5rem;
+  padding: 0;
 }
 
 .mobileFilterIcon {
-  transform: translateX(11rem);
   opacity: 0;
 }
 
