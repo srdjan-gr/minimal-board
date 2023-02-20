@@ -250,6 +250,10 @@ a {
 @media screen and (max-width: 480px) {
   .hiddenMenu__container {
     width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    transform: translateX(-100%);
   }
   .modal__component {
     display: none;
@@ -262,7 +266,6 @@ a {
     gap: 2rem;
   }
   main .main__all-container .filters__container .filters-form {
-    background-color: antiquewhite;
     height: 0;
     opacity: 0;
   }
@@ -271,6 +274,12 @@ a {
   }
   main .main__all-container .mobileFilterIcon {
     opacity: 1;
+  }
+  main .main__all-container-content .grid__container {
+    grid-template-columns: repeat(auto-fit, 100%) !important;
+  }
+  main .main__all-container-content .grid__container .box {
+    width: 100% !important;
   }
 }
 main {
@@ -304,7 +313,7 @@ main .main__all-container-content .grid__container {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, 26rem);
-  min-height: 15rem;
+  min-height: 18rem;
 }
 
 .toggleMainContent {
@@ -505,8 +514,6 @@ header .header__right {
 }
 
 .box {
-  width: 26rem;
-  min-height: 6rem;
   border-radius: 4px;
   padding: 2.5rem 1.5rem;
   display: flex;
@@ -636,12 +643,12 @@ header .header__right {
   gap: 0rem;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 100;
   width: 40rem;
   height: 100%;
   transition: all 0.2s ease-out;
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 .hiddenMenu__container-header {
   display: flex;

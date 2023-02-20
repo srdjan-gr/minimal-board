@@ -30,7 +30,6 @@
     .category-links{
         display: none;
     }
-
 }
 
 
@@ -38,11 +37,16 @@
 
     .hiddenMenu__container{
         width: 100% !important;
+        position: absolute;
+        top: 0;
+        left:  0 !important;
+        transform: translateX(-100%);
     }
 
     .modal__component{
         display: none;
     }
+
 
     main{
         .main__all-container{
@@ -52,7 +56,6 @@
             .filters__container {
 
                 .filters-form{
-                    background-color: antiquewhite;
                     height: 0;
                     opacity: 0;
                     // display: none;
@@ -68,7 +71,20 @@
                 opacity: 1;
             }
         }
-    }
 
+        .main__all-container{
+    
+            &-content{
+    
+                .grid__container{
+                    grid-template-columns: repeat(auto-fit, 100%) !important;
+
+                    .box {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
 
 }

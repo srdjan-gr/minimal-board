@@ -24,7 +24,7 @@ const SingleItemOptions = ({ task }) => {
 
     const deleteItem = (id) => {
 
-        confirm('Are you shure you to delete task?')
+        confirm('Are you shure you want to delete task?')
 
         api({
             method: 'post',
@@ -50,7 +50,7 @@ const SingleItemOptions = ({ task }) => {
     const editItem = (task) => {
         setHiddenMenu({ container: true, option: 'editTask', optionName: "Edit Task" });
         setModal(true);
-        
+
         setTasksEdit({
             taskData: task, isLoading: false,
         });

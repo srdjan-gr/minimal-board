@@ -29,12 +29,12 @@ const All = () => {
 
     return (
         <div>
+            <HiddenMenu />
             <Header />
             <Breadcrumb />
             <OptionsMenu />
             <Sidebar />
             <Modal />
-            <HiddenMenu />
 
 
             <main className={`${sidebar ? 'toggleMainContent' : ''} background text border-left`}>
