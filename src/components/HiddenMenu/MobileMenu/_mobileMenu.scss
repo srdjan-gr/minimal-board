@@ -1,0 +1,36 @@
+@use '../../../sass/colors' as *;
+
+.mobile__menu{
+    width: 100%;
+    height: calc(100% - 2rem);
+    overflow-y: scroll;
+
+    & ul{
+        @include flex(column, flex-start, flex-start, .5rem);
+
+        .mobile-category{
+            @include flex(raw, center, flex-start, 0rem);
+            width: 90%;
+            height: 3.4rem;
+            border-radius: 0 $radius $radius 0;
+            padding-left: 2rem;
+            text-transform: capitalize;
+
+            .mobile-links {
+                font-size: 1.8rem;
+                width: 100%;
+                transition: $transition-1;
+                border-radius: 0 $radius $radius 0;
+                transform: translateX(1.8rem);
+            }
+
+            .mobile-icon{
+                font-size: 1.8rem;
+            }
+        }
+
+        .mobile-category:hover {
+            background-color: $accent;
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
-import { BiDotsVerticalRounded, BiArrowToLeft, BiSun, BiPlus } from "react-icons/bi";
+import { BiDotsVerticalRounded, BiArrowToLeft, BiSun, BiPlus, BiMenu } from "react-icons/bi";
 
 import SidebarContext from '../../contexts/SidebarContext';
 import ThemeContext from '../../contexts/ThemeContext';
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
+import HiddenMenuContext from '../../contexts/HiddenMenuContext';
 
 
 const Header = () => {
@@ -11,7 +12,9 @@ const Header = () => {
     const { sidebar, setSidebar } = useContext(SidebarContext)
     const { theme, setTheme } = useContext(ThemeContext)
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
+    const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
 
+    console.log(hiddenMenu);
 
     const toggleSidebar = () => {
         setSidebar(!sidebar);
@@ -19,7 +22,18 @@ const Header = () => {
         !sidebar ? localStorage.setItem('minimalBoardSidebar', 'asideClosed') :
             localStorage.setItem('minimalBoardSidebar', 'asideOpend')
     }
- 
+
+
+    const toggleMobileMenu = () => {
+        setHiddenMenu({ container: true, option: 'mobileMenu', optionName: "Categories" });
+    }
+
+
+    // Options on the right side of Header
+    const headerMenuOptions = () => {
+        setOptionsMenuContainer(!optionsMenuContainer)
+        setOption('options')
+    }
 
     const toogleTheme = () => {
 
@@ -32,22 +46,18 @@ const Header = () => {
         }
     }
 
-
-    // 
-    const headerMenuOptions = () => {
-        setOptionsMenuContainer(!optionsMenuContainer)
-        setOption('options')
-    }
-
     const headerMenuAdd = () => {
         setOptionsMenuContainer(!optionsMenuContainer)
         setOption('add')
     }
 
+
+
     return (
         <header className={`${sidebar === true ? 'toggleHeader' : ''} background text border-bottom border-left`}>
             <article className='header__left'>
-                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m background-second`} onClick={toggleSidebar} />
+                <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m background-second mobile-none`} onClick={toggleSidebar} />
+                <BiMenu className='icon-m background-second' onClick={toggleMobileMenu} />
 
             </article>
             <article className='header__right'>

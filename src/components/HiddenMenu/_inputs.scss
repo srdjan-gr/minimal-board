@@ -4,6 +4,7 @@
 form {
 
     @include flex(column, flex-start, flex-start, 2rem);
+    padding: 0 2rem;
 
     .inputs__container{
         @include flex(column, flex-start, flex-start, 0rem);

@@ -35,6 +35,16 @@
 
 @media screen and (max-width: 480px) {
 
+    nav{
+        display: none;
+     }
+     
+     header,
+     main,
+     .breadcrumb{
+         min-width: 100% !important;
+     }
+
     .hiddenMenu__container{
         width: 100% !important;
         position: absolute;
@@ -45,6 +55,10 @@
 
     .modal__component{
         display: none;
+    }
+
+    .mobile-none{
+        display: none
     }
 
 
