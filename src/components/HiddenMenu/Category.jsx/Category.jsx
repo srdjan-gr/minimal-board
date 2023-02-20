@@ -6,10 +6,12 @@ import CategoriesContext from '..//../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 
+import categoryAdd from '../../../utils/categoryAdd';
+
 const Category = () => {
 
     // Initial state
-    const [addCategory, setAddCategory] = useState('');
+    const [addCategoryData, setAddCategoryData] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
@@ -22,21 +24,11 @@ const Category = () => {
         setIsLoading(true);
 
         const sendData = {
-            category: addCategory,
+            category: addCategoryData,
         }
 
-        api({
-            method: 'post',
-            url: 'category.php?fun=add',
-            data: sendData,
-        })
-            .then((response) => {
-                setAdd(true)
-                setIsLoading(false);
-                setModal(false)
-                setHiddenMenu(false)
-                setAddCategory('');
-            });
+        categoryAdd(setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, api, sendData);
+
     }
 
 
@@ -50,8 +42,8 @@ const Category = () => {
                     type="text"
                     placeholder='Enter name...'
                     className='background text border-all'
-                    value={addCategory}
-                    onChange={(e) => setAddCategory(e.target.value)}
+                    value={addCategoryData}
+                    onChange={(e) => setAddCategoryData(e.target.value)}
                 />
             </article>
 

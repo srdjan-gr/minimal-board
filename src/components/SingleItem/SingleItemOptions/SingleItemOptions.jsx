@@ -10,6 +10,7 @@ import CategoriesContext from '../../../contexts/CategoriesContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import ModalContext from '../../../contexts/ModalContext';
 import TaskEditContext from '../../../contexts/TasksEditContext';
+import taskDelete from '../../../utils/taskDelete';
 
 const SingleItemOptions = ({ task }) => {
 
@@ -25,25 +26,11 @@ const SingleItemOptions = ({ task }) => {
     const deleteItem = (id) => {
 
         confirm('Are you shure you want to delete task?')
+        setIsLoading(true)
 
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=delete&id=' + id,
-        })
-            .then((response) => {
-                console.log(response.data);
+        taskDelete(id, catId, setTasks, setIsLoading, api)
 
-                setIsLoading(true)
-                api({
-                    method: 'post',
-                    url: 'tasks.php?fun=read&opt=all&id=' + catId,
-                })
-                    .then((response) => {
-                        setTasks(response.data);
-                        setIsLoading(false)
-                        setItemsMenu({ container: false, itemId: '' })
-                    });
-            });
+        setItemsMenu({ container: false, itemId: '' })
     }
 
 

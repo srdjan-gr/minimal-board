@@ -5,6 +5,7 @@ import api from '../../../api/api'
 import CategoriesContext from '../../../contexts/CategoriesContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import TasksContext from '../../../contexts/TasksContext';
+import fetchTasksByCategory from '../../../utils/fetchTasksByCategory';
 
 const MobileMenu = () => {
 
@@ -13,22 +14,17 @@ const MobileMenu = () => {
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
 
-    const fetchTasks = (id) => {
+    const fetchTasks = (catId) => {
 
-        setCatId(id);
-
+        setCatId(catId);
         setIsLoading(true)
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=read&opt=all&id=' + id,
-        })
-            .then((response) => {
-                setTasks(response.data);
-                setIsLoading(false)
-                setHiddenMenu({ container: false, option: '', optionName: '' });
-            });
+
+        fetchTasksByCategory(catId, setTasks, setIsLoading, api)
+
+        setHiddenMenu({ container: false, option: '', optionName: '' });
     }
 
+    
     return (
         <div className='mobile__menu'>
             <ul>

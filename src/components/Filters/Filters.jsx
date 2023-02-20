@@ -8,6 +8,8 @@ import StatusFilter from '../StatusFilter/StatusFilter'
 import TasksContext from '../../contexts/TasksContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
 import FilterByPriority from '../Filters/FilterByPriority/FilterByPriority';
+import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
+import filtersFetch from '../../utils/filtersFetch';
 
 const Filters = () => {
 
@@ -44,14 +46,8 @@ const Filters = () => {
         // renderFilters()
 
         setIsLoading(true)
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=read&opt=all&id=' + catId,
-        })
-            .then((response) => {
-                setTasks(response.data);
-                setIsLoading(false)
-            });
+
+        fetchTasksByCategory(catId, setTasks, setIsLoading, api)
     }
 
 
@@ -67,22 +63,8 @@ const Filters = () => {
             priority: priority
         }
 
-        console.log(sendData);
+        filtersFetch(sendData, api, setIsLoading, setTasks);
 
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=read&opt=filters',
-            data: sendData,
-        })
-            .then((response) => {
-
-                setTasks(response.data);
-
-                // setOrder('')
-                // setStatus('')
-                // setPriority('')
-                setIsLoading(false);
-            });
     }
 
 

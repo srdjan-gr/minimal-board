@@ -1,20 +1,25 @@
 import React, { useState, useContext } from 'react'
 import api from '../../../api/api';
 import Loader from '../../Loader/Loader'
-import Category from '../Category.jsx/Category';
 
+// Conrtexts
 import CategoriesContext from '../../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import TaskEditContext from '../../../contexts/TasksEditContext';
+import TasksContext from '../../../contexts/TasksContext';
+
+// Utilities
+import taskEdit from '../../../utils/taskEdit';
 
 const TaskEdit = () => {
 
-    const [isLoading, setIsLoading] = useState(false);
-    const { categories } = useContext(CategoriesContext);
+    const { categories, catId } = useContext(CategoriesContext);
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
     const { tasksEdit, setTasksEdit } = useContext(TaskEditContext)
+    const { setTasks, isLoading, setIsLoading } = useContext(TasksContext);
+
 
     // Initial state
     const [id, setId] = useState(tasksEdit.taskData.id_task);
@@ -36,26 +41,10 @@ const TaskEdit = () => {
             category: category,
         }
 
-        console.log(sendData)
+        taskEdit(setIsLoading, setModal, setHiddenMenu,
+            setId, setTitle, setDescription, setPriority,
+            setCategory, catId, setTasks, sendData, api)
 
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=update',
-            data: sendData,
-        })
-            .then((response) => {
-
-                console.log(response.data);
-
-                setIsLoading(false);
-                setModal(false)
-                setHiddenMenu(false)
-                setId('')
-                setTitle('')
-                setDescription('')
-                setPriority('')
-                setCategory('')
-            });
     }
 
 

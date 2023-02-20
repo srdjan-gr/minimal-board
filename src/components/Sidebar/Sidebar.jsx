@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import { BiUser, BiListUl } from "react-icons/bi";
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import api from '../../api/api'
 
+// Contexts
 import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
 import TasksContext from '../../contexts/TasksContext';
@@ -10,32 +12,28 @@ import ThemeContext from '../../contexts/ThemeContext';
 import userImg from '../../assets/nouser.jpg';
 import brandLogoLight from '../../assets/logo/mb-white-pink-200.png';
 import brandLogoDark from '../../assets/logo/mb-black-pink-200.png';
-import api from '../../api/api'
+
+import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
 
 const Sidebar = () => {
+
+
     const { theme, setTheme } = useContext(ThemeContext);
     const { sidebar } = useContext(SidebarContext);
     const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    // const [searchParams, setSearchParams] = useSearchParams();
 
     const location = useLocation();
 
 
-    const fetchTasks = (id) => {
+    const fetchTasks = (catId) => {
 
-        setCatId(id);
-
+        setCatId(catId);
         setIsLoading(true)
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=read&opt=all&id=' + id,
-        })
-            .then((response) => {
-                setTasks(response.data);
-                setIsLoading(false)
-            });
+
+        fetchTasksByCategory(catId, setTasks, setIsLoading, api)
     }
 
 

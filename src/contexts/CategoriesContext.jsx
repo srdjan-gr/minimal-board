@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react'
 import api from '../api/api'
+import categoriesFetchAll from '../utils/categoriesFetchAll';
 
 const CategoriesContext = createContext();
 
@@ -25,13 +26,9 @@ export const CategoriesProvider = ({ children }) => {
 
 
     useEffect(() => {
-        api({
-            method: 'post',
-            url: 'category.php?fun=read',
-        })
-            .then((response) => {
-                setCategories(response.data);
-            });
+
+        categoriesFetchAll(setCategories, api)
+
     }, [add])
 
 

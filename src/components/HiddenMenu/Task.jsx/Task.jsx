@@ -8,13 +8,15 @@ import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import TasksContext from '../../../contexts/TasksContext';
 
+import fetchTasksByCategory from '../../../utils/fetchTasksByCategory';
+import taskAdd from '../../../utils/taskAdd';
+
 const Task = () => {
 
-    const [isLoading, setIsLoading] = useState(false);
     const { categories, catId } = useContext(CategoriesContext);
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
-    const { setTasks } = useContext(TasksContext);
+    const { setTasks, isLoading, setIsLoading } = useContext(TasksContext);
 
 
     // Initial state
@@ -25,8 +27,8 @@ const Task = () => {
 
     const handleSubbmit = (e) => {
         e.preventDefault();
-
         setIsLoading(true);
+
 
         const sendData = {
             title: title,
@@ -35,33 +37,8 @@ const Task = () => {
             category: category,
         }
 
-        console.log(sendData)
 
-        api({
-            method: 'post',
-            url: 'tasks.php?fun=add',
-            data: sendData,
-        })
-            .then((response) => {
-
-                console.log(response.data);
-
-                setIsLoading(false);
-                setModal(false)
-                setHiddenMenu(false)
-                setTitle('')
-                setDescription('')
-                setPriority('')
-                setCategory('')
-
-                api({
-                    method: 'post',
-                    url: 'tasks.php?fun=read&opt=all&id=' + catId,
-                })
-                    .then((response) => {
-                        setTasks(response.data);
-                    });
-            })
+        taskAdd(setCategory, setPriority, setDescription, setTitle, setHiddenMenu, setModal, setIsLoading, catId, setTasks, sendData, api);
 
     }
 
