@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import TasksContext from '../../contexts/TasksContext';
+import TasksContext from '../../../contexts/TasksContext';
 
 const FilterByTime = ({ x }) => {
 

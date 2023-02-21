@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { BiX } from "react-icons/bi";
 
-import TasksContext from '../../contexts/TasksContext';
+import TasksContext from '../../../contexts/TasksContext';
 
 const StatusFilter = () => {
 

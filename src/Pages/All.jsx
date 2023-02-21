@@ -11,7 +11,6 @@ import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
 import Loader from '../components/Loader/Loader';
 import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
-import StatusFilter from '../components/StatusFilter/StatusFilter';
 import Message from '../components/Message/Message';
 
 

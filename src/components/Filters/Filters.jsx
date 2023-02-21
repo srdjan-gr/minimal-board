@@ -2,15 +2,15 @@ import React, { useContext, useState } from 'react'
 import { BiFilter, BiChevronDown } from "react-icons/bi";
 import api from '../../api/api';
 
-import FilterByTime from '../FiterBytime/FilterByTime'
-import StatusFilter from '../StatusFilter/StatusFilter'
+import AscDesc from './AscDesc/AscDesc';
+import FilterByTime from './FiterBytime/FilterByTime'
+import StatusFilter from './StatusFilter/StatusFilter'
+import FilterByPriority from './FilterByPriority/FilterByPriority';
 
 import TasksContext from '../../contexts/TasksContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
-import FilterByPriority from '../Filters/FilterByPriority/FilterByPriority';
 import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
 import filtersFetch from '../../utils/filtersFetch';
-import AscDesc from './AscDesc/AscDesc';
 
 const Filters = () => {
 
