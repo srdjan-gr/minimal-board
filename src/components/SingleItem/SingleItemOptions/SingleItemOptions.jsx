@@ -11,6 +11,7 @@ import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import ModalContext from '../../../contexts/ModalContext';
 import TaskEditContext from '../../../contexts/TasksEditContext';
 import taskDelete from '../../../utils/taskDelete';
+import MessageContext from '../../../contexts/MessageContext'
 
 const SingleItemOptions = ({ task }) => {
 
@@ -21,6 +22,7 @@ const SingleItemOptions = ({ task }) => {
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)
     const { tasksEdit, setTasksEdit } = useContext(TaskEditContext)
+    const { message, setMessage } = useContext(MessageContext)
 
 
     const deleteItem = (id) => {
@@ -28,7 +30,7 @@ const SingleItemOptions = ({ task }) => {
         confirm('Are you shure you want to delete task?')
         setIsLoading(true)
 
-        taskDelete(id, catId, setTasks, setIsLoading, api)
+        taskDelete(id, catId, setTasks, setMessage, setIsLoading, api)
 
         setItemsMenu({ container: false, itemId: '' })
     }

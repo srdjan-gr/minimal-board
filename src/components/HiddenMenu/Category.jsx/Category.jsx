@@ -5,6 +5,7 @@ import Loader from '../../Loader/Loader'
 import CategoriesContext from '..//../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
+import MessageContext from '../../../contexts/MessageContext'
 
 import categoryAdd from '../../../utils/categoryAdd';
 
@@ -16,6 +17,7 @@ const Category = () => {
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
     const { categories, setCategories, catId, setCatId, setAdd } = useContext(CategoriesContext);
+    const { message, setMessage } = useContext(MessageContext)
 
 
     const handleSubbmit = (e) => {
@@ -27,7 +29,7 @@ const Category = () => {
             category: addCategoryData,
         }
 
-        categoryAdd(setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, api, sendData);
+        categoryAdd(setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, setMessage, api, sendData);
 
     }
 

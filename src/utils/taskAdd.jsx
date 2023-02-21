@@ -1,17 +1,11 @@
 import fetchTasksByCategory from "./fetchTasksByCategory";
+import responseMessage from "./responseMessage";
 
 const taskAdd = (
-    setCategory,
-    setPriority,
-    setDescription,
-    setTitle,
-    setHiddenMenu,
-    setModal,
-    setIsLoading,
-    catId,
-    setTasks,
-    sendData,
-    api
+    setCategory, setPriority, setDescription,
+    setTitle, setHiddenMenu, setModal,
+    setIsLoading, catId, setTasks,
+    setMessage, sendData, api
 ) => {
 
     api({
@@ -21,21 +15,20 @@ const taskAdd = (
     })
         .then((response) => {
 
-            console.log(response.data);
-
+            responseMessage(response.data, setMessage)
             setIsLoading(false);
-            setModal(false)
-            setHiddenMenu(false)
-            setTitle('')
-            setDescription('')
-            setPriority('')
-            setCategory('')
 
+            if (response.data.uspesno) {
 
-            fetchTasksByCategory(catId, setTasks, setIsLoading, api);
+                setModal(false)
+                setHiddenMenu(false)
+                setTitle('')
+                setDescription('')
+                setPriority('')
+                setCategory('')
+                fetchTasksByCategory(catId, setTasks, setIsLoading, api);
+            }
         })
-
-
 }
 
 export default taskAdd

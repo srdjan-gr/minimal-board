@@ -8,16 +8,18 @@ import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
 import Filters from '../components/Filters/Filters';
 import Header from '../components/Header/Header'
 import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
-
 import Loader from '../components/Loader/Loader';
 import Sidebar from '../components/Sidebar/Sidebar'
 import SingleItem from '../components/SingleItem/SingleItem';
 import StatusFilter from '../components/StatusFilter/StatusFilter';
+import Message from '../components/Message/Message';
+
 
 import SidebarContext from '../contexts/SidebarContext';
 import TasksContext from '../contexts/TasksContext';
 import Modal from '../components/Modal/Modal';
 import HiddenMenu from '../components/HiddenMenu/HiddenMenu';
+
 
 const All = () => {
 
@@ -29,6 +31,7 @@ const All = () => {
 
     return (
         <div>
+            <Message />
             <HiddenMenu />
             <Header />
             <Breadcrumb />

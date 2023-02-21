@@ -4,9 +4,14 @@ $accent: rgb(255, 128, 170);
 $accent-50: rgba(255, 102, 153, 0.25);
 
 $success:hsla(154, 74%, 65%, 0.1);
-$danger:#63e8af;
 $info:rgba(150, 99, 232, 0.1);
 
+
+
+// $message-danger:hsla(4, 85%, 62%, 0.7);
+$message-danger: rgba(239, 84, 102, 0.7);
+$message-success:hsla(154, 74%, 65%, 0.7);
+$message-info:hsla(212, 100%, 70%, 0.7);
 // Maybe colors
 // $accent: #c1cba9;
 // $accent: #E3FCBF;

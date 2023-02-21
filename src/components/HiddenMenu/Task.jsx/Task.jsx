@@ -7,6 +7,7 @@ import CategoriesContext from '../../../contexts/CategoriesContext';
 import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import TasksContext from '../../../contexts/TasksContext';
+import MessageContext from '../../../contexts/MessageContext';
 
 import fetchTasksByCategory from '../../../utils/fetchTasksByCategory';
 import taskAdd from '../../../utils/taskAdd';
@@ -17,6 +18,7 @@ const Task = () => {
     const { setModal } = useContext(ModalContext)
     const { setHiddenMenu } = useContext(HiddenMenuContext);
     const { setTasks, isLoading, setIsLoading } = useContext(TasksContext);
+    const { message, setMessage } = useContext(MessageContext);
 
 
     // Initial state
@@ -37,9 +39,7 @@ const Task = () => {
             category: category,
         }
 
-
-        taskAdd(setCategory, setPriority, setDescription, setTitle, setHiddenMenu, setModal, setIsLoading, catId, setTasks, sendData, api);
-
+        taskAdd(setCategory, setPriority, setDescription, setTitle, setHiddenMenu, setModal, setIsLoading, catId, setTasks, setMessage, sendData, api);
     }
 
 

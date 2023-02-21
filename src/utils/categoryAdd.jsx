@@ -1,15 +1,23 @@
-const categoryAdd = (setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, api, sendData) => {
+import responseMessage from "./responseMessage";
+
+const categoryAdd = (setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, setMessage, api, sendData) => {
     api({
         method: 'post',
         url: 'category.php?fun=add',
         data: sendData,
     })
         .then((response) => {
-            setAdd(true)
+
+            responseMessage(response.data, setMessage)
             setIsLoading(false);
-            setModal(false)
-            setHiddenMenu(false)
-            setAddCategoryData('');
+
+            if (response.data.uspesno) {
+
+                setAdd(true)
+                setModal(false)
+                setHiddenMenu(false)
+                setAddCategoryData('');
+            }
         });
 }
 

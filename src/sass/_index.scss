@@ -70,12 +70,14 @@ body {
     border-radius: .8rem;
   }
 
-  .icon-m1{
-    font-size: 2.5rem;
-  }
-
   .icon-m:hover{
     color: $accent;
+  }
+
+  .icon-m1{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: rgb(197, 197, 197);
   }
 
   .icon-m2{
@@ -97,4 +99,16 @@ body {
   }
 
 
+.message-info{
+  background-color: $message-info;
+  color: $font-color-dark-first;
+}
+.message-success{
+  background-color: $message-success;
+  color: $font-color-dark-first;
+}
+.message-error{
+  background-color: $message-danger;
+  color: $font-color-dark-first;
+}
 

@@ -1,9 +1,10 @@
 import fetchTasksByCategory from "./fetchTasksByCategory";
+import responseMessage from "./responseMessage";
 
 const taskEdit = (
     setIsLoading, setModal, setHiddenMenu,
     setId, setTitle, setDescription, setPriority,
-    setCategory, catId, setTasks, sendData, api
+    setCategory, catId, setTasks, setMessage, sendData, api
 ) => {
     api({
         method: 'post',
@@ -12,18 +13,20 @@ const taskEdit = (
     })
         .then((response) => {
 
-            console.log(response.data);
-
+            responseMessage(response.data, setMessage)
             setIsLoading(false);
-            setModal(false)
-            setHiddenMenu(false)
-            setId('')
-            setTitle('')
-            setDescription('')
-            setPriority('')
-            setCategory('')
 
-            fetchTasksByCategory(catId, setTasks, setIsLoading, api);
+            if (response.data.uspesno) {
+                setModal(false)
+                setHiddenMenu(false)
+                setId('')
+                setTitle('')
+                setDescription('')
+                setPriority('')
+                setCategory('')
+
+                fetchTasksByCategory(catId, setTasks, setIsLoading, api);
+            }
         });
 }
 

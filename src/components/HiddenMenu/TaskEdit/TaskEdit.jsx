@@ -8,6 +8,7 @@ import ModalContext from '../../../contexts/ModalContext';
 import HiddenMenuContext from '../../../contexts/HiddenMenuContext';
 import TaskEditContext from '../../../contexts/TasksEditContext';
 import TasksContext from '../../../contexts/TasksContext';
+import MessageContext from '../../../contexts/MessageContext'
 
 // Utilities
 import taskEdit from '../../../utils/taskEdit';
@@ -19,6 +20,7 @@ const TaskEdit = () => {
     const { setHiddenMenu } = useContext(HiddenMenuContext);
     const { tasksEdit, setTasksEdit } = useContext(TaskEditContext)
     const { setTasks, isLoading, setIsLoading } = useContext(TasksContext);
+    const { message, setMessage } = useContext(MessageContext)
 
 
     // Initial state
@@ -43,8 +45,7 @@ const TaskEdit = () => {
 
         taskEdit(setIsLoading, setModal, setHiddenMenu,
             setId, setTitle, setDescription, setPriority,
-            setCategory, catId, setTasks, sendData, api)
-
+            setCategory, catId, setTasks, setMessage, sendData, api)
     }
 
 
