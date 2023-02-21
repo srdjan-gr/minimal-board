@@ -10,6 +10,7 @@ import CategoriesContext from '../../contexts/CategoriesContext';
 import FilterByPriority from '../Filters/FilterByPriority/FilterByPriority';
 import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
 import filtersFetch from '../../utils/filtersFetch';
+import AscDesc from './AscDesc/AscDesc';
 
 const Filters = () => {
 
@@ -84,6 +85,7 @@ const Filters = () => {
 
             <div className={`${filters ? 'filtersFormActive' : ''} filters-form`} >
                 <form form onSubmit={handleSubmit}>
+                    <AscDesc />
                     <StatusFilter />
                     <FilterByTime />
                     <FilterByPriority />

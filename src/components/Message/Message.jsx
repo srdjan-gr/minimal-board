@@ -20,7 +20,7 @@ const Message = () => {
                     <div className="message">
                         <h3>{message.text}</h3>
                     </div>
-                    <BiX className='icon-m1 icon-message' onClick={closeMessage} />
+                    {/* <BiX className='icon-m1 icon-message' onClick={closeMessage} />*/}
                 </article>
             )
             break;
@@ -31,7 +31,7 @@ const Message = () => {
                     <div className="message">
                         <h3>{message.text}</h3>
                     </div>
-                    <BiX className='icon-m1 icon-message' onClick={closeMessage} />
+
                 </article>
             )
             break;
@@ -42,7 +42,7 @@ const Message = () => {
                     <div className="message">
                         <h3>{message.text}</h3>
                     </div>
-                    <BiX className='icon-m1 icon-message' onClick={closeMessage} />
+
                 </article>
             )
             break;

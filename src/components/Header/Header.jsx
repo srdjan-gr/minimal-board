@@ -56,8 +56,7 @@ const Header = () => {
         <header className={`${sidebar === true ? 'toggleHeader' : ''} background text border-bottom border-left`}>
             <article className='header__left'>
                 <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m background-second mobile-none`} onClick={toggleSidebar} />
-                <BiMenu className='icon-m background-second' onClick={toggleMobileMenu} />
-
+                <BiMenu className='icon-m background-second mobile-menu' onClick={toggleMobileMenu} />
             </article>
             <article className='header__right'>
                 <BiPlus className='icon-m background-second' onClick={headerMenuAdd} />
