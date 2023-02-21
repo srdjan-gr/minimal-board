@@ -28,6 +28,7 @@ const TaskEdit = () => {
     const [title, setTitle] = useState(tasksEdit.taskData.task_title);
     const [description, setDescription] = useState(tasksEdit.taskData.task_description);
     const [priority, setPriority] = useState(tasksEdit.taskData.task_priority);
+    const [status, setStatus] = useState(tasksEdit.taskData.task_status);
     const [category, setCategory] = useState(tasksEdit.taskData.category_id_cat);
 
     const handleSubbmit = (e) => {
@@ -40,6 +41,7 @@ const TaskEdit = () => {
             title: title,
             description: description,
             priority: priority,
+            status: status,
             category: category,
         }
 
@@ -84,6 +86,17 @@ const TaskEdit = () => {
                     <option value={3}>3</option>
                     <option value={4}>4</option>
                     <option value={5}>5</option>
+                </select>
+
+                <label htmlFor="selectCategory" className='text-third mb-05' >Task Status</label>
+                <select
+                    id="selectCategory"
+                    className='background text border-all mb-2'
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                >
+                    <option value={1}>done</option>
+                    <option value={0}>todo</option>
                 </select>
 
                 <label htmlFor="selectCategory" className='text-third mb-05' >Task Category</label>
