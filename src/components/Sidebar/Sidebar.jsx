@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { BiUser, BiListUl } from "react-icons/bi";
+import { BiUser, BiListUl, BiDotsHorizontalRounded, BiBrush, BiEdit } from "react-icons/bi";
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import api from '../../api/api'
 
@@ -8,6 +8,10 @@ import SidebarContext from '../../contexts/SidebarContext';
 import CategoriesContext from '../../contexts/CategoriesContext';
 import TasksContext from '../../contexts/TasksContext';
 import ThemeContext from '../../contexts/ThemeContext';
+
+import BoardContext from '../../contexts/BoardContext'
+import HiddenMenuContext from '../../contexts/HiddenMenuContext';
+import ModalContext from '../../contexts/ModalContext';
 
 import userImg from '../../assets/nouser.jpg';
 import brandLogoLight from '../../assets/logo/mb-white-pink-200.png';
@@ -23,6 +27,11 @@ const Sidebar = () => {
     const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
+    const { sidebarOption, setSidebarOption } = useContext(BoardContext)
+    const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
+    const { modal, setModal } = useContext(ModalContext)
+
+
     // const [searchParams, setSearchParams] = useSearchParams();
 
     const location = useLocation();
@@ -37,6 +46,14 @@ const Sidebar = () => {
     }
 
 
+    const optionsToogle = () => {
+        // setSidebarOption(!sidebarOption)
+        setHiddenMenu({ container: true, option: 'boardOptions', optionName: "Board Options" });
+        setModal(true);
+        setSidebarOption(!sidebarOption)
+    }
+
+
     // Resets
     location.pathname == '/' ? setCatId('') : ''
     const resetFilters = () => {
@@ -46,7 +63,6 @@ const Sidebar = () => {
 
     return (
         <nav className={`${sidebar ? 'toggleSidebar' : ''} background text `} >
-
             <article className='nav__header border-bottom'>
                 <span className='nav__header-user'>
                     <img src={userImg} alt="" />
@@ -63,6 +79,22 @@ const Sidebar = () => {
                         <img className='company-logo' src={brandLogoDark} alt="" onClick={resetFilters} />}
                 </Link>
             </article>
+
+
+            <article className='board__header'>
+
+                <BiEdit
+                    className='icon-m activeBoard  '
+                />
+                <BiBrush
+                    className='icon-m background-second'
+                />
+                <BiDotsHorizontalRounded
+                    className='icon-m background-second'
+                    onClick={() => optionsToogle()} />
+
+            </article>
+
 
             <article className='nav__middle'>
                 <ul>

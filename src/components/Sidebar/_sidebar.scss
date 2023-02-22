@@ -13,12 +13,10 @@ nav{
         padding: 1.5rem;
         height: 5rem;
         width: 100%;
-
         position: relative;
         top: 0;
         left: 0;
         z-index: 1;
-        // background-color: rgb(191, 204, 15);
 
         @include flex(raw, center, space-between, 0);
 
@@ -47,6 +45,19 @@ nav{
         }
     }
 
+    .board__header{
+        @include flex(raw, center, center, 2rem);
+
+        padding: 1.5rem;
+        height: 7rem;
+        width: 100%;
+
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
 
     .nav__middle{
         padding-top: 1rem;
@@ -60,13 +71,15 @@ nav{
 
             .nav__middle-category{
                 @include flex(raw, center, flex-start, 0rem);
+                // width: 100%;
                 width: 90%;
-                height: 3.4rem;
+                height: 3.5rem;
                 border-radius: 0 $radius $radius 0;
                 padding-left: 1.7rem;
                 text-transform: capitalize;
 
                 .category-links {
+
                     font-size: $fs-16;
                     width: 100%;
                     transition: $transition-1;
@@ -77,9 +90,6 @@ nav{
 
             .nav__middle-category:hover {
                 background-color: $accent;
-                // border-top: 1px solid $accent;
-                // border-right: 1px solid $accent;
-                // border-bottom: 1px solid $accent;
             }
         }
     }
@@ -90,6 +100,11 @@ nav{
     // border-top: 1px solid $accent;
     // border-right: 1px solid $accent;
     // border-bottom: 1px solid $accent;
+}
+
+
+.activeBoard{
+    background-color: $accent;
 }
 
 
@@ -111,14 +126,12 @@ nav{
         display: none;
     }
 
-    // .category-icon:hover{
-    //     width: 5rem;
-    //     height: 3rem;
-    //     background-color: aqua;
-    //     position: absolute;
-    //     left: 3rem;
-    //     z-index: 100;
-    // }
+    .board__header{
+        @include flex(column, center, center, 1.5rem);
+        padding: 1rem;
+        height: 13rem;
+        // background-color: aqua;
+    }
 }
 
 

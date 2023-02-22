@@ -3,6 +3,7 @@ import { BiX } from "react-icons/bi";
 
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
 import ModalContext from '../../contexts/ModalContext';
+import BoardOptions from './BoardOptions/BoardOptions';
 
 import Category from './Category.jsx/Category';
 import MobileMenu from './MobileMenu/MobileMenu';
@@ -35,7 +36,8 @@ const HiddenMenu = () => {
                         hiddenMenu.option === 'addTask' ? <Task /> :
                             hiddenMenu.option === 'editTask' ? <TaskEdit /> :
                                 hiddenMenu.option === 'mobileMenu' ? <MobileMenu /> :
-                                    ''
+                                    hiddenMenu.option === 'boardOptions' ? <BoardOptions /> :
+                                        ''
                 }
             </div>
 

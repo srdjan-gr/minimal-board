@@ -4,10 +4,21 @@
 }
 
 // Smaller than 768px
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     nav{
        width: 6rem !important;
+
+       .board__header{
+            @include flex(column, center, center, 1.5rem);
+
+            padding: 1rem !important;
+            height: 13rem !important;
+        }
+    }
+
+    .mobile-none{
+        display: none;
     }
     
     header,
@@ -57,9 +68,9 @@
         display: none;
     }
 
-    .mobile-none{
-        display: none
-    }
+    // .mobile-none{
+    //     display: none
+    // }
 
     .mobile-menu{
         display: block !important;

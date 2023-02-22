@@ -5,15 +5,16 @@ import './index.css'
 import './sass/main.css'
 
 import { ThemeProvider } from './contexts/ThemeContext';
+import { MessageProvider } from './contexts/MessageContext'
 import { SidebarProvider } from './contexts/SidebarContext';
-import { CategoriesProvider } from './contexts/CategoriesContext';
-import { TasksProvider } from './contexts/TasksContext';
+import { BoardProvider } from './contexts/BoardContext'
 import { OptionsMenuProvider } from './contexts/OptionsMenuContext';
 import { HiddenMenuProvider } from './contexts/HiddenMenuContext';
 import { ModalProvider } from './contexts/ModalContext'
+import { CategoriesProvider } from './contexts/CategoriesContext';
 import { SingleItemOptionsProvider } from './contexts/SingleItemOptionsContext'
+import { TasksProvider } from './contexts/TasksContext';
 import { TasksEditProvider } from './contexts/TasksEditContext'
-import { MessageProvider } from './contexts/MessageContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
@@ -21,23 +22,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider>
     <MessageProvider  >
       <SidebarProvider>
-        <OptionsMenuProvider>
-          <HiddenMenuProvider>
-            <ModalProvider>
-              <CategoriesProvider>
-                <SingleItemOptionsProvider>
-                  <TasksProvider >
-                    <TasksEditProvider>
+        <BoardProvider>
+          <OptionsMenuProvider>
+            <HiddenMenuProvider>
+              <ModalProvider>
+                <CategoriesProvider>
+                  <SingleItemOptionsProvider>
+                    <TasksProvider >
+                      <TasksEditProvider>
 
-                      <App />
+                        <App />
 
-                    </TasksEditProvider>
-                  </TasksProvider>
-                </SingleItemOptionsProvider>
-              </CategoriesProvider>
-            </ModalProvider>
-          </HiddenMenuProvider>
-        </OptionsMenuProvider>
+                      </TasksEditProvider>
+                    </TasksProvider>
+                  </SingleItemOptionsProvider>
+                </CategoriesProvider>
+              </ModalProvider>
+            </HiddenMenuProvider>
+          </OptionsMenuProvider>
+        </BoardProvider>
       </SidebarProvider>
     </MessageProvider>
   </ThemeProvider>

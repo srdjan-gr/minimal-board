@@ -4,8 +4,8 @@ import responseMessage from "./responseMessage";
 const taskEdit = (
     setIsLoading, setModal, setHiddenMenu,
     setId, setTitle, setDescription, setPriority,
-    setCategory, catId, setTasks, setMessage, sendData, api
-) => {
+    setCategory, catId, setTasks, setMessage, sendData, api) => {
+
     api({
         method: 'post',
         url: 'tasks.php?fun=update',

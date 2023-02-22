@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { BiEditAlt, BiShow } from "react-icons/bi";
+import { BiEditAlt, BiShow, BiTrashAlt } from "react-icons/bi";
 import api from '../../../api/api';
 
 
@@ -51,16 +51,16 @@ const SingleItemOptions = ({ task }) => {
         // Class for toggle component will be added only if 2 ids are the same
         // Preventing that on Single Task click Options component will be opened in All Tasks
         <article className={`${itemsMenu.container && task.id_task == itemsMenu.itemId ? 'singleItemOptionsToggle' : ''} singleItemOptions__container background text border-all`}>
-            <div className='header__menu-single' >
+            {/* <div className='header__menu-single' >
                 <BiShow className='icon-m background-second' />
                 <h3>Details</h3>
-            </div>
+            </div>*/}
             <div className='header__menu-single' onClick={() => editItem(task)}>
                 <BiEditAlt className='icon-m background-second' />
                 <h3>Edit</h3>
             </div>
             <div className='header__menu-single' onClick={() => deleteItem(task.id_task)}>
-                <BiEditAlt className='icon-m background-second' />
+                <BiTrashAlt className='icon-m background-second' />
                 <h3>Delete</h3>
             </div>
         </article>
