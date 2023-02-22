@@ -18,7 +18,7 @@ const HeaderMenu = () => {
         switch (option) {
 
             case 'category':
-                setHiddenMenu({ container: true, option: 'category', optionName: "Add Category" })
+                setHiddenMenu({ container: true, option: 'category', optionName: "Add Board" })
                 setOptionsMenuContainer(!optionsMenuContainer)
                 setModal(true)
                 break;
@@ -40,8 +40,8 @@ const HeaderMenu = () => {
             return (
                 <article className={`${optionsMenuContainer ? 'toggleHeaderMenu' : ''} header__menu right-1 text background border-all`}>
                     <div className='header__menu-single' onClick={() => openHiddenMenu('category')}>
-                        <span className='icon-letter background-second'>C</span>
-                        <h3>Category</h3>
+                        <span className='icon-letter background-second'>B</span>
+                        <h3>Board</h3>
                     </div>
                     <div className='header__menu-single' onClick={() => openHiddenMenu('task')}>
                         <BiListOl className='icon-m background-second' />

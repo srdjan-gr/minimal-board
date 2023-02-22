@@ -38,11 +38,11 @@ const Category = () => {
         <form onSubmit={handleSubbmit}>
 
             <article className='inputs__container border-all'>
-                <label htmlFor="addCategory" className='text-third mb-05'>Category Name</label>
+                <label htmlFor="addCategory" className='text-third mb-05'>Board Name</label>
                 <input
                     id='addCategory'
                     type="text"
-                    placeholder='Enter name...'
+                    placeholder='Enter board name...'
                     className='background text border-all'
                     value={addCategoryData}
                     onChange={(e) => setAddCategoryData(e.target.value)}
@@ -51,7 +51,7 @@ const Category = () => {
 
 
             <div className="btn__container">
-                <button className='btn-s'>Add category</button>
+                <button className='btn-s'>Add board</button>
                 {isLoading ? <Loader /> : ''}
             </div>
         </form>
