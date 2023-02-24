@@ -5,28 +5,35 @@
     height: calc(100% - 2rem);
     overflow-y: scroll;
 
+    .mobile-header{
+        @include flex(raw, center, center, 2rem);
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
     & ul{
         @include flex(column, flex-start, flex-start, .5rem);
 
         .mobile-category{
             @include flex(raw, center, flex-start, 0rem);
             width: 90%;
-            height: 3.4rem;
+            height: 4rem;
             border-radius: 0 $radius $radius 0;
             padding-left: 2rem;
             text-transform: capitalize;
+            font-size: 2rem;
 
             .mobile-links {
-                font-size: 1.8rem;
                 width: 100%;
                 transition: $transition-1;
                 border-radius: 0 $radius $radius 0;
                 transform: translateX(1.8rem);
             }
 
-            .mobile-icon{
-                font-size: 1.8rem;
-            }
+            // .mobile-icon{
+            //     // font-size: $fs-m;
+            //     font-size: 2rem;
+            // }
         }
 
         .mobile-category:hover {

@@ -1,39 +1,60 @@
 import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom';
 
-import Header from '../components/Header/Header'
-import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
-import Sidebar from '../components/Sidebar/Sidebar'
+import logo from '../assets/logo/logo-no-background.svg'
 
-import ErrorComponent from '../components/ErrorComponent/ErrorComponent';
-
-import SidebarContext from '../contexts/SidebarContext';
-import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
-
-import Modal from '../components/Modal/Modal';
-import HiddenMenu from '../components/HiddenMenu/HiddenMenu';
-
-const ErrorPage = () => {
-
-    const { sidebar } = useContext(SidebarContext)
+const ErrorPage = ({ nopage, nologin, error }) => {
 
 
-    return (
-        <div>
-            <Modal />
-            <HiddenMenu />
-            <Header />
-            <Breadcrumb />
-            <OptionsMenu />
-            <Sidebar />
+    if (nopage) {
+        return (
+            <article className='loginPage__component' >
+                <img src={logo} />
 
+                <div className="error-info text">
+                    <h3>404</h3>
+                    <h3>Page not found!!!</h3>
+                    <Link to='/'>Back to login.</Link>
+                </div>
 
-            <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} id="detail">
+                <div className="comercial">
+                    <a className='text-second' href="http://www.videezy.com">Free Broll provided by Videezy</a>
+                </div>
+            </article>
+        )
 
-                <ErrorComponent error='notasks' />
+    } else if (error) {
+        return (
+            <article className='loginPage__component' >
+                <img src={logo} />
 
-            </main>
-        </div>
-    )
+                <div className="error-info text">
+                    <h3>Error</h3>
+                    <Link to='/'>Back to login.</Link>
+                </div>
+
+                <div className="comercial">
+                    <a className='text-second' href="http://www.videezy.com">Free Broll provided by Videezy</a>
+                </div>
+            </article>
+        )
+
+    } else if (nologin) {
+        return (
+            <article className='loginPage__component' >
+                <img src={logo} />
+
+                <div className="error-info text">
+                    <h3>You are not loged in!</h3>
+                    <Link to='/'>Back to login.</Link>
+                </div>
+
+                <div className="comercial">
+                    <a className='text-second' href="http://www.videezy.com">Free Broll provided by Videezy</a>
+                </div>
+            </article>
+        )
+    }
 }
 
 export default ErrorPage

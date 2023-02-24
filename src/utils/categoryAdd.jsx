@@ -1,6 +1,9 @@
 import responseMessage from "./responseMessage";
 
 const categoryAdd = (setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, setMessage, api, sendData) => {
+
+    setAdd(false)
+
     api({
         method: 'post',
         url: 'category.php?fun=add',

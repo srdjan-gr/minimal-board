@@ -11,6 +11,8 @@
     transform-origin: top;
     transform: rotateX(-100deg) translateY(-50%);
     opacity: 0;
+
+    padding: .5rem;
     
     @include flex(column, flex-start, flex-start, 0 );
     

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { BiLogOutCircle, BiCog, BiListOl } from "react-icons/bi";
 
+import { Navigate, useNavigate } from 'react-router-dom'
+
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
 import ModalContext from '../../contexts/ModalContext';
@@ -12,6 +14,14 @@ const HeaderMenu = () => {
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)
+
+    const navigate = useNavigate();
+
+    const sessionKill = () => {
+        sessionStorage.removeItem('mblog')
+        navigate('/')
+    }
+
 
     const openHiddenMenu = (option) => {
 
@@ -40,11 +50,11 @@ const HeaderMenu = () => {
             return (
                 <article className={`${optionsMenuContainer ? 'toggleHeaderMenu' : ''} header__menu right-1 text background border-all`}>
                     <div className='header__menu-single' onClick={() => openHiddenMenu('category')}>
-                        <span className='icon-letter background-second'>B</span>
+                        <span className='icon-letter mobile-icon background-second'>B</span>
                         <h3>Board</h3>
                     </div>
                     <div className='header__menu-single' onClick={() => openHiddenMenu('task')}>
-                        <BiListOl className='icon-m background-second' />
+                        <BiListOl className='icon-m mobile-icon background-second' />
                         <h3>Task</h3>
                     </div>
                 </article>
@@ -55,11 +65,11 @@ const HeaderMenu = () => {
             return (
                 <article className={`${optionsMenuContainer ? 'toggleHeaderMenu' : ''} header__menu right-1 text background border-all`}>
                     <div className='header__menu-single'>
-                        <BiCog className='icon-m background-second' />
+                        <BiCog className='icon-m mobile-icon background-second' />
                         <h3>Settings</h3>
                     </div>
-                    <div className='header__menu-single'>
-                        <BiLogOutCircle className='icon-m background-second' />
+                    <div className='header__menu-single' onClick={sessionKill}>
+                        <BiLogOutCircle className='icon-m mobile-icon background-second' />
                         <h3>Log Out</h3>
                     </div>
                 </article>

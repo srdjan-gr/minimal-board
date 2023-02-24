@@ -6,6 +6,17 @@
 // Smaller than 768px
 @media screen and (max-width: 768px) {
 
+    .loginPage__component{
+        padding: 0 auto !important;
+        // @include flex(raw, center, center, 0rem);
+        @include flex(raw, center, center, 0rem);
+    }
+
+    .login__component{
+        transform: translateX(0%) !important;
+        
+    }
+
     nav{
        width: 6rem !important;
 
@@ -45,6 +56,17 @@
 
 
 @media screen and (max-width: 480px) {
+
+    .login__component{
+        transform: translateX(0%) !important;
+        width: 32rem !important;
+    }
+
+    .mobile-icon{
+        width: 3rem;
+        height: 3rem;
+        padding: .4rem;
+    }
 
     nav{
         display: none;
@@ -126,11 +148,20 @@
                 }
             }
         }
+
+    }
+    .btn__container {
+
+        .loader__container{
+            position: relative !important;
+            top: 0% !important;
+            left:  2rem !important;
+        }
     }
 
     .filtersFormActive {
         @include flex(column, flex-start, flex-start, 2rem);
-        min-height: 41rem !important;
+        min-height: 54rem !important;
         opacity: 1 !important;
         // transition: $transition-2;
     }

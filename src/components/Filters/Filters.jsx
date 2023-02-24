@@ -44,8 +44,6 @@ const Filters = () => {
         setStatus('');
         setOrder('');
 
-        // renderFilters()
-
         setIsLoading(true)
 
         fetchTasksByCategory(catId, setTasks, setIsLoading, api)
@@ -77,14 +75,14 @@ const Filters = () => {
 
     return (
         <article className='filters__container'>
-            <div className="filters__container-header border-bottom text-third">
+            <div className="filters__container-header border-bottom text-third" onClick={openMobileFilters}>
                 <BiFilter className='icon-m2' />
                 <h2>Filters</h2>
-                <BiChevronDown className={`${filters ? 'icon-rotate-180' : ''} icon-m2 mobileFilterIcon`} onClick={openMobileFilters} />
+                <BiChevronDown className={`${filters ? 'icon-rotate-180' : ''} icon-m2 mobileFilterIcon`} />
             </div>
 
             <div className={`${filters ? 'filtersFormActive' : ''} filters-form`} >
-                <form form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <AscDesc />
                     <StatusFilter />
                     <FilterByTime />
@@ -93,7 +91,7 @@ const Filters = () => {
                     {status === '' && order === '' && priority === '' ?
                         '' :
 
-                        <div className="btn-container mt-1">
+                        <div className="btn__container mt-1">
                             <button className="btn-s">Filter</button>
                             <button className="btn-s" onClick={resetFilter}>X</button>
                         </div>}

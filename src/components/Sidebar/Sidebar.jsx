@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { BiUser, BiListUl, BiDotsHorizontalRounded, BiBrush, BiEdit } from "react-icons/bi";
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import api from '../../api/api'
+import jwt from 'jwt-decode'
 
 // Contexts
 import SidebarContext from '../../contexts/SidebarContext';
@@ -21,6 +22,8 @@ import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
 
 const Sidebar = () => {
 
+    // Session
+    const mbsession = sessionStorage.getItem("mblog");
 
     const { theme, setTheme } = useContext(ThemeContext);
     const { sidebar } = useContext(SidebarContext);
@@ -30,7 +33,7 @@ const Sidebar = () => {
     const { sidebarOption, setSidebarOption } = useContext(BoardContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)
-
+    const token = jwt(mbsession);
 
     // const [searchParams, setSearchParams] = useSearchParams();
 
@@ -55,7 +58,7 @@ const Sidebar = () => {
 
 
     // Resets
-    location.pathname == '/' ? setCatId('') : ''
+    // location.pathname == '/' ? setCatId('') : ''
     const resetFilters = () => {
         setStatus('')
         setOrder('')
@@ -68,8 +71,8 @@ const Sidebar = () => {
                     <img src={userImg} alt="" />
 
                     <div className='user-data'>
-                        <h3>User Name</h3>
-                        <p>User</p>
+                        <h3>{token.data.name}</h3>
+                        <p>{token.data.status}</p>
                     </div>
                 </span>
 
@@ -80,11 +83,10 @@ const Sidebar = () => {
                 </Link>
             </article>
 
-
+            {/*Boards options in Sidebar header*/}
             <article className='board__header'>
-
                 <BiEdit
-                    className='icon-m activeBoard  '
+                    className='icon-m activeBoard'
                 />
                 <BiBrush
                     className='icon-m background-second'
@@ -92,7 +94,6 @@ const Sidebar = () => {
                 <BiDotsHorizontalRounded
                     className='icon-m background-second'
                     onClick={() => optionsToogle()} />
-
             </article>
 
 

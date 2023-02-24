@@ -27,7 +27,7 @@ const HiddenMenu = () => {
 
             <div className="hiddenMenu__container-header">
                 <h2 className="text-third">{hiddenMenu.optionName}</h2>
-                <BiX className='icon-m background-second close-hiddenMenu' onClick={closeHiddenMenu} />
+                <BiX className='icon-m mobile-icon background-second close-hiddenMenu' onClick={closeHiddenMenu} />
             </div>
 
             <div className="hiddenMenu__container-inputs">

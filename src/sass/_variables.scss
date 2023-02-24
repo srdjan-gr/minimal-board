@@ -16,3 +16,22 @@ $fs-24: 24px;
 $fs-32: 32px;
 $fs-40: 40px;
 $fs-48: 48px;
+
+
+// Not implemented
+$fs-s: 10px;
+$fs-m: 16px;
+$fs-mb: 18px;
+$fs-l: 24px;
+$fs-xl: 32px;
+$fs-xxl: 40px;
+
+
+@media (max-width: 480px){
+    $fs-s: 12px;
+    $fs-m: 18px;
+    $fs-mb: 20px;
+    $fs-l: 26px;
+    $fs-xl: 34px;
+    $fs-xxl: 42px;
+}

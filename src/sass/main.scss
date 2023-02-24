@@ -6,6 +6,7 @@
 @import 'responsive';
 
 
+@import '../Pages/login';
 @import '../Pages/pages';
 
 @import '../components/Sidebar/sidebar';
@@ -21,6 +22,7 @@
 @import '../components/SingleItem/SingleItemOptions/singleItemOptions';
 @import '../components/HiddenMenu/MobileMenu/mobileMenu';
 @import '../components/Message/message';
+@import '../components/LoginSignup/loginSignup';
 
 @import '../components/Filters/filters';
 @import '../components/Filters/filterSingle';

@@ -10,6 +10,7 @@
     border-radius: $radius;
     transition: $transition-1;
     opacity: 0;
+    padding: .5rem;
     
     @include flex(column, flex-start, flex-start, 0 );
 

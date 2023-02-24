@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
-// import Header from './components/Header/Header'
-// import HeaderMenu from './components/HeaderMenu/HeaderMenu';
-// import Sidebar from './components/Sidebar/Sidebar'
 import ThemeContext from './contexts/ThemeContext';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useParams } from 'react-router-dom';
+// import { Route, RouterProvider, createBrowserRouter, useParams } from 'react-router-dom';
 
 
-import { Route, RouterProvider, createBrowserRouter, useParams } from 'react-router-dom';
 import Home from './Pages/Home';
 import ErrorPage from './Pages/ErrorPage';
 import All from './Pages/All';
+import Login from './Pages/Login';
 
 
 function App() {
@@ -16,27 +15,41 @@ function App() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   // New router V6.4
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "All/:categoryName",
-      element: <All />,
-      errorElement: <ErrorPage />
-    },
-  ])
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Login />,
+  //     errorElement: <ErrorPage error='nologin' />,
+  //   },
+  //   {
+  //     path: "/Home",
+  //     element: <Home />,
+  //     errorElement: <ErrorPage error='notask' />,
+  //   },
+  //   {
+  //     path: "All/:categoryName",
+  //     element: <All />,
+  //     errorElement: <ErrorPage error='notask' />
+  //   },
+  //   {
+  //     path: '*',
+  //     // element: <ErrorPage />,
+  //     errorElement: <ErrorPage nopage />
+  //   },
+  // ])
 
+  // <RouterProvider router={router} />
   return (
-
     <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'} main`}>
-
-      <RouterProvider router={router} />
-
+      <Router>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/All/:categoryName' element={<All />} />
+          <Route path='*' element={<ErrorPage nopage />} />
+        </Routes>
+      </Router>
     </div>
-
   )
 }
 

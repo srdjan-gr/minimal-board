@@ -63,12 +63,12 @@ const SingleItem = ({ task }) => {
 
             <div className="box-icons">
                 <BiDotsHorizontalRounded
-                    className='icon-m background'
+                    className='icon-m  background'
                     onClick={() => singleItemMenu(id_task)} />
 
                 {task_status == 1 ?
-                    <BiCheck className='icon-m background bg-success' /> :
-                    <BiQuestionMark className='icon-m background bg-info' />}
+                    <BiCheck className='icon-m  background bg-success' /> :
+                    <BiQuestionMark className='icon-m  background bg-info' />}
             </div>
         </div>
     )

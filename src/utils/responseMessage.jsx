@@ -9,7 +9,7 @@ const responseMessage = (response, setMessage) => {
 
         setTimeout(() => {
             setMessage({ container: false, response: '', text: '' })
-        }, 2000);
+        }, 2500);
 
     } else if (response.info) {
         setMessage({
@@ -20,7 +20,7 @@ const responseMessage = (response, setMessage) => {
 
         setTimeout(() => {
             setMessage({ container: false, response: '', text: '' })
-        }, 2000);
+        }, 2500);
 
     } else {
         setMessage({
@@ -31,7 +31,7 @@ const responseMessage = (response, setMessage) => {
 
         setTimeout(() => {
             setMessage({ container: false, response: '', text: '' })
-        }, 2000);
+        }, 2500);
 
     }
 }

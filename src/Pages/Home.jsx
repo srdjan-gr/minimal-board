@@ -8,28 +8,39 @@ import Modal from '../components/Modal/Modal';
 import OptionsMenu from '../components/OptionsMenu/OptionsMenu'
 import Sidebar from '../components/Sidebar/Sidebar'
 
+import jwt from 'jwt-decode'
+
 import SidebarContext from '../contexts/SidebarContext';
+import ErrorPage from './ErrorPage';
 
 const Home = () => {
 
+    // Session
+    const mbsession = sessionStorage.getItem("mblog");
+
     const { sidebar } = useContext(SidebarContext)
 
-    return (
-        <div>
-            <Message />
-            <Modal />
-            <HiddenMenu />
-            <Header />
-            <Breadcrumb />
-            <OptionsMenu />
-            <Sidebar />
 
-            <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} >
+    if (mbsession) {
 
+        return (
+            <div>
+                <Message />
+                <Modal />
+                <HiddenMenu />
+                <Header />
+                <Breadcrumb />
+                <OptionsMenu />
+                <Sidebar />
 
-            </main>
-        </div>
-    )
+                <main className={`${sidebar === true ? 'toggleMainContent' : ''} background text border-left`} ></main>
+            </div>
+        )
+    } else {
+        return (
+            <ErrorPage nologin />
+        )
+    }
 }
 
 export default Home

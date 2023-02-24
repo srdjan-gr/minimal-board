@@ -60,7 +60,6 @@ const BoardOptions = () => {
     const edit = (e) => {
         e.preventDefault()
         let x = options.split(',')
-        // setEditData({ option: 'edit', title: x[1] })
 
         setEditOption('edit')
         setTitle(x[1])
@@ -69,7 +68,7 @@ const BoardOptions = () => {
 
     return (
         <article>
-            <form form onSubmit={handleDelete} >
+            <form onSubmit={handleDelete} >
                 <article className='inputs__container border-all'>
                     <label htmlFor="addCategory" className='text-third mb-05'>Select Board</label>
                     <select
@@ -107,7 +106,7 @@ const BoardOptions = () => {
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         />
-                        <div className="btn__container mt-1">
+                        <div className="btn__container mt-2">
                             <button className='btn-s'>Edit</button>
                         </div>
                     </article>

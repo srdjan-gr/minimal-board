@@ -15,6 +15,10 @@ body {
   margin-top: 1rem;
 }
 
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .mb-1 {
   margin-bottom: 1rem;
 }
@@ -32,13 +36,13 @@ body {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -99,17 +103,17 @@ a {
 }
 
 .message-info {
-  background-color: hsla(212deg, 100%, 70%, 0.7);
+  background-color: hsla(212deg, 100%, 70%, 0.8);
   color: #fff;
 }
 
 .message-success {
-  background-color: hsla(154deg, 74%, 65%, 0.7);
+  background-color: hsla(154deg, 74%, 65%, 0.8);
   color: #fff;
 }
 
 .message-error {
-  background-color: rgba(239, 84, 102, 0.7);
+  background-color: rgba(239, 84, 102, 0.8);
   color: #fff;
 }
 
@@ -191,13 +195,13 @@ a {
 
 /* $accent: #d7e636; */
 /* $bg-second: #333333; */
-.btn-container {
+.btn__container {
   width: 100%;
   display: flex;
   flex-direction: raw;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 0rem;
 }
 
 .btn {
@@ -221,7 +225,7 @@ a {
 .btn-s {
   background-color: transparent;
   border: 1px solid rgb(255, 128, 170);
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   color: rgb(255, 128, 170);
   border-radius: 4px;
   cursor: pointer;
@@ -237,6 +241,17 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  .loginPage__component {
+    padding: 0 auto !important;
+    display: flex;
+    flex-direction: raw;
+    align-items: center;
+    justify-content: center;
+    gap: 0rem;
+  }
+  .login__component {
+    transform: translateX(0%) !important;
+  }
   nav {
     width: 6rem !important;
   }
@@ -271,6 +286,15 @@ a {
   }
 }
 @media screen and (max-width: 480px) {
+  .login__component {
+    transform: translateX(0%) !important;
+    width: 32rem !important;
+  }
+  .mobile-icon {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.4rem;
+  }
   nav {
     display: none;
   }
@@ -328,16 +352,60 @@ a {
   main .main__all-container-content .grid__container .box {
     width: 100% !important;
   }
+  .btn__container .loader__container {
+    position: relative !important;
+    top: 0% !important;
+    left: 2rem !important;
+  }
   .filtersFormActive {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 2rem;
-    min-height: 41rem !important;
+    min-height: 54rem !important;
     opacity: 1 !important;
   }
 }
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.loginPage__component {
+  background-image: url("../assets/bg/Bubble-10.5s-2436px(1).svg");
+  position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+.loginPage__component img {
+  height: 10rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.loginPage__component .error-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.loginPage__component .error-info a {
+  color: rgb(255, 128, 170);
+  text-decoration: underline;
+}
+.loginPage__component .comercial {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.loginPage__component .comercial a {
+  font-size: 1rem;
+}
+
 main {
   padding: 2rem;
   width: calc(100% - 25rem);
@@ -541,6 +609,7 @@ header .mobile-menu {
   transform-origin: top;
   transform: rotateX(-100deg) translateY(-50%);
   opacity: 0;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -746,6 +815,9 @@ header .mobile-menu {
   height: 6.6rem;
   padding: 2rem;
 }
+.hiddenMenu__container-header h2 {
+  font-size: 24px;
+}
 .hiddenMenu__container-inputs {
   width: 100%;
   height: calc(100% - 6.6rem);
@@ -779,7 +851,7 @@ form .inputs__container input,
 form .inputs__container select {
   width: 100%;
   border-radius: 4px;
-  padding: 0.8rem;
+  padding: 1rem;
   font-size: 16px;
   letter-spacing: 0.1rem;
 }
@@ -832,6 +904,7 @@ form .btn__container .loader__container {
   border-radius: 4px;
   transition: all 0.1s ease-out;
   opacity: 0;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -870,6 +943,15 @@ form .btn__container .loader__container {
   height: calc(100% - 2rem);
   overflow-y: scroll;
 }
+.mobile__menu .mobile-header {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
 .mobile__menu ul {
   display: flex;
   flex-direction: column;
@@ -884,20 +966,17 @@ form .btn__container .loader__container {
   justify-content: flex-start;
   gap: 0rem;
   width: 90%;
-  height: 3.4rem;
+  height: 4rem;
   border-radius: 0 4px 4px 0;
   padding-left: 2rem;
   text-transform: capitalize;
+  font-size: 2rem;
 }
 .mobile__menu ul .mobile-category .mobile-links {
-  font-size: 1.8rem;
   width: 100%;
   transition: all 0.1s ease-out;
   border-radius: 0 4px 4px 0;
   transform: translateX(1.8rem);
-}
-.mobile__menu ul .mobile-category .mobile-icon {
-  font-size: 1.8rem;
 }
 .mobile__menu ul .mobile-category:hover {
   background-color: rgb(255, 128, 170);
@@ -932,12 +1011,64 @@ form .btn__container .loader__container {
   visibility: visible;
 }
 
+/* $accent: #d7e636; */
+/* $bg-second: #333333; */
+.login__component {
+  width: 36rem;
+  height: 44rem;
+  border-radius: 4px;
+  padding: 2rem;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  box-shadow: 0 0 7px -2px rgba(255, 102, 153, 0.6);
+}
+.login__component form {
+  width: 100%;
+  padding: 0;
+}
+.login__component form .goto-signup {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.login__component form .goto-signup:hover {
+  color: rgb(255, 128, 170);
+}
+.login__component form .login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.login__component form .login-form input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 1rem;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+}
+.login__component form .login-form input:focus,
+.login__component form .login-form select:focus {
+  outline: 1px solid rgb(255, 128, 170);
+}
+
 .filters__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-center;
   gap: 2rem;
+  cursor: pointer;
 }
 .filters__container-header {
   display: flex;

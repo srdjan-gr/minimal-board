@@ -45,7 +45,7 @@ const Task = () => {
 
     return (
         <form onSubmit={handleSubbmit}>
-            <article article className='inputs__container border-all' >
+            <article className='inputs__container border-all' >
                 <label htmlFor="taskName" className='text-third mb-05'>Task Name</label>
                 <input
                     type="text"
@@ -101,7 +101,7 @@ const Task = () => {
             </article>
 
             <div className="btn__container">
-                <button className='btn-s'>Add Task</button>
+                <button className='btn'>Add Task</button>
                 {isLoading ? <Loader /> : ''}
             </div>
         </form>

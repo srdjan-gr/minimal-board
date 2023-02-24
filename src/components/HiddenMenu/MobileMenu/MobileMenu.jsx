@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { BiUser, BiListUl, BiDotsHorizontalRounded, BiBrush, BiEdit } from "react-icons/bi";
 import api from '../../../api/api'
 
 import CategoriesContext from '../../../contexts/CategoriesContext';
@@ -24,9 +25,28 @@ const MobileMenu = () => {
         setHiddenMenu({ container: false, option: '', optionName: '' });
     }
 
-    
+
+    const optionsToogle = () => {
+        // setSidebarOption(!sidebarOption)
+        setHiddenMenu({ container: true, option: 'boardOptions', optionName: "Board Options" });
+    }
+
+
     return (
         <div className='mobile__menu'>
+            <article className='board__header mobile-header'>
+
+                <BiEdit
+                    className='icon-m mobile-icon activeBoard  '
+                />
+                <BiBrush
+                    className='icon-m mobile-icon background-second'
+                />
+                <BiDotsHorizontalRounded
+                    className='icon-m mobile-icon background-second'
+                    onClick={() => optionsToogle()} />
+
+            </article>
             <ul>
                 {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                     categories.map((category) => {

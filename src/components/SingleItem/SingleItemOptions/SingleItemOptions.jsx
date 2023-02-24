@@ -56,11 +56,11 @@ const SingleItemOptions = ({ task }) => {
                 <h3>Details</h3>
             </div>*/}
             <div className='header__menu-single' onClick={() => editItem(task)}>
-                <BiEditAlt className='icon-m background-second' />
+                <BiEditAlt className='icon-m mobile-icon background-second' />
                 <h3>Edit</h3>
             </div>
             <div className='header__menu-single' onClick={() => deleteItem(task.id_task)}>
-                <BiTrashAlt className='icon-m background-second' />
+                <BiTrashAlt className='icon-m mobile-icon background-second' />
                 <h3>Delete</h3>
             </div>
         </article>

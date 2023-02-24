@@ -18,7 +18,7 @@ const Breadcrumb = () => {
     );
 
     const routes = [
-        { path: "/", breadcrumb: "Home/ " },
+        { path: "/home", breadcrumb: "/home" },
         { path: "/:categoryName", breadcrumb: DynamicCategoryName },
     ];
 

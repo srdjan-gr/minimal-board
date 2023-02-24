@@ -1,5 +1,6 @@
 .filters__container {
     @include flex(column, flex-start, flex-center, 2rem);
+    cursor: pointer;
     
     &-header{
         @include flex(raw, center, flex-start, 1rem);

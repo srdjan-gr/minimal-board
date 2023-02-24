@@ -119,7 +119,7 @@ const TaskEdit = () => {
             </article>
 
             <div className="btn__container">
-                <button className='btn-s'>Edit Task</button>
+                <button className='btn'>Edit Task</button>
                 {isLoading ? <Loader /> : ''}
             </div>
         </form>
