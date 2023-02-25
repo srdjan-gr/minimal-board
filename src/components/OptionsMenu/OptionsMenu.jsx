@@ -19,6 +19,7 @@ const HeaderMenu = () => {
 
     const sessionKill = () => {
         sessionStorage.removeItem('mblog')
+        setOptionsMenuContainer(!optionsMenuContainer)
         navigate('/')
     }
 

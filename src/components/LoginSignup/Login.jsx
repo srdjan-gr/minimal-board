@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader'
 import api from '../../api/api'
-import login from '../../utils/login';
+import loginFun from '../../utils/loginFun';
 import MessageContext from '../../contexts/MessageContext';
 import jwt from 'jwt-decode'
 
+import logo from '../../assets/logo/mb-white-pink-200.png'
 
-const Login = () => {
+const Login = ({ signup, setSignup }) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
@@ -27,14 +28,22 @@ const Login = () => {
             password: password
         }
 
-        login(api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail, setPassword);
+        loginFun(api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail, setPassword);
+    }
+
+    const changeCards = () => {
+        setSignup(!signup)
+        setEmail('')
+        setPassword('')
     }
 
 
     return (
-        <article className='login__component background  border-all text-second'>
+        <article className={`${signup ? 'moveLogin' : ''} card__component login__component background  border-all text-second`}  >
             <form onSubmit={handleLogin}>
-                <span className='goto-signup'>Go to signup</span>
+                <span className='goto-signup' onClick={changeCards}>Go to signup</span>
+                <img src={logo} alt="minimal boardlogo" />
+
                 <div className='login-form'>
                     <label htmlFor="" className='text-third mb-05'>User name</label>
                     <input
@@ -59,9 +68,9 @@ const Login = () => {
                     />
                 </div>
 
-                <div className="mt-2">
+                <div className="mt-2 login-button">
                     <button className='btn'>Login</button>
-                    {/*{isLoading ? <Loader /> : ''}*/}
+                    {isLoading ? <Loader /> : ''}
                 </div>
             </form>
 

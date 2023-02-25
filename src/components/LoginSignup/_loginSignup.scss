@@ -1,11 +1,15 @@
 @use '../../sass/colors' as *;
 
-.login__component{
+.card__component{
     width: 36rem;
-    height: 44rem;
+    height: 50rem;
     border-radius: $radius;
     padding: 2rem;
-    transform: translateX(100%);
+    // transform: translateX(100%);
+    position: absolute;
+    right: 15%;
+    z-index: 5;
+    transition: $transition-2;
 
     @include flex(column, center, center, 0rem);
     -webkit-box-shadow: 0 0 7px -2px rgba(255, 102, 153, 0.6);
@@ -28,14 +32,69 @@
             color: $accent;
         }
 
+        img{
+            height: 3rem;
+            position: absolute;
+            top: 2rem;
+            left: 31rem;
+        }
+
+        .login-button{
+            position: relative;
+            .loader__container {
+                position: absolute;
+                top: 0;
+                left: 30rem;
+            }
+        }
+
+        .check{
+            @include flex(raw, center, center, 0rem);  
+
+            input[type='checkbox']{
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: .5rem;
+
+                -webkit-appearance: none;
+                appearance: none;
+                margin: 0;
+
+                font: inherit;
+                color: currentColor;
+                width: 1.6rem;
+                height: 1.6rem;
+                border: 0.15rem solid  #636363;
+                border-radius: 0.3em;
+                transform: translateY(-0.075em);
+
+                display: grid;
+                place-content: center;
+            }
+
+            input[type="checkbox"]::before {
+                content: "";
+                width: 1.4rem;
+                height: 1.4rem;
+                border: 0.15rem solid $accent;
+                border-radius: 0.3em;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em $accent-50;
+            }
+
+            input[type="checkbox"]:checked::before {
+                transform: scale(1);
+            }
+        }
+        
         .login-form{
             @include flex(column, flex-start, center, 0rem);
     
             width: 100%;
             height: 100%;
             border-radius: $radius;
-    
-    
+
             input{
                 width: 100%;
                 border-radius: $radius;
@@ -50,4 +109,24 @@
             }
         }
     }
+}
+
+.signup__component{
+    transform: translate(100%, 10rem);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.moveSignup{
+    transform: translate(0%, 0%);
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.moveLogin{
+    transform: translate(100%, -20rem);
+    opacity: 0;
+    visibility: hidden;
 }

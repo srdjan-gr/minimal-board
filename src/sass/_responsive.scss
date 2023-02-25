@@ -57,9 +57,22 @@
 
 @media screen and (max-width: 480px) {
 
-    .login__component{
-        transform: translateX(0%) !important;
+    .card__component{
+        right: 50% !important;
+        transform: translateX(50%) !important;
         width: 32rem !important;
+
+        form{
+            img{
+                left: 27rem !important;
+            }
+
+            .login-button{
+                .loader__container {
+                    left: 26rem !important;
+                }
+            }
+        }
     }
 
     .mobile-icon{
