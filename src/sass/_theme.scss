@@ -49,6 +49,11 @@
       @include borderAll($border-dark);
     }
 
+    .border-bottom-diff {
+      @include borderBottomLight($bg-dark);
+    }
+
+
 
     .bg-success {
       background-color: $success;
@@ -103,6 +108,10 @@
 
     .border-all {
       @include borderAll($border-light);
+    }
+
+    .border-bottom-diff {
+      @include borderBottomLight($bg-light);
     }
 
     .bg-success {

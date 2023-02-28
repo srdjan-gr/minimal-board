@@ -15,10 +15,6 @@ const LoginPage = () => {
             <Login signup={signup} setSignup={setSignup} />
             <Signup signup={signup} setSignup={setSignup} />
 
-            {/*<div className="comercial">
-                <a className='text-second' href="http://www.videezy.com">Free Broll provided by Videezy</a>
-            </div>*/}
-
             <Message />
         </article>
     )

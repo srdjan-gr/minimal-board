@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Breadcrumb from '../components/Bradcrumb/Breadcrumb';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import Header from '../components/Header/Header'
 import HiddenMenu from '../components/HiddenMenu/HiddenMenu';
@@ -15,8 +16,19 @@ import ErrorPage from './ErrorPage';
 
 const Home = () => {
 
+    const navigate = useNavigate();
+
     // Session
     const mbsession = sessionStorage.getItem("mblog");
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (mbsession) {
+                sessionStorage.removeItem('mblog')
+                navigate('/')
+            }
+        }, 900000);
+    }, [mbsession])
 
     const { sidebar } = useContext(SidebarContext)
 

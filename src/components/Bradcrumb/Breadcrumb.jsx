@@ -26,7 +26,7 @@ const Breadcrumb = () => {
 
 
     return (
-        <section className={`${sidebar === true ? 'toggleBreadcrumb' : ''} breadcrumb background-second text border-left`} >
+        <section className={`${sidebar === true ? 'toggleBreadcrumb' : ''} breadcrumb background-second text border-left border-bottom-diff`} >
 
             {breadcrumbs.map(({ match, breadcrumb }) => (
                 <NavLink

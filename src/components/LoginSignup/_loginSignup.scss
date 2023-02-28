@@ -94,6 +94,7 @@
             width: 100%;
             height: 100%;
             border-radius: $radius;
+            position: relative;
 
             input{
                 width: 100%;
@@ -106,6 +107,12 @@
             input:focus,
             select:focus{
                 outline: 1px solid $accent;
+            }
+
+            .visible__pass{
+                position: absolute;
+                right: 1rem;
+                top: 2.8rem;
             }
         }
     }

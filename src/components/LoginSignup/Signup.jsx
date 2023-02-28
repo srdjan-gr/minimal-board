@@ -4,6 +4,7 @@ import Loader from '../Loader/Loader'
 import api from '../../api/api'
 import signupFun from '../../utils/signupFun';
 import MessageContext from '../../contexts/MessageContext';
+import { BiShow } from "react-icons/bi";
 
 import logo from '../../assets/logo/mb-white-pink-200.png'
 
@@ -11,6 +12,7 @@ import logo from '../../assets/logo/mb-white-pink-200.png'
 const Signup = ({ signup, setSignup }) => {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [showPass, setShowPass] = useState(false);
     const { message, setMessage } = useContext(MessageContext)
     const navigate = useNavigate();
 
@@ -63,7 +65,7 @@ const Signup = ({ signup, setSignup }) => {
                 <div className='login-form'>
                     <label htmlFor="" className='text-third mb-05'>Name</label>
                     <input
-                        // autoComplete="on"
+                        autoComplete="on"
                         type="text"
                         className='background text border-all'
                         placeholder='Enter name...'
@@ -99,12 +101,13 @@ const Signup = ({ signup, setSignup }) => {
                 <div className='login-form'>
                     <label htmlFor="" className='text-third mb-05'>Password</label>
                     <input
-                        type="password"
+                        type={showPass ? 'text' : 'password'}
                         className='background text border-all'
                         placeholder='Enter password...'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                    <BiShow className=' icon-m visible__pass' onClick={() => setShowPass(!showPass)} />
                 </div>
                 <div className=' check'>
                     <input

@@ -30,10 +30,12 @@ const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail,
 
                         sessionStorage.setItem("mblog", JSON.stringify({
                             login: true,
-                            token: response.data.token
+                            token: response.data.token,
+                            // time: time()
                         }));
-                        // setTimeout(() => {
-                        // }, 5000);
+
+
+
 
 
                         // setLogin({ login: true });

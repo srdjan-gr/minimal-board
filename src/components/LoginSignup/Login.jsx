@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
+import { BiShow } from "react-icons/bi";
 import Loader from '../Loader/Loader'
 import api from '../../api/api'
 import loginFun from '../../utils/loginFun';
@@ -14,6 +15,7 @@ const Login = ({ signup, setSignup }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { message, setMessage } = useContext(MessageContext)
+    const [showPass, setShowPass] = useState(false);
 
     const navigate = useNavigate();
 
@@ -60,12 +62,13 @@ const Login = ({ signup, setSignup }) => {
                 <div className='login-form'>
                     <label htmlFor="" className='text-third mb-05'>Password</label>
                     <input
-                        type="password"
+                        type={showPass ? 'text' : 'password'}
                         className='background text border-all'
                         placeholder='Enter password...'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                    <BiShow className=' icon-m visible__pass' onClick={() => setShowPass(!showPass)} />
                 </div>
 
                 <div className="mt-2 login-button">

@@ -107,12 +107,12 @@ a {
 }
 
 .message-info {
-  background-color: hsla(212deg, 100%, 70%, 0.8);
+  background-color: hsla(212, 100%, 70%, 0.8);
   color: #fff;
 }
 
 .message-success {
-  background-color: hsla(154deg, 74%, 65%, 0.8);
+  background-color: hsla(154, 74%, 65%, 0.8);
   color: #fff;
 }
 
@@ -153,8 +153,11 @@ a {
 .darkTheme .border-all {
   border: 1px solid #2f2f2f;
 }
+.darkTheme .border-bottom-diff {
+  border-bottom: 1px solid #242424;
+}
 .darkTheme .bg-success {
-  background-color: hsla(154deg, 74%, 65%, 0.1);
+  background-color: hsla(154, 74%, 65%, 0.1);
 }
 .darkTheme .bg-info {
   background-color: rgba(150, 99, 232, 0.1);
@@ -190,8 +193,11 @@ a {
 .lightTheme .border-all {
   border: 1px solid #bebebe;
 }
+.lightTheme .border-bottom-diff {
+  border-bottom: 1px solid #e7e7e7;
+}
 .lightTheme .bg-success {
-  background-color: hsla(154deg, 74%, 65%, 0.1);
+  background-color: hsla(154, 74%, 65%, 0.1);
 }
 .lightTheme .bg-info {
   background-color: rgba(150, 99, 232, 0.1);
@@ -1115,6 +1121,7 @@ form .btn__container .loader__container {
   width: 100%;
   height: 100%;
   border-radius: 4px;
+  position: relative;
 }
 .card__component form .login-form input {
   width: 100%;
@@ -1126,6 +1133,11 @@ form .btn__container .loader__container {
 .card__component form .login-form input:focus,
 .card__component form .login-form select:focus {
   outline: 1px solid rgb(255, 128, 170);
+}
+.card__component form .login-form .visible__pass {
+  position: absolute;
+  right: 1rem;
+  top: 2.8rem;
 }
 
 .signup__component {

@@ -12,6 +12,22 @@ import LoginPage from './Pages/LoginPage';
 function App() {
 
   const { theme, setTheme } = useContext(ThemeContext);
+  // const session = sessionStorage.getItem("mblog");
+
+  // useEffect(() => {
+
+  //   // window.addEventListener();
+
+  //   setTimeout(() => {
+  //     if (session) {
+  //       // const sessionKill = () => {
+  //       sessionStorage.removeItem('mblog')
+  //       navigate('/')
+  //       // }
+  //     }
+  //   }, 10000);
+  // }, [session])
+
 
   return (
     <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'} main`}>
