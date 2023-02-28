@@ -17,6 +17,7 @@ import ErrorPage from './ErrorPage';
 const Home = () => {
 
     const navigate = useNavigate();
+    const { sidebar } = useContext(SidebarContext)
 
     // Session
     const mbsession = sessionStorage.getItem("mblog");
@@ -30,7 +31,6 @@ const Home = () => {
         }, 900000);
     }, [mbsession])
 
-    const { sidebar } = useContext(SidebarContext)
 
 
     if (mbsession) {

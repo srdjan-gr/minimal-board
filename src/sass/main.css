@@ -921,6 +921,7 @@ form .btn__container .loader__container {
   border-radius: 4px;
   transition: all 0.1s ease-out;
   opacity: 0;
+  visibility: hidden;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -950,6 +951,7 @@ form .btn__container .loader__container {
 
 .singleItemOptionsToggle {
   opacity: 1;
+  visibility: visible;
   z-index: 10;
 }
 
