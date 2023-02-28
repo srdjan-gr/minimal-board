@@ -2,9 +2,14 @@ import React, { useContext } from 'react'
 
 import TasksContext from '../../../contexts/TasksContext';
 
-const AscDesc = ({ x }) => {
+const AscDesc = ({ asc, setAsc }) => {
 
     const { order, setOrder } = useContext(TasksContext);
+
+
+    const handleRadio = (e) => {
+        setAsc(e.target.value);
+    }
 
 
     return (
@@ -14,22 +19,29 @@ const AscDesc = ({ x }) => {
             <div className="status-group">
                 <input
                     type="radio"
-                    name="byTime"
-                    id="filterDone"
-                    onChange={(e) => setOrder('DESC')} />
+                    value='check'
+                    checked={asc === 'check'}
+                    id="filterDescDone"
+                    onChange={handleRadio}
+                    onClick={(e) => setOrder('DESC')}
+                />
 
-                <label htmlFor="filterDone">Done First</label>
+                <label htmlFor="filterDescDone">Done First</label>
             </div>
             <div className="status-group">
                 <input
                     type="radio"
-                    name="byTime"
-                    id="filterToDo"
-                    onChange={(e) => setOrder('ASC')} />
+                    value='nocheck'
+                    checked={asc === 'nocheck'}
+                    id="filterAscDone"
+                    onChange={handleRadio}
+                    onClick={(e) => setOrder('ASC')}
+                />
 
-                <label htmlFor="filterToDo">Todo First</label>
+                <label htmlFor="filterAscDone">Todo First</label>
             </div>
         </article>
+
     )
 }
 

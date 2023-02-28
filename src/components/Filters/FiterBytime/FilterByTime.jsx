@@ -2,9 +2,14 @@ import React, { useContext } from 'react'
 
 import TasksContext from '../../../contexts/TasksContext';
 
-const FilterByTime = ({ x }) => {
+const FilterByTime = ({ filterTime, setFilterTime }) => {
 
     const { order, setOrder } = useContext(TasksContext);
+
+
+    const handleRadio = (e) => {
+        setFilterTime(e.target.value);
+    }
 
 
     return (
@@ -14,18 +19,25 @@ const FilterByTime = ({ x }) => {
             <div className="status-group">
                 <input
                     type="radio"
-                    name="byTime"
+                    value='check'
+                    checked={filterTime === 'check'}
                     id="filterDone"
-                    onChange={(e) => setOrder('DESC')} />
+                    onChange={handleRadio}
+                    onClick={(e) => setOrder('DESC')}
+                />
 
                 <label htmlFor="filterDone">Newest First</label>
             </div>
             <div className="status-group">
                 <input
                     type="radio"
+                    value='nocheck'
+                    checked={filterTime === 'nocheck'}
                     name="byTime"
                     id="filterToDo"
-                    onChange={(e) => setOrder('ASC')} />
+                    onChange={handleRadio}
+                    onClick={(e) => setOrder('ASC')}
+                />
 
                 <label htmlFor="filterToDo">Oldest First</label>
             </div>

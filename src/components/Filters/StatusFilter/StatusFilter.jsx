@@ -3,9 +3,15 @@ import { BiX } from "react-icons/bi";
 
 import TasksContext from '../../../contexts/TasksContext';
 
-const StatusFilter = () => {
+const StatusFilter = ({ filterStatus, setFilterStatus }) => {
 
     const { setStatus } = useContext(TasksContext);
+
+
+    const handleRadio = (e) => {
+        setFilterStatus(e.target.value);
+    }
+
 
     return (
         <article className='status__filter border-all text-third' >
@@ -15,8 +21,13 @@ const StatusFilter = () => {
                 <input type="radio"
                     name="byStatus"
                     id="filterDone"
-                    value={1}
-                    onChange={(e) => setStatus(e.target.value)} />
+                    value={'check'}
+                    checked={filterStatus === 'check'}
+
+
+                    onChange={handleRadio}
+                    onClick={(e) => setStatus(1)}
+                />
 
                 <label htmlFor="filterDone">Done</label>
             </div>
@@ -24,8 +35,12 @@ const StatusFilter = () => {
                 <input type="radio"
                     name="byStatus"
                     id="filterToDo"
-                    value={0}
-                    onChange={(e) => setStatus(e.target.value)} />
+                    value={'nocheck'}
+                    checked={filterStatus === 'nocheck'}
+
+                    onChange={handleRadio}
+                    onClick={(e) => setStatus(0)}
+                />
 
                 <label htmlFor="filterToDo">Todo</label>
             </div>

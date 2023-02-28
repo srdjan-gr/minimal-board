@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { BiFilter, BiChevronDown } from "react-icons/bi";
 import api from '../../api/api';
 
@@ -15,6 +15,9 @@ import filtersFetch from '../../utils/filtersFetch';
 const Filters = () => {
 
     const [filters, setFilters] = useState(false);
+    const [asc, setAsc] = useState('');
+    const [filterTime, setFilterTime] = useState('');
+    const [filterStatus, setFilterStatus] = useState('');
 
 
     const { catId } = useContext(CategoriesContext);
@@ -28,24 +31,19 @@ const Filters = () => {
         setPriority } = useContext(TasksContext);
 
 
-    // const renderFilters = () => {
-    //     return (
-    //         <div>
-    //             <StatusFilter />
-    //             <FilterByTime />
-    //             <FilterByPriority />
-    //         </div>
-    //     )
-    // }
-
     const resetFilter = (e) => {
 
         e.preventDefault();
+        setFilters(false)
         setStatus('');
         setOrder('');
+        setPriority('')
+
+        setAsc('')
+        setFilterTime('')
+        setFilterStatus('')
 
         setIsLoading(true)
-
         fetchTasksByCategory(catId, setTasks, setIsLoading, api)
     }
 
@@ -64,6 +62,14 @@ const Filters = () => {
 
         filtersFetch(sendData, api, setIsLoading, setTasks);
 
+        setFilters(false)
+        setStatus('');
+        setOrder('');
+        setPriority('')
+
+        setAsc('')
+        setFilterTime('')
+        setFilterStatus('')
     }
 
 
@@ -83,17 +89,18 @@ const Filters = () => {
 
             <div className={`${filters ? 'filtersFormActive' : ''} filters-form`} >
                 <form onSubmit={handleSubmit}>
-                    <AscDesc />
-                    <StatusFilter />
-                    <FilterByTime />
+
+
+                    <AscDesc asc={asc} setAsc={setAsc} />
+                    <StatusFilter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+                    <FilterByTime filterTime={filterTime} setFilterTime={setFilterTime} />
                     <FilterByPriority />
 
-                    {status === '' && order === '' && priority === '' ?
-                        '' :
+                    {status == '' && order == '' && priority == '' ? '' :
 
                         <div className="btn__container mt-1">
-                            <button className="btn-s">Filter</button>
-                            <button className="btn-s" onClick={resetFilter}>X</button>
+                            <button className="btn-s" onClick={openMobileFilters}>Filter</button>
+                            <button className="btn-s" onClick={(e) => resetFilter(e)}>X</button>
                         </div>}
                 </form>
             </div>
