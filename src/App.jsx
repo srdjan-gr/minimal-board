@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import ErrorPage from './Pages/ErrorPage';
 import All from './Pages/All';
 import LoginPage from './Pages/LoginPage';
+import Loading from './Pages/Loading';
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     <div className={`${theme === 'lightTheme' ? 'lightTheme' : 'darkTheme'} main`}>
       <Router>
         <Routes>
-          <Route path='/' element={<LoginPage />} />
+          <Route exact path='/' element={<LoginPage />} />
+          <Route path='/loading' element={<Loading />} />
           <Route path='/Home' element={<Home />} />
           <Route path='/All/:categoryName' element={<All />} />
           <Route path='*' element={<ErrorPage nopage />} />

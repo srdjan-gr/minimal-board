@@ -76,8 +76,6 @@ const Login = ({ signup, setSignup }) => {
                     {isLoading ? <Loader /> : ''}
                 </div>
             </form>
-
-
         </article>
     )
 }

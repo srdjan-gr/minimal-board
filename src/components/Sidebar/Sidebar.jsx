@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { BiUser, BiListUl, BiDotsHorizontalRounded, BiBrush, BiEdit } from "react-icons/bi";
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import api from '../../api/api'
@@ -19,38 +19,32 @@ import brandLogoLight from '../../assets/logo/mb-white-pink-200.png';
 import brandLogoDark from '../../assets/logo/mb-black-pink-200.png';
 
 import fetchTasksByCategory from '../../utils/fetchTasksByCategory';
+import Loader from '../Loader/Loader';
 
 const Sidebar = () => {
 
     // Session
     const mbsession = sessionStorage.getItem("mblog");
+    const token = jwt(mbsession);
 
     const { theme, setTheme } = useContext(ThemeContext);
     const { sidebar } = useContext(SidebarContext);
-    const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
+    const { categories, setCategories, catId, setCatId, isLoading } = useContext(CategoriesContext);
     const { tasks, setTasks, setIsLoading, setStatus, setOrder } = useContext(TasksContext);
 
     const { sidebarOption, setSidebarOption } = useContext(BoardContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)
-    const token = jwt(mbsession);
-
-    // const [searchParams, setSearchParams] = useSearchParams();
-
-    const location = useLocation();
 
 
     const fetchTasks = (catId) => {
-
         setCatId(catId);
         setIsLoading(true)
-
         fetchTasksByCategory(catId, setTasks, setIsLoading, api)
     }
 
 
     const optionsToogle = () => {
-        // setSidebarOption(!sidebarOption)
         setHiddenMenu({ container: true, option: 'boardOptions', optionName: "Board Options" });
         setModal(true);
         setSidebarOption(!sidebarOption)
@@ -99,7 +93,9 @@ const Sidebar = () => {
 
             <article className='nav__middle'>
                 <ul>
-                    {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
+
+                    {categories.length === 0 ? <span className='ml-15'>No boards to show.</span> :
+                        // {isLoading ? <Loader /> : categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                         categories.map((category) => {
 
                             const x = category.cat_name

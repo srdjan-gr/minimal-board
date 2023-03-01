@@ -26,7 +26,7 @@ const StatusFilter = ({ filterStatus, setFilterStatus }) => {
 
 
                     onChange={handleRadio}
-                    onClick={(e) => setStatus(1)}
+                    onClick={(e) => setStatus('1')}
                 />
 
                 <label htmlFor="filterDone">Done</label>
@@ -39,7 +39,7 @@ const StatusFilter = ({ filterStatus, setFilterStatus }) => {
                     checked={filterStatus === 'nocheck'}
 
                     onChange={handleRadio}
-                    onClick={(e) => setStatus(0)}
+                    onClick={(e) => setStatus('0')}
                 />
 
                 <label htmlFor="filterToDo">Todo</label>

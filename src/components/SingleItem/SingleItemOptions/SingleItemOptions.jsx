@@ -17,7 +17,7 @@ const SingleItemOptions = ({ task }) => {
 
     const { itemsMenu, setItemsMenu } = useContext(SingleItemOptionsContext)
     const { setTasks, setIsLoading } = useContext(TasksContext);
-    const { categories, setCategories, catId, setCatId } = useContext(CategoriesContext);
+    const { categories, setCategories, catId, setCatId, isLoading } = useContext(CategoriesContext);
 
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)

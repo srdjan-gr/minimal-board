@@ -1,6 +1,6 @@
 import responseMessage from "./responseMessage";
 
-const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail, setPassword) => {
+const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail, setPassword, setUid) => {
 
     api({
         method: 'post',
@@ -31,12 +31,7 @@ const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail,
                         sessionStorage.setItem("mblog", JSON.stringify({
                             login: true,
                             token: response.data.token,
-                            // time: time()
                         }));
-
-
-
-
 
                         // setLogin({ login: true });
 
@@ -48,7 +43,11 @@ const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail,
                         //     navigate('/Dashboard')
                         // } else if (token.data.status == 'Korisnik') {
 
+
+                        // categoriesFetchAll(setCategories, api, uid)
+                        // categoriesFetchAll()
                         navigate('/home')
+
                         //     notifySuccess(response.data.uspesno);
                         // } else {
 

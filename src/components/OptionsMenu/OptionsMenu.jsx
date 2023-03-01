@@ -6,18 +6,20 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
 import ModalContext from '../../contexts/ModalContext';
+import CategoriesContext from '../../contexts/CategoriesContext';
 
-// import headerOptions from '../../data';
 
 const HeaderMenu = () => {
 
     const { optionsMenuContainer, setOptionsMenuContainer, option, setOption } = useContext(OptionsMenuContext)
     const { hiddenMenu, setHiddenMenu } = useContext(HiddenMenuContext);
     const { modal, setModal } = useContext(ModalContext)
+    const { setCategories } = useContext(CategoriesContext);
 
     const navigate = useNavigate();
 
     const sessionKill = () => {
+        setCategories([])
         sessionStorage.removeItem('mblog')
         setOptionsMenuContainer(!optionsMenuContainer)
         navigate('/')

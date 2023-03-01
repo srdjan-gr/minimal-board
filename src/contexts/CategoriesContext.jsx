@@ -2,33 +2,20 @@ import React, { createContext, useState, useEffect } from 'react'
 import api from '../api/api'
 import categoriesFetchAll from '../utils/categoriesFetchAll';
 
+
 const CategoriesContext = createContext();
 
 export const CategoriesProvider = ({ children }) => {
 
-    const [categories, setCategories] = useState([
-        // {
-        //     id: 1,
-        //     kategorija_ime_EN: 'Personal',
-        // },
-    ]);
 
-    // const [categories, setCategories] = useState({
-    //     data: [],
-    //     isLoading: false,
-    //     catId: null,
-    //     add: false
-    // })
-
+    const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [catId, setCatId] = useState(null);
     const [add, setAdd] = useState(false);
 
 
     useEffect(() => {
-
         categoriesFetchAll(setCategories, api)
-
     }, [add])
 
 

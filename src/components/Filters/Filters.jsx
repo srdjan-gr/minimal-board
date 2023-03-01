@@ -96,7 +96,7 @@ const Filters = () => {
                     <FilterByTime filterTime={filterTime} setFilterTime={setFilterTime} />
                     <FilterByPriority />
 
-                    {status == '' && order == '' && priority == '' ? '' :
+                    {status === '' && order === '' && priority === '' ? '' :
 
                         <div className="btn__container mt-1">
                             <button className="btn-s" onClick={openMobileFilters}>Filter</button>
