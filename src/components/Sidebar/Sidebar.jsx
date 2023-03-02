@@ -93,7 +93,6 @@ const Sidebar = () => {
 
             <article className='nav__middle'>
                 <ul>
-
                     {categories.length === 0 ? <span className='ml-15'>No boards to show.</span> :
                         // {isLoading ? <Loader /> : categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                         categories.map((category) => {

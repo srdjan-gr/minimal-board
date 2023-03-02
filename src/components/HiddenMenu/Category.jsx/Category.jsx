@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import api from '../../../api/api';
+import jwt from 'jwt-decode'
 import Loader from '../../Loader/Loader'
 
 import CategoriesContext from '..//../../contexts/CategoriesContext';
@@ -23,14 +24,18 @@ const Category = () => {
     const handleSubbmit = (e) => {
         e.preventDefault()
 
+        const mbsession = sessionStorage.getItem("mblog")
+        const token = jwt(mbsession);
+        const uid = token.data.id;
+
         setIsLoading(true);
 
         const sendData = {
             category: addCategoryData,
+            uid: uid
         }
 
         categoryAdd(setAdd, setIsLoading, setModal, setHiddenMenu, setAddCategoryData, setMessage, api, sendData);
-
     }
 
 

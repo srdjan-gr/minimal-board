@@ -21,7 +21,6 @@ const MobileMenu = () => {
         setIsLoading(true)
 
         fetchTasksByCategory(catId, setTasks, setIsLoading, api)
-
         setHiddenMenu({ container: false, option: '', optionName: '' });
     }
 
@@ -35,7 +34,6 @@ const MobileMenu = () => {
     return (
         <div className='mobile__menu'>
             <article className='board__header mobile-header'>
-
                 <BiEdit
                     className='icon-m mobile-icon activeBoard  '
                 />
@@ -45,8 +43,8 @@ const MobileMenu = () => {
                 <BiDotsHorizontalRounded
                     className='icon-m mobile-icon background-second'
                     onClick={() => optionsToogle()} />
-
             </article>
+
             <ul>
                 {categories.length === 0 ? <span className='ml-15'>Nema kategorija za prikaz.</span> :
                     categories.map((category) => {

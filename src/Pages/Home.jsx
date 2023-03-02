@@ -28,20 +28,21 @@ const Home = () => {
 
 
     useEffect(() => {
-
+        // Loads uses boards on login
         setTimeout(() => {
             categoriesFetchAll(setCategories, api)
         }, 500)
 
+        // Sets session duration. 
+        // After that time sessio will expire and user will be loged out
         setTimeout(() => {
             if (mbsession) {
                 sessionStorage.removeItem('mblog')
                 navigate('/')
             }
-        }, 600000);
+        }, 900000);
 
     }, [mbsession])
-
 
 
     if (mbsession) {
