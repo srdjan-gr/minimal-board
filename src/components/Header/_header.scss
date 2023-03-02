@@ -11,6 +11,35 @@ header{
     padding: 0 1rem;
     transition: $transition-2;
 
+    .header__left {
+
+        @include flex(raw, center, flex-start, 1rem);
+
+        .header-user{
+            visibility: none;
+            opacity: 0;
+            @include flex(raw, center, flex-start, 1rem);
+            
+
+            img{
+                border-radius: 1rem;
+                height: 2.8rem;
+            }
+
+            .data{
+                h3{
+                    font-size: 1.4rem;
+                }
+        
+                p{
+                    font-size: 1rem;
+                    font-style: italic;
+                    text-transform: lowercase
+                }
+            }
+        }
+    }
+
     .header__right{
         display: flex;
         gap: 1rem;
@@ -19,9 +48,12 @@ header{
     .mobile-menu{
         display: none;
     }
-
 }
 
 .toggleHeader{
     width: calc(100% - 6rem);
 }
+
+// .user-mobile{
+//     display: none !important;
+// }

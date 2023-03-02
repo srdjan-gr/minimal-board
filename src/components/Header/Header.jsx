@@ -6,8 +6,14 @@ import ThemeContext from '../../contexts/ThemeContext';
 import OptionsMenuContext from '../../contexts/OptionsMenuContext';
 import HiddenMenuContext from '../../contexts/HiddenMenuContext';
 
+import userImg from '../../assets/nouser.jpg';
+import jwt from 'jwt-decode'
 
 const Header = () => {
+
+    // Session
+    const mbsession = sessionStorage.getItem("mblog");
+    const token = jwt(mbsession);
 
     const { sidebar, setSidebar } = useContext(SidebarContext)
     const { theme, setTheme } = useContext(ThemeContext)
@@ -57,8 +63,16 @@ const Header = () => {
                 <BiArrowToLeft className={`${sidebar === true ? 'icon-rotate-180' : ''} icon-m mobile-icon background-second mobile-none`} onClick={toggleSidebar} />
                 <BiMenu className='icon-m mobile-icon background-second mobile-menu' onClick={toggleMobileMenu} />
 
+                <span className='header-user user-mobile'>
+                    <img src={userImg} alt="" />
 
+                    <div className='data'>
+                        <h3>{token.data.name}</h3>
+                        <p>{token.data.status}</p>
+                    </div>
+                </span>
             </article>
+
             <article className='header__right'>
                 <BiPlus className='icon-m mobile-icon background-second' onClick={headerMenuAdd} />
                 <BiSun className='icon-m mobile-icon background-second' onClick={toogleTheme} />

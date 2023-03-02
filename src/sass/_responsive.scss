@@ -1,3 +1,5 @@
+
+
 // Bigger than 1920px to 2k
 @media screen and (min-width:1920px) and (max-width:2560px) {
 
@@ -108,7 +110,16 @@
     // }
 
     .mobile-menu{
-        display: block !important;
+        display: flex !important;
+    }
+
+    .user-mobile{
+        display: flex !important;
+    }
+
+    .header-user{
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
 

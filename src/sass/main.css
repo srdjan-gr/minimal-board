@@ -332,7 +332,14 @@ a {
     display: none;
   }
   .mobile-menu {
-    display: block !important;
+    display: flex !important;
+  }
+  .user-mobile {
+    display: flex !important;
+  }
+  .header-user {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   main .main__all-container {
     display: flex;
@@ -505,6 +512,7 @@ nav .nav__header-user .user-data h3 {
 nav .nav__header-user .user-data p {
   font-size: 1rem;
   font-style: italic;
+  text-transform: lowercase;
 }
 nav .board__header {
   display: flex;
@@ -544,7 +552,6 @@ nav .nav__middle ul .nav__middle-category {
   height: 3.5rem;
   border-radius: 0 4px 4px 0;
   padding-left: 1.7rem;
-  text-transform: capitalize;
 }
 nav .nav__middle ul .nav__middle-category .category-links {
   font-size: 16px;
@@ -602,6 +609,34 @@ header {
   height: 5rem;
   padding: 0 1rem;
   transition: all 0.2s ease-out;
+}
+header .header__left {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+header .header__left .header-user {
+  visibility: none;
+  opacity: 0;
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+header .header__left .header-user img {
+  border-radius: 1rem;
+  height: 2.8rem;
+}
+header .header__left .header-user .data h3 {
+  font-size: 1.4rem;
+}
+header .header__left .header-user .data p {
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: lowercase;
 }
 header .header__right {
   display: flex;
