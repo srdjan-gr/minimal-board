@@ -56,13 +56,13 @@ const MobileMenu = () => {
                             <div key={category.id_cat} className={`${catId == category.id_cat ? 'activeNavCategory' : ''} mobile-category`}>
                                 <Link
                                     className=' icon-letter background-second category-icon mobile-icon'
-                                    to={`/All/${category.cat_name}`}
+                                    to={`/home/${category.cat_name}`}
                                     onClick={() => fetchTasks(category.id_cat)}>{short}
                                 </Link>
 
                                 <Link
                                     className='text mobile-links '
-                                    to={`/All/${category.cat_name}`}
+                                    to={`/home/${category.cat_name}`}
                                     onClick={() => fetchTasks(category.id_cat)}> {category.cat_name}
                                 </Link>
                             </div>

@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/' element={<LoginPage />} />
           <Route path='/loading' element={<Loading />} />
           <Route path='/Home' element={<Home />} />
-          <Route path='/All/:categoryName' element={<All />} />
+          <Route path='/Home/:categoryName' element={<Home />} />
           <Route path='*' element={<ErrorPage nopage />} />
         </Routes>
       </Router>

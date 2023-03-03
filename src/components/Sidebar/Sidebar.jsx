@@ -104,13 +104,13 @@ const Sidebar = () => {
                                 <div key={category.id_cat} className={`${catId == category.id_cat ? 'activeNavCategory' : ''} nav__middle-category`}>
                                     <Link
                                         className=' icon-letter background-second category-icon'
-                                        to={`/All/${category.cat_name}`}
+                                        to={`/home/${category.cat_name}`}
                                         onClick={() => fetchTasks(category.id_cat)}>{short}
                                     </Link>
 
                                     <Link
                                         className='text category-links '
-                                        to={`/All/${category.cat_name}`}
+                                        to={`/home/${category.cat_name}`}
                                         onClick={() => fetchTasks(category.id_cat)}> {category.cat_name}
                                     </Link>
                                 </div>
