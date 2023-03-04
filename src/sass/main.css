@@ -1112,6 +1112,16 @@ form .btn__container .loader__container {
   top: 0;
   left: 30rem;
 }
+.card__component form .pass-reset {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.card__component form .pass-reset:hover {
+  color: rgb(255, 128, 170);
+}
 .card__component form .check {
   display: flex;
   flex-direction: raw;
@@ -1185,6 +1195,20 @@ form .btn__container .loader__container {
   z-index: -1;
 }
 
+.resetPass__component {
+  transform: translate(100%, 10rem);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.newPass__component {
+  transform: translate(100%, 10rem);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
 .moveSignup {
   transform: translate(0%, 0%);
   opacity: 1;
@@ -1196,6 +1220,20 @@ form .btn__container .loader__container {
   transform: translate(100%, -20rem);
   opacity: 0;
   visibility: hidden;
+}
+
+.movePassReset {
+  transform: translate(0%, 0rem);
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
+}
+
+.moveNewPass {
+  transform: translate(0%, 0rem);
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
 }
 
 .filters__container {

@@ -9,7 +9,7 @@ import { BiShow } from "react-icons/bi";
 import logo from '../../assets/logo/mb-white-pink-200.png'
 
 
-const Signup = ({ signup, setSignup }) => {
+const Signup = ({ cards, setCards }) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [showPass, setShowPass] = useState(false);
@@ -40,14 +40,15 @@ const Signup = ({ signup, setSignup }) => {
         signupFun(api, sendData, setMessage,
             setIsLoading, navigate, setEmail,
             setPassword, setLastName,
-            setTerms, setSignup, signup, setFirstName);
+            setTerms, setFirstName, setCards, cards);
 
         e.target.terms.checked = false
     }
 
 
     const changeCards = (e) => {
-        setSignup(!signup)
+        // setSignup(!signup)
+        setCards({ login: true, signup: false, reset: false, new: false })
         setEmail('')
         setPassword('')
         setfirstName('')
@@ -57,7 +58,7 @@ const Signup = ({ signup, setSignup }) => {
 
 
     return (
-        <article className={`${signup ? 'moveSignup' : ''} card__component signup__component background  border-all text-second`}>
+        <article className={`${cards.signup ? 'moveSignup' : ''} card__component signup__component background  border-all text-second`}>
             <form onSubmit={handleLogin} className='mt-3'>
                 <span className='goto-signup' onClick={(e) => changeCards()}>Back to login</span>
                 <img src={logo} alt="minimal boardlogo" />

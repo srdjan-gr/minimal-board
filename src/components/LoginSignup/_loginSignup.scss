@@ -48,6 +48,18 @@
             }
         }
 
+        .pass-reset{
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .pass-reset:hover{
+            color: $accent;
+        }
+
         .check{
             @include flex(raw, center, center, 0rem);  
 
@@ -125,6 +137,20 @@
     z-index: -1;
 }
 
+.resetPass__component{
+    transform: translate(100%, 10rem);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.newPass__component{
+    transform: translate(100%, 10rem);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
 .moveSignup{
     transform: translate(0%, 0%);
     opacity: 1;
@@ -136,4 +162,18 @@
     transform: translate(100%, -20rem);
     opacity: 0;
     visibility: hidden;
+}
+
+.movePassReset{
+    transform: translate(0%, 0rem);
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+}
+
+.moveNewPass{
+    transform: translate(0%, 0rem);
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
 }

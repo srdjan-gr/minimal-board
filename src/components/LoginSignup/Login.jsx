@@ -9,7 +9,7 @@ import jwt from 'jwt-decode'
 
 import logo from '../../assets/logo/mb-white-pink-200.png'
 
-const Login = ({ signup, setSignup }) => {
+const Login = ({ cards, setCards }) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
@@ -33,15 +33,24 @@ const Login = ({ signup, setSignup }) => {
         loginFun(api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail, setPassword);
     }
 
+
     const changeCards = () => {
-        setSignup(!signup)
+        // setSignup(!signup)
+        setCards({ login: false, signup: true, reset: false })
+        setEmail('')
+        setPassword('')
+    }
+
+
+    const openResetPass = () => {
+        setCards({ login: false, signup: false, reset: true })
         setEmail('')
         setPassword('')
     }
 
 
     return (
-        <article className={`${signup ? 'moveLogin' : ''} card__component login__component background  border-all text-second`}  >
+        <article className={`${cards.login ? '' : 'moveLogin'} card__component login__component background  border-all text-second`}  >
             <form onSubmit={handleLogin}>
                 <span className='goto-signup' onClick={changeCards}>Go to signup</span>
                 <img src={logo} alt="minimal boardlogo" />
@@ -75,6 +84,8 @@ const Login = ({ signup, setSignup }) => {
                     <button className='btn'>Login</button>
                     {isLoading ? <Loader /> : ''}
                 </div>
+
+                <span className='pass-reset' onClick={openResetPass}>Forgot your password?</span>
             </form>
         </article>
     )

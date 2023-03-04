@@ -2,12 +2,11 @@ import responseMessage from "./responseMessage";
 
 const signupFun = (api, sendData, setMessage,
     setIsLoading, navigate, setEmail,
-    setPassword, setLastName,
-    setTerms, setFirstName, setCards, cards) => {
+    cards, setCards) => {
 
     api({
         method: 'post',
-        url: 'signup.php',
+        url: 'reset.php?fun=reset',
         data: sendData,
     })
         .then((response) => {
@@ -16,13 +15,8 @@ const signupFun = (api, sendData, setMessage,
             setIsLoading(false);
 
             if (response.data.uspesno) {
-                // navigate('/');
-                setFirstName('')
-                setLastName('')
                 setEmail('')
-                setPassword('')
-                setTerms(false)
-                setCards({ login: true, signup: false, reset: false, new: false })
+                setCards({ login: false, signup: false, reset: false, new: true })
             }
         });
 }
