@@ -14,7 +14,7 @@ const NewPass = ({ cards, setCards }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [newPass, setNewPass] = useState('');
-    const [code, setCode] = useState('');
+    const [resCode, setResCode] = useState('');
     const { message, setMessage } = useContext(MessageContext)
 
     const navigate = useNavigate();
@@ -28,19 +28,19 @@ const NewPass = ({ cards, setCards }) => {
         const sendData = {
             email: email,
             newPass: newPass,
-            code: Number(code)
+            resCode: Number(resCode)
         }
 
         newPassFun(api, sendData, setMessage,
             setIsLoading, navigate, setEmail,
-            cards, setCards, setNewPass, setCode);
+            cards, setCards, setNewPass, setResCode);
     }
 
     const changeCards = () => {
         setCards({ login: true, signup: false, reset: false, new: false })
         setEmail('')
         setNewPass('')
-        setCode('')
+        setResCode('')
     }
 
 
@@ -82,8 +82,8 @@ const NewPass = ({ cards, setCards }) => {
                         type="text"
                         className='background text border-all'
                         placeholder='Enter code...'
-                        value={code}
-                        onChange={(e) => setCode(e.target.value)}
+                        value={resCode}
+                        onChange={(e) => setResCode(e.target.value)}
                     />
                 </div>
 

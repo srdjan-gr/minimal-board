@@ -1,7 +1,7 @@
 import responseMessage from "./responseMessage";
 
 const newPassFun = (api, sendData, setMessage,
-    setIsLoading, setEmail, setNewPass, setCode, setCards) => {
+    setIsLoading, setEmail, setNewPass, setResCode, setCards) => {
 
     api({
         method: 'post',
@@ -17,7 +17,7 @@ const newPassFun = (api, sendData, setMessage,
                 setCards({ login: true, signup: false, reset: false, new: false });
                 setEmail('')
                 setNewPass('')
-                setCode('')
+                setResCode('')
             }
         });
 }
