@@ -8,9 +8,15 @@ import ErrorPage from './Pages/ErrorPage';
 import All from './Pages/All';
 import LoginPage from './Pages/LoginPage';
 import Loading from './Pages/Loading';
+import { registerSW } from "virtual:pwa-register";
 
 
 function App() {
+
+  if ("serviceWorker" in navigator) {
+    // && !/localhost/.test(window.location)) {
+    registerSW();
+  }
 
   const { theme, setTheme } = useContext(ThemeContext);
 
