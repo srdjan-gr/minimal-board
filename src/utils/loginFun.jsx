@@ -56,7 +56,7 @@ const login = (api, sendData, setMessage, setIsLoading, navigate, jwt, setEmail,
                     }
 
                 } else {
-                    notifyError("Login error.");
+                    setMessage({ container: true, response: 'danger', text: 'Login Error' })
                 }
             }
         });

@@ -1,9 +1,6 @@
 @use './colors' as *;
   
 
-
-  
-
   .darkTheme{
     .text{
       color: $font-color-dark-first;
@@ -24,10 +21,6 @@
     .background{
       background-color: $bg-dark;
     }
-  
-    // .b:hover{
-    //   background-color: $bg-dark-second;
-    // }
   
     .background-second{
       background-color: $bg-dark-second;
@@ -52,7 +45,6 @@
     .border-bottom-diff {
       @include borderBottomLight($bg-dark);
     }
-
 
 
     .bg-success {

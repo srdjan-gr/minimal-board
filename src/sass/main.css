@@ -1,5 +1,4 @@
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
@@ -108,22 +107,21 @@ a {
 }
 
 .message-info {
-  background-color: hsla(212, 100%, 70%, 0.8);
+  background-color: hsla(212, 100%, 70%, 0.9);
   color: #fff;
 }
 
 .message-success {
-  background-color: hsla(154, 74%, 65%, 0.8);
+  background-color: hsla(154, 74%, 65%, 0.9);
   color: #fff;
 }
 
 .message-error {
-  background-color: rgba(239, 84, 102, 0.8);
+  background-color: rgba(239, 84, 102, 0.9);
   color: #fff;
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .darkTheme .text {
   color: #fff;
 }
@@ -177,10 +175,10 @@ a {
   color: #636363;
 }
 .lightTheme .background {
-  background-color: #e7e7e7;
+  background-color: #ffffff;
 }
 .lightTheme .background-second {
-  background-color: #cacaca;
+  background-color: #f6f7fb;
 }
 .lightTheme .border-right {
   border-right: 1px solid #bebebe;
@@ -195,7 +193,7 @@ a {
   border: 1px solid #bebebe;
 }
 .lightTheme .border-bottom-diff {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #ffffff;
 }
 .lightTheme .bg-success {
   background-color: hsla(154, 74%, 65%, 0.1);
@@ -205,7 +203,6 @@ a {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .btn__container {
   width: 100%;
   display: flex;
@@ -393,7 +390,6 @@ a {
   }
 }
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .loginPage__component {
   background-image: url("../assets/bg/Bubble-10.5s-2436px(1).svg");
   position: center;
@@ -469,7 +465,6 @@ main .main__all-container-content .grid__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 nav {
   width: 25rem;
   height: 100%;
@@ -651,7 +646,6 @@ header .mobile-menu {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .header__menu {
   min-width: 14rem;
   position: absolute;
@@ -764,7 +758,6 @@ header .mobile-menu {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .breadcrumb {
   display: flex;
   flex-direction: raw;
@@ -797,7 +790,6 @@ header .mobile-menu {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .loader__container {
   position: absolute;
   display: flex;
@@ -881,7 +873,6 @@ header .mobile-menu {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 form {
   display: flex;
   flex-direction: column;
@@ -947,7 +938,6 @@ form .btn__container .loader__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .singleItemOptions__container {
   min-width: 12rem;
   position: absolute;
@@ -992,7 +982,6 @@ form .btn__container .loader__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .mobile__menu {
   width: 100%;
   height: calc(100% - 2rem);
@@ -1038,7 +1027,6 @@ form .btn__container .loader__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .message__container {
   width: 100%;
   height: 6rem;
@@ -1048,7 +1036,6 @@ form .btn__container .loader__container {
   z-index: 110;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease-out;
   display: flex;
   flex-direction: raw;
   align-items: center;
@@ -1067,7 +1054,6 @@ form .btn__container .loader__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .card__component {
   width: 36rem;
   height: 50rem;
@@ -1283,7 +1269,6 @@ form .btn__container .loader__container {
 }
 
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
 .status__filter {
   width: 22rem;
   padding: 1rem;

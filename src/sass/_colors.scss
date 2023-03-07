@@ -1,5 +1,4 @@
-$accent: #EFF48E;
-// $accent: #FF6699;
+// $accent: #EFF48E;
 $accent: rgb(255, 128, 170);
 $accent-50: rgba(255, 102, 153, 0.25);
 
@@ -7,17 +6,13 @@ $success:hsla(154, 74%, 65%, 0.1);
 $info:rgba(150, 99, 232, 0.1);
 
 
-
-// $message-danger:hsla(4, 85%, 62%, 0.7);
-$message-danger: rgba(239, 84, 102, 0.8);
-$message-success:hsla(154, 74%, 65%, 0.8);
-$message-info:hsla(212, 100%, 70%, 0.8);
+$message-danger: rgba(239, 84, 102, 0.9);
+$message-success:hsla(154, 74%, 65%, 0.9);
+$message-info:hsla(212, 100%, 70%, 0.9);
 // Maybe colors
 // $accent: #c1cba9;
 // $accent: #E3FCBF;
 /* $accent: #d7e636; */
-/* $bg-second: #333333; */
-
 
 
 // Dark Theme
@@ -30,35 +25,12 @@ $border-dark: #2f2f2f;
 
 
 // Light Theme
-$bg-light: #e7e7e7;
+// $bg-light: #e7e7e7;
 // $bg-light-second: #cacaca;
-$bg-light-second: #cacaca;
 $font-color-light-first: #2f2f2f;
 $font-color-light-second:  #e7e7e7;
 $font-color-light-third:  #636363;
 $border-light: #bebebe;
 
-
-// Light Test 2
-// $bg-light: #f6f7fb;
-// $bg-light-second:   #eef1fc;
-// $font-color-light-first:  #2f2f2f;
-// $font-color-light-second:  #bebebe;
-// $border-light: #bebebe;
-
-// Light Test 3
-// $bg-light: #fff;
-// $bg-light-second: #f6f7fb;
-// $font-color-light-first: #4e4e4e;
-// $font-color-light-second:  #f5f5f5;
-// $border-light: #d8d8d8;
-
-// --main: #f6f7fb;
-// --second: #fff;
-// --txt: #4e4e4e;
-// --txt-different: #f5f5f5;
-
-// --hover: #c9c9c977;
-
-// --border: 1px solid #d8d8d8;
-
+$bg-light-second: #f6f7fb;
+$bg-light: #ffffff;

@@ -10,7 +10,6 @@
     z-index: 110;
     opacity: 0;
     visibility: hidden;
-    transition: $transition-2;
 
     @include flex(raw, center, center, 0rem);
 

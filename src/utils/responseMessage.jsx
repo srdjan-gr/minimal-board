@@ -32,7 +32,6 @@ const responseMessage = (response, setMessage) => {
         setTimeout(() => {
             setMessage({ container: false, response: '', text: '' })
         }, 2500);
-
     }
 }
 
